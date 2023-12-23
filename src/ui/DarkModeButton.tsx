@@ -1,8 +1,6 @@
 import * as React from 'react';
 import { SunIcon } from '@radix-ui/react-icons';
-import useDarkMode from 'use-dark-mode';
 import { Button } from './Button';
-import { darkThemeClass } from '../stitches.config';
 
 interface DarkModeButtonProps {
   css?: React.ComponentProps<typeof Button>['css'];
@@ -20,27 +18,17 @@ export const DarkModeButton: React.VFC<DarkModeButtonProps> = ({
   try {
     storageProvider = localStorage;
   } catch {}
-  const darkMode = useDarkMode(undefined, {
-    classNameDark: darkThemeClass,
-    storageProvider,
-  });
 
   // add color-scheme style to <html> element
   // so document scroll bars will have native dark mode styling
   React.useEffect(() => {
-    if (darkMode.value === true) {
-      // @ts-ignore because colorScheme type not added yet
-      document.documentElement.style.colorScheme = 'dark';
-    } else {
-      // @ts-ignore
-      document.documentElement.style.colorScheme = 'light';
-    }
-  }, [darkMode.value]);
+    // @ts-ignore
+    document.documentElement.style.colorScheme = 'light';
+  });
 
   return (
     <Button
       {...props}
-      onClick={darkMode.toggle}
       focus="boxShadow"
       css={{
         width: '36px',
