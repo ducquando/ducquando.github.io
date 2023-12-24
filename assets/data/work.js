@@ -1,4 +1,4 @@
-{
+const dbWork = {
   "Filter": {
     "curated": {
       "Sort": "curated",
@@ -1769,3 +1769,5 @@
     }
   }
 }
+
+export default dbWork;

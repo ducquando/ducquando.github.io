@@ -1,38 +1,42 @@
 import * as React from 'react';
-import './about.css';
+import '../../stylesheets/about.css';
 import '../javascripts/aboutScroll.js';
 
 interface AboutProps {
-  title: 'string';
-  aboutJourney: [{}];
-  aboutExp: [{}];
-  contactEmail: {};
-  contactConnect: [{}];
-  icons: {};
+  title: string;
+  aboutJourney: { [key: string]: any }[];
+  aboutExp: { [key: string]: any }[];
+  contactEmail: { [key: string]: any };
+  contactConnect: { [key: string]: any }[];
+  icons: { [key: string]: any };
 }
 
-function JourneySection(aboutJourney: [{}]): JSX.Element {
+function JourneySection({
+  aboutJourney,
+}: {
+  aboutJourney: { [key: string]: any };
+}) {
   return (
     <>
-      {' '}
-      {aboutJourney.forEach((journey) => {
-        <div className="journey-section width-20">
-          <p className="large">{journey['Year']}</p>
-          <p>{journey['Description']}</p>
-          <img
-            src={journey['Image'] + journey['Format']}
-            alt={journey['Year']}
-            style={
-              'left:' +
-              journey['HorizontalOffset'] +
-              'rem; top:' +
-              journey['VerticalOffset'] +
-              'rem;'
-            }
-            className={journey['Landspace'] ? 'landscape' : 'portrait'}
-          ></img>
-        </div>;
-      })}{' '}
+      {aboutJourney?.map((journey: { [key: string]: any }) => {
+        return (
+          <>
+            <div className="journey-section width-20">
+              <p className="large">{journey['Year']}</p>
+              <p>{journey['Description']}</p>
+              <img
+                src={journey['Image'] + journey['Format']}
+                alt={journey['Year']}
+                style={{
+                  left: journey['HorizontalOffset'] + 'rem',
+                  top: journey['VerticalOffset'] + 'rem',
+                }}
+                className={journey['Landspace'] ? 'landscape' : 'portrait'}
+              ></img>
+            </div>
+          </>
+        );
+      })}
     </>
   );
 }
@@ -48,59 +52,63 @@ function ExperienceStats(type: string, data: string): JSX.Element {
   );
 }
 
-function ExperienceTools(tools: [{}]): JSX.Element {
+function ExperienceTools(tools: { [key: string]: any }[]): JSX.Element {
   return (
     <>
-      {' '}
-      {tools.forEach((tool) => {
-        <div className="tool-items">
-          <img
-            src={tool['Image'] + tool['Format']}
-            alt={tool['SkillName']}
-          ></img>
-          <p>{tool['SkillName']}</p>
-        </div>;
-      })}{' '}
+      {tools?.map((tool: { [key: string]: any }) => {
+        return (
+          <>
+            <div className="tool-items">
+              <img
+                src={tool['Image'] + tool['Format']}
+                alt={tool['SkillName']}
+              ></img>
+              <p>{tool['SkillName']}</p>
+            </div>
+          </>
+        );
+      })}
     </>
   );
 }
 
-function ExperienceSection(aboutExp: [{}]): JSX.Element {
+function ExperienceSection(aboutExp: { [key: string]: any }[]): JSX.Element {
   return (
     <>
-      {' '}
-      {aboutExp.forEach((exp) => {
-        <div>
-          <div className="experience-section" id={exp['Name']}>
-            <div className="description-container width-30">
-              {/* Heading */}
-              <h2>{exp['Name']}</h2>
-              <p>{exp['Description']}</p>
+      {aboutExp?.map((exp: { [key: string]: any }) => {
+        return (
+          <>
+            <div className="experience-section" id={exp['Name']}>
+              <div className="description-container width-30">
+                {/* Heading */}
+                <h2>{exp['Name']}</h2>
+                <p>{exp['Description']}</p>
 
-              {/* Statistics */}
-              <div className="stats-container">
-                {ExperienceStats('Years', exp['Years'])}
-                {ExperienceStats('Projects', exp['Project'])}
-              </div>
+                {/* Statistics */}
+                <div className="stats-container">
+                  {ExperienceStats('Years', exp['Years'])}
+                  {ExperienceStats('Projects', exp['Project'])}
+                </div>
 
-              {/* Tools & skills */}
-              <div className="tool-container">
-                <h3>Tools and skills</h3>
-                <div className="tool-section">
-                  {ExperienceTools(exp['Skills'])}
+                {/* Tools & skills */}
+                <div className="tool-container">
+                  <h3>Tools and skills</h3>
+                  <div className="tool-section">
+                    {ExperienceTools(exp['Skills'])}
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <img
-              className="width-60"
-              src={exp['Thumbnail']}
-              alt={exp['Name']}
-            ></img>
-          </div>
-          <div className="divider"></div>
-        </div>;
-      })}{' '}
+              <img
+                className="width-60"
+                src={exp['Thumbnail'] + exp['Format']}
+                alt={exp['Name']}
+              ></img>
+            </div>
+            <div className="divider"></div>
+          </>
+        );
+      })}
     </>
   );
 }
@@ -128,7 +136,9 @@ export const About: React.VFC<AboutProps> = ({ aboutJourney, aboutExp }) => (
     {/* Journey section */}
     <div className="about-container width-90">
       <h1>Journey</h1>
-      <div id="journey-container">{JourneySection(aboutJourney)}</div>
+      <div id="journey-container">
+        <JourneySection aboutJourney={aboutJourney} />
+      </div>
     </div>
     <div className="divider"></div>
 
@@ -137,6 +147,7 @@ export const About: React.VFC<AboutProps> = ({ aboutJourney, aboutExp }) => (
       <h1>Experience</h1>
       <div id="experience-container">{ExperienceSection(aboutExp)}</div>
     </div>
+    <div className="divider"></div>
 
     {/* Future section */}
     <div className="about-container width-90">

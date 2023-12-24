@@ -1,4 +1,4 @@
-{
+const dbAbout = {
   "Journey": [
     {
       "Year": "2012",
@@ -202,4 +202,6 @@
       ]
     }
   ]
-}
+};
+
+export default dbAbout;

@@ -1,4 +1,4 @@
-{
+const dbContact = {
   "Contact": [
     {
       "Details": "Do Duc Quan (he/him)",
@@ -39,3 +39,5 @@
     }
   ]
 }
+
+export default dbContact;
