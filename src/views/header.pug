@@ -1,0 +1,28 @@
+head
+  link(rel='stylesheet', href='/stylesheets/header.css')
+
+body
+  nav
+    -var pages = {"/": "Home", "/about": "About", "/works": "Works", "/contact": "Contact"};
+    #header-container.width-100
+      span
+
+      //- Desktop version
+      #nav-items 
+        each pageName, pageLink in pages
+          a(href=pageLink data-link).button.mid-1
+            h2= pageName
+
+      //- Mobile version
+      #nav-burger
+        svg(xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none")
+            path(d=icons["HamburgerClose"])#burger-close
+            path(d=icons["HamburgerOpen"])#burger-open
+    
+    #nav-container.width-100 
+      #nav-mobile.width-100 
+        each pageName, pageLink in pages
+          a(href=pageLink data-link)
+            img(src="/assets/graphics/" + pageName + ".svg", alt= pageName + " page").width-90
+
+script(src="/javascripts/menuToggle.js") 

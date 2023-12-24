@@ -1,0 +1,91 @@
+/* Typefaces */
+h1,
+h2,
+h3,
+p {
+  font-family: 'Outfit', sans-serif;
+}
+p.large,
+p.large-number {
+  font-family: 'Familjen Grotesk', serif;
+}
+
+/* Colors */
+h1,
+h2,
+h3,
+p,
+ul {
+  color: var(--white);
+}
+a {
+  color: var(--illuminating-yellow);
+}
+
+/* Styles */
+a {
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+p,
+ul {
+  font-style: normal;
+  line-height: normal;
+  border: 0px;
+  margin: 0px;
+}
+p {
+  text-transform: none;
+}
+h3 {
+  text-transform: capitalize;
+}
+h1,
+h2,
+p.large,
+p.button-text {
+  text-transform: uppercase;
+}
+
+/* Weights */
+p {
+  font-weight: 400;
+}
+h2,
+p.mid {
+  font-weight: 500;
+}
+h1,
+h3 {
+  font-weight: 600;
+}
+p.large,
+p.button-text {
+  font-weight: 700;
+}
+
+/* Sizes */
+h1 {
+  font-size: 1.5rem;
+}
+h2 {
+  font-size: 1.125rem;
+}
+h3,
+p {
+  font-size: 1rem;
+}
+p.large,
+p.large-number {
+  font-size: 3.875rem;
+  letter-spacing: -0.31rem;
+}
+p.mid {
+  font-size: 2.5rem;
+}
+p.button-text,
+p.caption {
+  font-size: 0.875rem;
+}

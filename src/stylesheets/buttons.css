@@ -1,0 +1,59 @@
+/* Styling */
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0rem 0.375rem;
+  border-radius: 0.625rem;
+}
+.button.large {
+  padding: 0.75rem 0rem;
+  border-radius: 1rem;
+  border: 1px solid var(--illuminating-yellow);
+  gap: 0.5rem;
+}
+.button.mid-1 {
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.875rem;
+}
+.button.mid-2 {
+  padding: 0rem 0.5rem;
+  border-radius: 0.625rem;
+}
+.button.more {
+  padding: 0rem 0.125rem 0rem 0.5rem;
+  border-radius: 0.625rem;
+}
+
+/* Colors */
+.button {
+  background-color: var(--ultimate-gray);
+}
+.button * {
+  color: var(--illuminating-yellow);
+  fill: var(--illuminating-yellow);
+}
+.button.symbol {
+  background-color: var(--illuminating-yellow);
+}
+.button:hover {
+  background-color: var(--illuminating-yellow);
+}
+.button:hover,
+.button:hover * {
+  color: var(--ultimate-gray);
+  fill: var(--ultimate-gray);
+}
+.button.symbol:hover {
+  background-color: var(--ultimate-gray);
+}
+
+/* Transitions */
+.button,
+.button * {
+  -webkit-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}

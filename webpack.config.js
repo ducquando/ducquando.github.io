@@ -20,6 +20,7 @@ module.exports = {
       // use ts-loader for ts and js files so all files are converted to es5
       { test: /\.(tsx?|js)$/, exclude: /node_modules/, loader: 'ts-loader' },
       { test: /\.js$/, loader: 'source-map-loader' },
+      { test: /\.pug$/, use: [ 'babel-loader', 'pug-as-jsx-loader' ] },
     ],
   },
 

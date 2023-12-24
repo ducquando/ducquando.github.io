@@ -1,0 +1,87 @@
+extends layout
+
+block heading 
+  link(rel="stylesheet", href="/stylesheets/home.css")
+  link(rel="stylesheet", href="/stylesheets/works.css")
+
+block content
+  //- Content
+  .main-container 
+    //- Thumbnail section
+    #thumbnail-container.width-100
+      img(src="/assets/graphics/DoDucQuan.svg", alt="Do Duc Quan").width-90
+      #thumbnail-section.width-25
+        p.mid Computer intelligence fuels my visual creations
+        h2 I am QUAN, and this is my portfolio
+    .divider 
+
+    //- About section
+    .main-section.width-100
+      .more-container.width-90(style="margin: auto;")
+        h1 About
+        a(href="/about").button.more
+          p.button-text More 
+          svg(xmlns="http://www.w3.org/2000/svg" width="19" height="20" viewBox="0 0 19 20" fill="none")
+            path(d=icons["More"])
+      #about-container
+        .width-90(style="margin: auto;")
+            p.mid.width-60 Quan is a creative UX engineer with 5 years of experience in developing and designing innovative solutions.
+        .about-section.width-90(style="margin: auto;")
+          .about-items.general-section
+            h3 Years of Experience
+            p.large-number= aboutGen["Years"]
+          .about-items.general-section
+            h3 Projects
+            p.large-number= aboutGen["Project"]
+          .about-items.general-section.desktop
+            h3 Happy stakeholders
+            p.large-number= aboutGen["Stakeholders"]
+    .divider 
+
+    //- Works section, mainly copied from works.pug
+    .main-section.width-90
+      .more-container 
+        h1 Featured works 
+        a(href="/works").button.more
+          p.button-text More 
+          svg(xmlns="http://www.w3.org/2000/svg" width="19" height="20" viewBox="0 0 19 20" fill="none")
+            path(d=icons["More"])
+      #post-container.width-90
+        each id in workHighlight
+          if workPost[id]["Highlight"]
+            a(href="/works" + workPost[id]["Link"], style="background-image: url(" + workPost[id]["Thumbnail"] + ")").post-section.width-30
+              .post-overlay
+              .post-title
+                h3= workPost[id]["Name"]
+                .post-items
+                  svg(xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none")
+                    path(d=icons["Field"])
+                  .listing(style="display: flex;")
+                    each field in workField
+                      if field["PostID"].includes(id)
+                        p.caption= field["Alias"]
+                .post-items
+                  svg(xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16" fill="none")
+                    path(d=icons["Calendar"])
+                  p.caption #{workPost[id]["Duration"]} (#{workPost[id]["Date"]})
+                .post-items
+                  svg(xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16" fill="none")
+                    path(d=icons["Tag"])
+                  p.caption= workPost[id]["Tags"]
+              .post-view 
+                svg(xmlns="http://www.w3.org/2000/svg" width="18" height="12" viewBox="0 0 18 12" fill="none")
+                  path(d=icons["Eye"])
+                p.button-text View project
+    .divider 
+
+    //- Contact section
+    .main-section.width-90
+      .more-container 
+        h1 Contact 
+        a(href="/contact").button.more
+          p.button-text More 
+          svg(xmlns="http://www.w3.org/2000/svg" width="19" height="20" viewBox="0 0 19 20" fill="none")
+            path(d=icons["More"])
+      .width-60
+        p.mid If you want to start a new project or have questions, feel free to reach out at #[a(href="mailto:" + contactEmail['Link'] class="button")= contactEmail["Details"]]
+      p Based in Ho Chi Minh City, Vietnam <br> Work worldwide

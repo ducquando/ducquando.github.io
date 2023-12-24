@@ -1,0 +1,55 @@
+head 
+  link(rel="stylesheet", href="/stylesheets/footer.css")
+
+body
+  div(style="height: 5.775rem;").width-100
+  #footer-container 
+    //- Logo
+    #footer-logo-section.width-100
+      img(src="/assets/graphics/LogoFull.svg", alt="Quan smiley logo")#footer-logo
+      rect.divider
+
+    //- Connect
+    p.large Stay connected 
+    #footer-link-section.width-90 
+      //- Mail
+      a(href="mailto:dodquan@gmail.com").button.large.width-70 
+        svg(xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="none")
+          path(d=icons["Email"])
+        p.button-text dodquan@gmail.com
+      #footer-connect-section
+        //- Linkedin
+        a(href="https://www.linkedin.com/in/quannz/").button.large.width-25
+          svg(xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 150.4 155.83")
+            path(d=icons["LinkedIn"])
+          p.button-text Linkedin
+        //- Github
+        a(href="https://github.com/ducquando").button.large.width-25
+          svg(xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 172.36 167.82")
+            path(d=icons["GitHub"])
+          p.button-text GitHub
+        //- Behance
+        a(href="https://www.behance.net/quannz").button.large.width-25
+          svg(xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 210.4 132.42")
+            path(d=icons["Behance"])
+            rect(x="136.56" y="6.72" width="53.53" height="14.84")
+          p.button-text Behance
+
+    //- Sitemap
+    #footer-sitemap-section.width-90 
+      p.caption Copyright 2023 @Do Duc Quan 
+      #footer-nav-links
+        a(href="/" data-link).button.mid-2
+          h2 Home
+        a(href="/about" data-link).button.mid-2
+          h2 About
+        //- NOT IMPLEMENT YET
+        a(href="/works" data-link).button.mid-2
+          h2 Works
+        a(href="/contact" data-link).button.mid-2
+          h2 Contact
+    
+    //- Name
+    div(style="height: 1rem;")
+
+script(src="/javascripts/logoRotate.js") 

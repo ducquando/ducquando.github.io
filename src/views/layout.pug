@@ -1,0 +1,12 @@
+doctype html
+html
+  head
+    title= title
+
+    block heading
+  body
+    include header.pug
+    div(style="height: 3.5rem;")
+    block content
+    include footer.pug
+  block scripts

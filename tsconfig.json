@@ -10,7 +10,8 @@
     "strict": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
   },
-  "include": ["./src/**.*"],
+  "include": ["./src/**.*", "src/views/views.d.ts"],
 }

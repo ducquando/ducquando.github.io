@@ -1,78 +1,125 @@
 import * as React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import { DarkModeButton } from './ui/DarkModeButton';
-import { GitHubIconLink } from './ui/GitHubIconLink';
-import { globalCss, styled } from './stitches.config';
-import { Home } from './components/Home';
-import { ExampleComponent } from './components/ExampleComponent';
-import { ExampleTwoDeepComponent } from './components/ExampleTwoDeepComponent';
-import { SitemapLinkGenerator } from './components/SitemapLinkGenerator';
-import { PageNotFound } from './components/PageNotFound';
-import { Breadcrumbs } from './components/Breadcrumbs';
+import { Routes, Route, useParams, useSearchParams } from 'react-router-dom';
 
-const AppContainer = styled('div', {
-  maxWidth: '540px',
-  padding: '12px 15px 25px',
-  margin: '0 auto',
-});
+import * as homeView from './views/home.pug';
+import * as aboutView from './views/about.pug';
+import * as contactView from './views/contact.pug';
+import * as workView from './views/work.pug';
+import * as postView from './views/post.pug';
 
-const HeaderContainer = styled('header', {
-  display: 'flex',
-  justifyContent: 'space-between',
-  marginBottom: '18px',
-});
+const dbAbout = require('./assets/data/about.json');
+const dbContact = require('./assets/data/contact.json');
+// import * as dbWork from './assets/data/work.json';
+const dbWork = require('./assets/data/workSimplified.json');
+const dbIcon = require('./assets/data/icon.json');
 
-const H1 = styled('h1', {
-  fontSize: '26px',
-  marginRight: '16px',
-});
+class Home extends React.Component {
+  render() {
+    return homeView.call(this, {
+      title: 'Do Duc Quan',
+      aboutExp: dbAbout.Experience,
+      aboutGen: dbAbout.General,
+      contactEmail: dbContact.Email,
+      contactConnect: dbContact.Connect,
+      workField: dbWork.Field,
+      workHighlight: dbWork.Filter.curated.Index,
+      workPost: dbWork.Post,
+      icons: dbIcon,
+    });
+  }
+}
 
-const HeaderIconContainer = styled('span', {
-  width: '78px',
-  display: 'inline-flex',
-  justifyContent: 'space-between',
-  gap: '12px',
-});
+class About extends React.Component {
+  render() {
+    return aboutView.call(this, {
+      title: 'About',
+      aboutJourney: dbAbout.Journey,
+      aboutExp: dbAbout.Experience,
+      contactEmail: dbContact.Email,
+      contactConnect: dbContact.Connect,
+      icons: dbIcon,
+    });
+  }
+}
 
-const BreadcrumbsNav = styled('nav', {
-  margin: '18px 0',
-});
+class Work extends React.Component {
+  render() {
+    let [searchParams] = useSearchParams();
+    const workParams = {
+      sort: searchParams.get('sort') || 'curated',
+      se: searchParams.get('se')
+        ? searchParams.get('se') == 'true'
+          ? true
+          : false
+        : true,
+      pd: searchParams.get('pd')
+        ? searchParams.get('pd') == 'true'
+          ? true
+          : false
+        : true,
+      ds: searchParams.get('ds')
+        ? searchParams.get('ds') == 'true'
+          ? true
+          : false
+        : true,
+      gd: searchParams.get('gd')
+        ? searchParams.get('gd') == 'true'
+          ? true
+          : false
+        : true,
+    };
+    return workView.call(this, {
+      title: 'Works',
+      contactEmail: dbContact.Email,
+      contactConnect: dbContact.Connect,
+      workField: dbWork.Field,
+      workParams: workParams,
+      workFilter: dbWork.Filter,
+      workPost: dbWork.Post,
+      icons: dbIcon,
+    });
+  }
+}
+
+class Post extends React.Component {
+  render() {
+    const { workID } = useParams();
+    const workPost = dbWork.Post[workID ?? ''];
+    return postView.call(this, {
+      title: workPost['Name'],
+      contactEmail: dbContact.Email,
+      contactConnect: dbContact.Connect,
+      workPost: workPost,
+      workField: dbWork.Field,
+      workID: workID,
+      allPosts: dbWork.Post,
+      icons: dbIcon,
+    });
+  }
+}
+
+class Contact extends React.Component {
+  render() {
+    return contactView.call(this, {
+      title: 'Contact',
+      contactInfo: dbContact.Contact,
+      contactEmail: dbContact.Email,
+      contactConnect: dbContact.Connect,
+      icons: dbIcon,
+    });
+  }
+}
 
 export const App: React.VFC = () => {
-  globalCss();
-
   return (
-    <AppContainer>
-      <HeaderContainer>
-        <H1>Single Page Apps for GitHub Pages</H1>
-        <HeaderIconContainer>
-          <DarkModeButton />
-          <GitHubIconLink
-            href="https://github.com/rafgraph/spa-github-pages"
-            title="GitHub repository for SPA GitHub Pages"
-          />
-        </HeaderIconContainer>
-      </HeaderContainer>
-
-      <BreadcrumbsNav>
-        <Breadcrumbs />
-      </BreadcrumbsNav>
-
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/example" component={ExampleComponent} />
-        <Route
-          exact
-          path="/example/two-deep"
-          component={ExampleTwoDeepComponent}
-        />
-        <Route
-          exact
-          path="/sitemap-link-generator"
-          component={SitemapLinkGenerator}
-        />
-        <Route component={PageNotFound} />
-      </Switch>
-    </AppContainer>
+    <>
+      <Routes>
+        <Route path="/" element={Home} />
+        <Route path="/about" element={About} />
+        <Route path="/works" element={Work} />
+        <Route path="/works/:workID" element={Post} />
+        <Route path="/contact" element={Contact} />
+      </Routes>
+    </>
   );
 };

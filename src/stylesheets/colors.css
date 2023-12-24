@@ -1,0 +1,14 @@
+/* Static colors */
+:root {
+  --illuminating-yellow: #f5df4d;
+  --white: #ffffff;
+  --overlay: rgba(0, 0, 0, 0.6);
+  --ultimate-gray: #434445;
+  --blue-nights: #000000;
+}
+
+/* Background colors */
+html,
+body {
+  background-color: var(--ultimate-gray);
+}

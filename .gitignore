@@ -6,3 +6,12 @@ generated
 
 # Files marked with gitigx
 *gitigx*
+
+# MacOS
+.DS_Store
+*.DS_Store
+**.DS_Store
+
+# Creating file
+*.psd
+**.psd

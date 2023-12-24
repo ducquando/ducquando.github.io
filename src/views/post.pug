@@ -1,0 +1,127 @@
+extends layout
+
+block heading
+  link(rel="stylesheet", href="/stylesheets/post.css")
+  link(rel="stylesheet", href="/stylesheets/home.css")
+  link(rel="stylesheet", href="/stylesheets/works.css")
+
+block content
+  //- Metadata section
+  #title-container.width-90
+    //- Desktop
+    .metadata-container.desktop
+      if workPost["Source"]
+        .metadata-section 
+          h3.metadata-items= workPost["Name"]
+          a(href=workPost["Source"]).button
+            p View report
+      else 
+        h3.metadata-items= workPost["Name"]
+    //- Mobile
+    .metadata-container.mobile(style="max-width: 50vw;")
+      h3.metadata-items= workPost["Name"]
+    if workPost["Source"]
+      .metadata-section.mobile
+        a(href=workPost["Source"]).button
+          p View report
+
+  //- Post section
+  .main-container
+    //- Title section
+    #heading-section.width-90
+      img(src=workPost["Title"], alt=title).width-90
+
+    //- Metadata section
+    #title-section.width-90
+      //- Desktop version
+      .metadata-container.desktop
+        .metadata-section 
+          h3 Duration
+          p #{workPost["Duration"]} (#{workPost["Date"]})
+        .metadata-section 
+          h3 Role
+          p= workPost["Role"]
+        if workPost["Source"]
+          .metadata-section 
+            h3.metadata-items Project
+            a(href=workPost["Source"]).button
+              p View report
+      //- Mobile version
+      #mobile-container.mobile
+        div(style="display: flex; flex-direction: column; justify-content: start; align-items: start;")
+          .mobile-section
+            svg(xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 11 13" fill="none")
+              path(d=icons["CalendarFill"])
+            p #{workPost["Duration"]} (#{workPost["Date"]})
+          .mobile-section
+            svg(xmlns="http://www.w3.org/2000/svg" width="13" height="18" viewBox="0 0 16 18" fill="none")
+                path(d=icons["Role"])
+            p= workPost["Role"]
+        if workPost["Source"]
+          .mobile-section
+            a(href=workPost["Source"]).button
+              p View project
+
+    //- Content 
+    #content-container.width-90
+      each content in workPost["Content"]
+        .content-section.width-90
+          each subcontent in content
+            case subcontent["Type"]
+              when "h1"
+                h2(class=subcontent["Style"]).content-heading= subcontent["Details"]
+              when "p"
+                p(class=subcontent["Style"])
+                  != subcontent["Details"]
+              when "img"
+                img(src=subcontent["Source"], alt=subcontent["Caption"], class=subcontent["Style"])
+              default 
+                .divider
+
+    //- CTA
+    if workPost["Source"]
+      #cta-button.width-90
+        h1= workPost["Name"]
+        a(href=workPost["Source"]).button.large
+          p View report
+
+    if workPost["Similar"].length
+      .divider
+
+      //- More like this, mainly copied from works.pug
+      .main-section.width-90
+        .more-container 
+          h1 More like this 
+          - var filtering = ["se","pd","gd","ds"].map((e) => (e + "=" + workField[e]["PostID"].includes(workID))).reduce((m, o) => m + "&" + o);
+          a(href="/works?" + filtering).button.more
+            p.button-text More 
+            svg(xmlns="http://www.w3.org/2000/svg" width="19" height="20" viewBox="0 0 19 20" fill="none")
+              path(d=icons["More"])
+        #post-container.width-90
+          each id in workPost["Similar"]
+              a(href="/works" + allPosts[id]["Link"], style="background-image: url(" + allPosts[id]["Thumbnail"] + ")").post-section.width-30
+                .post-overlay
+                .post-title
+                  h3= allPosts[id]["Name"]
+                  .post-items
+                    svg(xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none")
+                      path(d=icons["Field"])
+                    .listing
+                      each field in workField
+                        if field["PostID"].includes(id)
+                          p.caption= field["Alias"]
+                  .post-items
+                    svg(xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16" fill="none")
+                      path(d=icons["Calendar"])
+                    p.caption #{allPosts[id]["Duration"]} (#{allPosts[id]["Date"]})
+                  .post-items
+                    svg(xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16" fill="none")
+                      path(d=icons["Tag"])
+                    p.caption= allPosts[id]["Tags"]
+                .post-view 
+                  svg(xmlns="http://www.w3.org/2000/svg" width="18" height="12" viewBox="0 0 18 12" fill="none")
+                    path(d=icons["Eye"])
+                  p.button-text View project
+
+block scripts 
+  script(src="/javascripts/postSticky.js") 
