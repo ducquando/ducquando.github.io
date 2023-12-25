@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Routes, Route, useParams, useSearchParams } from 'react-router-dom';
 
-import { Header, Footer, About } from './views';
+import { Header, Footer, About, Contact } from './views';
 // import { Footer } from './views/footer';
 // import * as homeView from './views/home.pug';
 // import * as contactView from './views/contact.pug';
@@ -122,8 +122,19 @@ export const App: React.FC = () => {
           }
         />
         {/* <Route path="/works" element={Work} />
-        <Route path="/works/:workID" element={Post} />
-        <Route path="/contact" element={Contact} /> */}
+        <Route path="/works/:workID" element={Post} />*/}
+        <Route
+          path="/contact"
+          element={
+            <Contact
+              title="Contact"
+              icons={dbIcon}
+              contactEmail={dbContact.Email}
+              contactConnect={dbContact.Connect}
+              contactInfo={dbContact.Contact}
+            />
+          }
+        />
       </Routes>
       <Footer
         contactEmail={dbContact.Email}
