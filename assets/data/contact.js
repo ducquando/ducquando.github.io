@@ -12,7 +12,10 @@ const dbContact = {
 
   "Email": {
     "Details": "dodquan@gmail.com",
-    "Link": "dodquan@gmail.com"
+    "Link": "dodquan@gmail.com",
+    "ViewBox": "0 0 20 20",
+    "Size": "16",
+    "SVG": "Email"
   },
 
   "Connect": [
@@ -21,6 +24,7 @@ const dbContact = {
       "Details": "Duc-Quan Do",
       "Link": "https://www.linkedin.com/in/quannz/",
       "ViewBox": "0 0 150.4 155.83",
+      "Size": "12",
       "SVG": "LinkedIn"
     },
     {
@@ -28,6 +32,7 @@ const dbContact = {
       "Details": "Duc Quan Do",
       "Link": "https://www.behance.net/quannz",
       "ViewBox": "0 0 210.4 132.42",
+      "Size": "16",
       "SVG": "Behance"
     },
     {
@@ -35,6 +40,7 @@ const dbContact = {
       "Details": "Duc-Quan Do",
       "Link": "https://github.com/ducquando",
       "ViewBox": "0 0 172.36 167.82",
+      "Size": "16",
       "SVG": "GitHub"
     }
   ]

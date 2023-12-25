@@ -59,13 +59,15 @@ export const About: React.FC<AboutProps> = ({
       <>
         {tools?.map((tool: { [key: string]: any }) => {
           return (
-            <div className="tool-items" key={tool['SkillName']}>
-              <img
-                src={tool['Image'] + tool['Format']}
-                alt={tool['SkillName']}
-              ></img>
-              <p>{tool['SkillName']}</p>
-            </div>
+            <>
+              <div className="tool-items" key={tool['SkillName']}>
+                <img
+                  src={tool['Image'] + tool['Format']}
+                  alt={tool['SkillName']}
+                ></img>
+                <p>{tool['SkillName']}</p>
+              </div>
+            </>
           );
         })}
       </>
@@ -78,36 +80,34 @@ export const About: React.FC<AboutProps> = ({
         {aboutExp?.map((exp: { [key: string]: any }) => {
           return (
             <>
-              <div key={exp['Name']}>
-                <div className="experience-section" id={exp['Name']}>
-                  <div className="description-container width-30">
-                    {/* Heading */}
-                    <h2>{exp['Name']}</h2>
-                    <p>{exp['Description']}</p>
+              <div className="experience-section" id={exp['Name']}>
+                <div className="description-container width-30">
+                  {/* Heading */}
+                  <h2>{exp['Name']}</h2>
+                  <p>{exp['Description']}</p>
 
-                    {/* Statistics */}
-                    <div className="stats-container">
-                      {ExperienceStats('Years', exp['Years'])}
-                      {ExperienceStats('Projects', exp['Project'])}
-                    </div>
-
-                    {/* Tools & skills */}
-                    <div className="tool-container">
-                      <h3>Tools and skills</h3>
-                      <div className="tool-section">
-                        {ExperienceTools(exp['Skills'])}
-                      </div>
-                    </div>
+                  {/* Statistics */}
+                  <div className="stats-container">
+                    {ExperienceStats('Years', exp['Years'])}
+                    {ExperienceStats('Projects', exp['Project'])}
                   </div>
 
-                  <img
-                    className="width-60"
-                    src={exp['Thumbnail'] + exp['Format']}
-                    alt={exp['Name']}
-                  ></img>
+                  {/* Tools & skills */}
+                  <div className="tool-container">
+                    <h3>Tools and skills</h3>
+                    <div className="tool-section">
+                      {ExperienceTools(exp['Skills'])}
+                    </div>
+                  </div>
                 </div>
-                <div className="divider"></div>
+
+                <img
+                  className="width-60"
+                  src={exp['Thumbnail'] + exp['Format']}
+                  alt={exp['Name']}
+                ></img>
               </div>
+              <div className="divider"></div>
             </>
           );
         })}
@@ -126,7 +126,6 @@ export const About: React.FC<AboutProps> = ({
         ></img>
         <div className="width-90">
           <p className="mid width-60">
-            {' '}
             I am Quan, a creative UX engineer with 3 years of experience in
             developing and designing innovative solutions. <br />
             <br /> My main fields are Product Development and Software

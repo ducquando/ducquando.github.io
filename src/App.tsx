@@ -125,6 +125,11 @@ export const App: React.FC = () => {
         <Route path="/works/:workID" element={Post} />
         <Route path="/contact" element={Contact} /> */}
       </Routes>
+      <Footer
+        contactEmail={dbContact.Email}
+        contactConnect={dbContact.Connect}
+        icons={dbIcon}
+      />
     </div>
   );
 };
