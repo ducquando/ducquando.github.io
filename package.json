@@ -1,18 +1,18 @@
 {
-  "name": "spa-github-pages",
-  "version": "6.1.0",
+  "name": "ducquando.github.io",
+  "version": "0.0.1",
   "private": true,
-  "description": "Single Page Apps for GitHub Pages",
+  "description": "Do Duc Quan's personal website",
   "scripts": {
     "start": "webpack-dev-server --host 0.0.0.0 --disable-host-check --open",
     "build": "webpack -p"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rafgraph/spa-github-pages.git"
+    "url": "git+https://github.com/ducquando/ducquando.github.io.git"
   },
-  "author": "Rafael Pedicini <rafael@rafgraph.dev>",
-  "license": "MIT",
+  "author": "Do Duc Quan <dodquan@gmail.com>",
+  "license": "GPL-3.0",
   "dependencies": {
     "@radix-ui/react-icons": "^1.0.3",
     "@stitches/react": "^0.1.9",
@@ -23,8 +23,8 @@
     "react-router-dom": "^6.21.1"
   },
   "devDependencies": {
-    "@types/react": "^17.0.4",
-    "@types/react-dom": "^17.0.3",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
     "@types/react-router-dom": "^5.1.7",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
