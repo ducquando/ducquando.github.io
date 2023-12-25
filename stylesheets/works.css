@@ -16,7 +16,7 @@
   flex-wrap: wrap;
 }
 
-.tool-section {
+.tool-section-work {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -65,7 +65,7 @@
 }
 
 @media screen and (max-width: 640px) {
-  .tool-section {
+  .tool-section-work {
     flex-direction: row;
   }
 

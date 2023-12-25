@@ -95,7 +95,7 @@ export const About: React.FC<AboutProps> = ({
                   {/* Tools & skills */}
                   <div className="tool-container">
                     <h3>Tools and skills</h3>
-                    <div className="tool-section">
+                    <div className="tool-section-about">
                       {ExperienceTools(exp['Skills'])}
                     </div>
                   </div>

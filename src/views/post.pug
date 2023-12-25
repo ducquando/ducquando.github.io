@@ -76,7 +76,7 @@ block content
               when "img"
                 img(src=subcontent["Source"], alt=subcontent["Caption"], class=subcontent["Style"])
               default 
-                .divider
+                .divider-post
 
     //- CTA
     if workPost["Source"]
@@ -86,7 +86,7 @@ block content
           p View report
 
     if workPost["Similar"].length
-      .divider
+      .divider-post
 
       //- More like this, mainly copied from works.pug
       .main-section.width-90
