@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Routes, Route, useParams, useSearchParams } from 'react-router-dom';
 
-import { Header, Footer, About, Contact } from './views';
+import { Header, Footer, About, Contact, Home, NotFound } from './views';
 // import { Footer } from './views/footer';
 // import * as homeView from './views/home.pug';
 // import * as contactView from './views/contact.pug';
@@ -110,7 +110,19 @@ export const App: React.FC = () => {
       <Header icons={dbIcon} />
       <div style={{ height: '3.5rem' }}></div>
       <Routes>
-        {/* <Route path="/" element={Home} /> */}
+        <Route
+          path="/"
+          element={
+            <Home
+              workHighlight={dbWork.Filter.curated.Index}
+              icons={dbIcon}
+              aboutGen={dbAbout.General}
+              contactEmail={dbContact.Email}
+              workPost={dbWork.Post}
+              workField={dbWork.Field}
+            />
+          }
+        />
         <Route
           path="/about"
           element={
@@ -132,6 +144,15 @@ export const App: React.FC = () => {
               contactEmail={dbContact.Email}
               contactConnect={dbContact.Connect}
               contactInfo={dbContact.Contact}
+            />
+          }
+        />
+        <Route
+          element={
+            <NotFound
+              title="404 Error"
+              message="Error: Page not found (404)"
+              icons={dbIcon}
             />
           }
         />

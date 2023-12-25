@@ -21,7 +21,7 @@ export const Contact: React.FC<ContactProps> = ({
     document.title = title;
   }, []);
 
-  function InfoSection(contactInfo: { [key: string]: any }[]): JSX.Element {
+  function InfoSection(): JSX.Element {
     return (
       <>
         {contactInfo?.map((info: { [key: string]: any }) => {
@@ -46,9 +46,7 @@ export const Contact: React.FC<ContactProps> = ({
     );
   }
 
-  function SocialSection(
-    contactConnect: { [key: string]: any }[],
-  ): JSX.Element {
+  function SocialSection(): JSX.Element {
     return (
       <>
         {contactConnect?.map((connect: { [key: string]: any }) => {
@@ -91,7 +89,7 @@ export const Contact: React.FC<ContactProps> = ({
           <h1>CONTACT INFORMATION</h1>
           <div className="info-connect-container">
             {/* Basic information */}
-            {InfoSection(contactInfo)}
+            {InfoSection()}
 
             {/* Email */}
             <div className="info-connect-section">
@@ -113,9 +111,7 @@ export const Contact: React.FC<ContactProps> = ({
 
         <div className="contact-section width-90">
           <h1>CONNECT ME ON</h1>
-          <div className="info-connect-container">
-            {SocialSection(contactConnect)}
-          </div>
+          <div className="info-connect-container">{SocialSection()}</div>
         </div>
       </div>
     </>

@@ -17,7 +17,7 @@ export const About: React.FC<AboutProps> = ({
     document.title = title;
   }, []);
 
-  function JourneySection(aboutJourney: { [key: string]: any }[]): JSX.Element {
+  function JourneySection(): JSX.Element {
     return (
       <>
         {aboutJourney?.map((journey: { [key: string]: any }) => {
@@ -74,7 +74,7 @@ export const About: React.FC<AboutProps> = ({
     );
   }
 
-  function ExperienceSection(aboutExp: { [key: string]: any }[]): JSX.Element {
+  function ExperienceSection(): JSX.Element {
     return (
       <>
         {aboutExp?.map((exp: { [key: string]: any }) => {
@@ -138,14 +138,14 @@ export const About: React.FC<AboutProps> = ({
         {/* Journey section */}
         <div className="about-container width-90">
           <h1>Journey</h1>
-          <div id="journey-container">{JourneySection(aboutJourney)}</div>
+          <div id="journey-container">{JourneySection()}</div>
         </div>
         <div className="divider"></div>
 
         {/* Experience section */}
         <div className="about-container width-90">
           <h1>Experience</h1>
-          <div id="experience-container">{ExperienceSection(aboutExp)}</div>
+          <div id="experience-container">{ExperienceSection()}</div>
         </div>
         <div className="divider"></div>
 
