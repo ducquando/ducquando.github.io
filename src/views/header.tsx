@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useState } from 'react';
-import '../../stylesheets/header.css';
+import '../stylesheets/header.css';
 
 interface HeaderProps {
   icons: { [key: string]: any };

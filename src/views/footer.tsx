@@ -1,5 +1,5 @@
 import * as React from 'react';
-import '../../stylesheets/footer.css';
+import '../stylesheets/footer.css';
 
 interface FooterProps {
   contactEmail: { [key: string]: any };

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useEffect } from 'react';
-import '../../stylesheets/error.css';
+import '../stylesheets/error.css';
 
 interface NotFoundProps {
   title: string;

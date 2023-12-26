@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useEffect } from 'react';
-import '../../stylesheets/about.css';
+import '../stylesheets/about.css';
 
 interface AboutProps {
   title: string;
@@ -84,7 +84,7 @@ export const About: React.FC<AboutProps> = ({
                 <div className="description-container width-30">
                   {/* Heading */}
                   <h2>{exp['Name']}</h2>
-                  <p>{exp['Description']}</p>
+                  <p dangerouslySetInnerHTML={{ __html: exp['Description'] }} />
 
                   {/* Statistics */}
                   <div className="stats-container">

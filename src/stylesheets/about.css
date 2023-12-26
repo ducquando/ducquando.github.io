@@ -117,6 +117,7 @@
   gap: 0.5rem 1rem;
   align-self: stretch;
   flex-wrap: wrap;
+  flex-direction: column;
 }
 .tool-items {
   display: flex;

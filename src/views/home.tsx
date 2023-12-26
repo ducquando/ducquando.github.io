@@ -1,6 +1,6 @@
 import * as React from 'react';
-import '../../stylesheets/home.css';
-import '../../stylesheets/works.css';
+import '../stylesheets/home.css';
+import '../stylesheets/work.css';
 
 interface HomeProps {
   workHighlight: string[];
