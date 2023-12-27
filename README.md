@@ -1,4 +1,4 @@
-# DoDucQuan Personal Website
+# Do Duc Quan's Personal Website
 
 ## Website
 Live at [www.dodquan.com](www.dodquan.com).
@@ -20,8 +20,8 @@ Live at [www.dodquan.com](www.dodquan.com).
 |- Contact
 ```
 
-## Technology stack
-- Frontend: ReactJS
+## Technology Stack
+- Front-end: ReactJS
 - Business logic: TypeScript
 - Middleware: Webpack
-- Distribution: GitHub Pages
+- Hosting: GitHub Pages
