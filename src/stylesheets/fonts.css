@@ -89,3 +89,6 @@ p.button-text,
 p.caption {
   font-size: 0.875rem;
 }
+body {
+  -webkit-text-size-adjust: none;
+}
