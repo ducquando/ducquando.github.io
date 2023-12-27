@@ -25,12 +25,10 @@ export const Header: React.FC<HeaderProps> = ({ icons }) => {
 
   function changeState() {
     if (openSymbol == 'none') {
-      // $('body').css('overflow-y', 'visible');
       setOpenSymbol('block');
       setCloseSymbol('none');
       setNavView('none');
     } else {
-      // $('body').css('overflow-y', 'hidden');
       setOpenSymbol('none');
       setCloseSymbol('block');
       setNavView('flex');

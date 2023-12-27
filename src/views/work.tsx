@@ -25,16 +25,16 @@ export const Work: React.FC<WorkProps> = ({
     searchParams.get('sort') ?? 'curated',
   );
   const [paramSE, setParamSE] = useState(
-    searchParams.get('se') == 'true' ?? true,
+    (searchParams.get('se') && searchParams.get('se') == 'true') ?? true,
   );
   const [paramPD, setParamPD] = useState(
-    searchParams.get('pd') == 'true' ?? true,
+    (searchParams.get('pd') && searchParams.get('pd') == 'true') ?? true,
   );
   const [paramDS, setParamDS] = useState(
-    searchParams.get('ds') == 'true' ?? true,
+    (searchParams.get('ds') && searchParams.get('ds') == 'true') ?? true,
   );
   const [paramGD, setParamGD] = useState(
-    searchParams.get('gd') == 'true' ?? true,
+    (searchParams.get('gd') && searchParams.get('gd') == 'true') ?? true,
   );
 
   function toggleFilter(id: string) {
@@ -128,7 +128,7 @@ export const Work: React.FC<WorkProps> = ({
         <div id="work-container">
           <div id="tool-container" className="width-90">
             {/* Filter */}
-            <div className="tool-section-about">
+            <div className="tool-section-work">
               <div className="tool-title">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -145,7 +145,7 @@ export const Work: React.FC<WorkProps> = ({
             </div>
 
             {/* Sort */}
-            <div className="tool-section-about">
+            <div className="tool-section-work">
               <div className="tool-title">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
