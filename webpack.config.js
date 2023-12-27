@@ -1,3 +1,7 @@
+// Single Page Apps for GitHub Pages
+// MIT License
+// https://github.com/rafgraph/spa-github-pages
+
 const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {

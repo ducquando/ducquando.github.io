@@ -1,4 +1,9 @@
-https://spa-github-pages.rafgraph.dev/
-https://spa-github-pages.rafgraph.dev/?/example
-https://spa-github-pages.rafgraph.dev/?/example/two-deep&field1=foo~and~field2=bar#boom!
-https://spa-github-pages.rafgraph.dev/?/sitemap-link-generator
+https://www.dodquan.com/
+https://www.dodquan.com/?/about
+https://www.dodquan.com/?/works
+https://www.dodquan.com/?/works/the-next-lap-web
+https://www.dodquan.com/?/works/inquiry
+https://www.dodquan.com/?/works/momo-o2o
+https://www.dodquan.com/?/works/lane-detection
+https://www.dodquan.com/?/works/student-council
+https://www.dodquan.com/?/contact

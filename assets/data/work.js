@@ -1,3 +1,7 @@
+// Do Duc Quan's Personal Website
+// GNL General Public License v3
+// Copyright (c) Do Duc Quan. All rights reserved.
+
 const dbWork = {
   "Filter": {
     "curated": {

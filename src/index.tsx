@@ -1,3 +1,7 @@
+// Single Page Apps for GitHub Pages
+// MIT License
+// https://github.com/rafgraph/spa-github-pages
+
 import * as React from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';

@@ -1,3 +1,7 @@
+// Do Duc Quan's Personal Website
+// GNL General Public License v3
+// Copyright (c) Do Duc Quan. All rights reserved.
+
 import * as React from 'react';
 import '../stylesheets/work.css';
 import { useNavigate, useSearchParams, useLocation } from 'react-router-dom';
@@ -174,7 +178,7 @@ export const Work: React.FC<WorkProps> = ({
             </div>
           </div>
 
-          <div className="divider-post" />
+          <div className="divider" />
 
           {/* Post */}
           <div id="post-container" className="width-90">

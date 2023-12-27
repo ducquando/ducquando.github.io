@@ -5,6 +5,7 @@
   --overlay: rgba(0, 0, 0, 0.6);
   --ultimate-gray: #434445;
   --blue-nights: #000000;
+  --width-90: calc(100vw - 2.5rem * 2);
 }
 
 /* Background colors */

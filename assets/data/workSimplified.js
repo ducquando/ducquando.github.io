@@ -1,3 +1,7 @@
+// Do Duc Quan's Personal Website
+// GNL General Public License v3
+// Copyright (c) Do Duc Quan. All rights reserved.
+
 const dbWork = {
   "Filter": {
     "curated": {
@@ -612,7 +616,7 @@ const dbWork = {
       "Date": "2022",
       "Tags": "Product, Prototypes, Figma, Illustrator",
       "Role": "Product developer, UX/UI designer",
-      "Source": "https://www.figma.com/proto/LWDWMZu1KfNwq1zLM31AX5/MoMo-Mall-(Version-2)?page-id=0%3A1&type=design&node-id=2-2&viewport=68%2C337%2C0.16&t=sQGcH9bFQeeYPRbb-1&scaling=scale-down&starting-point-node-id=2%3A2&mode=design",
+      "Source": "https://www.behance.net/gallery/168781019/MoMo-O2O",
       "Highlight": true,
       "Similar": ["inquiry", "the-next-lap-web"],
       "Content": [

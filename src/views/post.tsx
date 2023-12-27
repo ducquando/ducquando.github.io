@@ -1,3 +1,7 @@
+// Do Duc Quan's Personal Website
+// GNL General Public License v3
+// Copyright (c) Do Duc Quan. All rights reserved.
+
 import * as React from 'react';
 import { useEffect, useRef, useState } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
@@ -92,7 +96,7 @@ export const Post: React.FC<PostProps> = ({ icons, workField, allPosts }) => {
                       key={index}
                     />
                   ) : (
-                    <div className="divider-post" key={index} />
+                    <div className="divider" key={index} />
                   );
                 })}
               </div>
@@ -179,7 +183,6 @@ export const Post: React.FC<PostProps> = ({ icons, workField, allPosts }) => {
 
           {/* Mobile */}
           <div id="mobile-container" className="mobile">
-            '
             <div
               style={{
                 display: 'flex',
@@ -239,7 +242,7 @@ export const Post: React.FC<PostProps> = ({ icons, workField, allPosts }) => {
         )}
         {workPost['Similar'].length && (
           <>
-            <div className="divider-post" />
+            <div className="divider" />
             <div className="main-section width-90">
               <div className="more-container">
                 <h1>More like this </h1>

@@ -55,8 +55,8 @@
   }
 }
 @media screen and (max-width: 1024px) {
-  .width-30,
-  .width-60 {
+  #about-page .width-30,
+  #about-page .width-60 {
     width: calc(100vw - 2.5rem * 2);
   }
   #journey-container :nth-child(2n).journey-section {

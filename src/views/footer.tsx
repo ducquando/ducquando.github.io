@@ -1,3 +1,7 @@
+// Do Duc Quan's Personal Website
+// GNL General Public License v3
+// Copyright © Do Duc Quan. All rights reserved.
+
 import * as React from 'react';
 import '../stylesheets/footer.css';
 
@@ -98,7 +102,9 @@ export const Footer: React.FC<FooterProps> = ({
 
         {/* Sitemap */}
         <div id="footer-sitemap-section" className="width-90">
-          <p className="caption">Copyright 2023 @Do Duc Quan</p>
+          <p className="caption">
+            Copyright © 2023 Do Duc Quan. All rights reserved.
+          </p>
           <div id="footer-nav-links">
             <a href="/" className="button mid-2">
               <h2>Home</h2>

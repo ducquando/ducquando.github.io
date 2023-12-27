@@ -1,3 +1,7 @@
+// Do Duc Quan's Personal Website
+// GNL General Public License v3
+// Copyright (c) Do Duc Quan. All rights reserved.
+
 import * as React from 'react';
 import '../stylesheets/home.css';
 import '../stylesheets/work.css';
@@ -84,7 +88,7 @@ export const Home: React.FC<HomeProps> = ({
                 <p className="large-number">{aboutGen['Project']}</p>
               </div>
               <div className="about-items general-section desktop">
-                <h3>Happy stakeholders</h3>
+                <h3>Happy clients</h3>
                 <p className="large-number">{aboutGen['Stakeholders']}</p>
               </div>
             </div>
@@ -136,19 +140,17 @@ export const Home: React.FC<HomeProps> = ({
   function HighlightHelper(id: string): JSX.Element {
     return (
       <>
-        {Object.entries(workField).map(
-          (fields: { [key: string]: any }, index) => {
-            const field = fields[1];
+        {Object.entries(workField).map((fields: { [key: string]: any }) => {
+          const field = fields[1];
 
-            return field['PostID'].includes(id) ? (
-              <p className="caption" key={index}>
-                {field['Alias']}
-              </p>
-            ) : (
-              <></>
-            );
-          },
-        )}
+          return field['PostID'].includes(id) ? (
+            <p className="caption" key={field['ID'] + id}>
+              {field['Alias']}
+            </p>
+          ) : (
+            <></>
+          );
+        })}
       </>
     );
   }

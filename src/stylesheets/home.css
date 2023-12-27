@@ -5,10 +5,22 @@
   .desktop {
     display: flex;
   }
+  .about-section .about-items {
+    width: 15vw;
+  }
+  .about-section .about-items:last-of-type {
+    width: 30vw;
+  }
 }
 @media all and (max-width: 800px) {
   .desktop {
     display: none;
+  }
+  .about-section .about-items {
+    width: 30vw;
+  }
+  .about-section .about-items:first-of-type {
+    width: 20vw;
   }
 }
 
@@ -59,8 +71,7 @@
   gap: 2.5rem;
   align-self: stretch;
 }
-.about-section,
-.field-section {
+.about-section {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -68,83 +79,4 @@
 }
 .about-items.general-section {
   flex-direction: column;
-}
-.about-section .about-items:nth-of-type(3n + 1),
-.field-section .about-items:nth-of-type(3n + 1) {
-  width: 13rem;
-}
-.about-section .about-items:nth-of-type(3n + 2),
-.field-section .about-items:nth-of-type(3n + 2) {
-  width: 7.5rem;
-}
-.about-section .about-items:nth-of-type(3n),
-.field-section .about-items:nth-of-type(3n) {
-  width: 22rem;
-}
-
-/* Field section */
-#field-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: -webkit-fill-available;
-}
-.field-section {
-  margin: auto;
-}
-.category-container {
-  width: -webkit-fill-available;
-  display: flex;
-  padding-bottom: 8px;
-  flex-direction: column;
-  overflow-x: hidden;
-  transition: all 0.2s ease-in;
-  cursor: pointer;
-}
-.category-section {
-  display: inline-flex;
-  justify-content: start;
-  align-items: flex-start;
-  gap: 2rem;
-  width: max-content;
-}
-.category-container p {
-  color: var(--illuminating-yellow);
-}
-.category-container:hover {
-  background-color: var(--illuminating-yellow);
-}
-.category-container:hover p {
-  color: var(--ultimate-gray);
-}
-
-/* Translate */
-#field-container :nth-child(2n + 1).category-container {
-  align-items: start;
-}
-#field-container :nth-child(2n).category-container {
-  align-items: end;
-}
-#field-container :nth-child(2n + 1) .category-section {
-  animation: translate-forwards 8s linear infinite;
-}
-#field-container :nth-child(2n) .category-section {
-  animation: translate-backwards 8s linear infinite;
-}
-
-@keyframes translate-forwards {
-  from {
-    transform: translate(0%);
-  }
-  to {
-    transform: translate(calc(-20% - 0.375rem));
-  }
-}
-@keyframes translate-backwards {
-  from {
-    transform: translate(calc(0%));
-  }
-  to {
-    transform: translate(calc(20%));
-  }
 }

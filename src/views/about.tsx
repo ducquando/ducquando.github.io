@@ -1,3 +1,7 @@
+// Do Duc Quan's Personal Website
+// GNL General Public License v3
+// Copyright (c) Do Duc Quan. All rights reserved.
+
 import * as React from 'react';
 import { useEffect } from 'react';
 import '../stylesheets/about.css';
@@ -117,7 +121,7 @@ export const About: React.FC<AboutProps> = ({
 
   return (
     <>
-      <div className="main-container">
+      <div className="main-container" id="about-page">
         {/* Intro section */}
         <img
           src="../assets/graphics/About.svg"
