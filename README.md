@@ -1,7 +1,7 @@
 # Do Duc Quan's Personal Website
 
 ## Website
-Live at [www.dodquan.com](www.dodquan.com).
+Live at [www.dodquan.com](http://www.dodquan.com).
 
 ## Sitemap
 ```
