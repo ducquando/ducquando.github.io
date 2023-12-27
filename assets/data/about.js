@@ -117,7 +117,7 @@ const dbAbout = {
           "SkillName": "Python"
         },
         {
-          "Image": "/assets/pictures/tools/Javascript",
+          "Image": "/assets/pictures/tools/JavaScript",
           "Format": ".png",
           "SkillName": "JavaScript"
         },

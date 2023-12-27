@@ -270,6 +270,3 @@ export function WorkSection(
     </>
   );
 }
-
-// block scripts
-//   script(src="/javascripts/workFilter.js")
