@@ -3,22 +3,25 @@
 // Copyright (c) Do Duc Quan. All rights reserved.
 
 import * as React from 'react';
+import { lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import {
-  Header,
-  Footer,
-  About,
-  Contact,
-  Home,
-  NotFound,
-  Post,
-  Work,
-} from './views';
+import { Header, Footer } from './views';
 
 import dbAbout from '../assets/data/about.js';
 import dbContact from '../assets/data/contact.js';
 import dbWork from '../assets/data/workSimplified.js';
 import dbIcon from '../assets/data/icon.js';
+
+const About = lazy(async () => ({ default: (await import('./views')).About }));
+const Contact = lazy(async () => ({
+  default: (await import('./views')).Contact,
+}));
+const Home = lazy(async () => ({ default: (await import('./views')).Home }));
+const NotFound = lazy(async () => ({
+  default: (await import('./views')).NotFound,
+}));
+const Post = lazy(async () => ({ default: (await import('./views')).Post }));
+const Work = lazy(async () => ({ default: (await import('./views')).Work }));
 
 export const App: React.FC = () => {
   return (

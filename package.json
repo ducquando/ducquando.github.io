@@ -5,7 +5,7 @@
   "description": "Do Duc Quan's Personal Website",
   "scripts": {
     "start": "webpack-dev-server --host 0.0.0.0 --disable-host-check --open",
-    "build": "webpack --mode=production"
+    "build": "webpack -p"
   },
   "repository": {
     "type": "git",
@@ -16,6 +16,7 @@
   "dependencies": {
     "@radix-ui/react-icons": "^1.0.3",
     "@stitches/react": "^0.1.9",
+    "lodash": "^4.17.21",
     "prop-types": "^15.7.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -23,6 +24,7 @@
     "react-router-dom": "^6.21.1"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.202",
     "@types/react": "^18.2.45",
     "@types/react-dom": "^18.2.18",
     "@types/react-router-dom": "^5.1.7",
