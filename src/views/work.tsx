@@ -3,66 +3,49 @@
 // Copyright (c) Do Duc Quan. All rights reserved.
 
 import * as React from 'react';
+import { useState } from 'react';
 import '../stylesheets/work.css';
-import { useNavigate, useSearchParams, useLocation } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 
 interface WorkProps {
-  icons: { [key: string]: any };
   workField: { [key: string]: any };
   workFilter: { [key: string]: any };
   allPosts: { [key: string]: any };
+  icons: { [key: string]: any };
 }
 
 export const Work: React.FC<WorkProps> = ({
-  icons,
   workField,
   workFilter,
   allPosts,
+  icons,
 }) => {
-  const navigate = useNavigate();
-  const location = useLocation().pathname;
   const [searchParams] = useSearchParams();
-
-  let sortParams = searchParams.get('sort') || 'curated';
-  let workParams: { [key: string]: boolean } = {
-    se: searchParams.get('se')
-      ? searchParams.get('se') == 'true'
-        ? true
-        : false
-      : true,
-    pd: searchParams.get('pd')
-      ? searchParams.get('pd') == 'true'
-        ? true
-        : false
-      : true,
-    ds: searchParams.get('ds')
-      ? searchParams.get('ds') == 'true'
-        ? true
-        : false
-      : true,
-    gd: searchParams.get('gd')
-      ? searchParams.get('gd') == 'true'
-        ? true
-        : false
-      : true,
-  };
-
-  function updateLink() {
-    let newLink = `${location}?sort=${sortParams}`;
-    ['se', 'pd', 'ds', 'gd'].forEach((key) => {
-      newLink += `&${key}=${workParams[key]}`;
-    });
-    return newLink;
-  }
+  const [paramSort, setParamSort] = useState(
+    searchParams.get('sort') ?? 'curated',
+  );
+  const [paramSE, setParamSE] = useState(
+    searchParams.get('se') == 'true' ?? true,
+  );
+  const [paramPD, setParamPD] = useState(
+    searchParams.get('pd') == 'true' ?? true,
+  );
+  const [paramDS, setParamDS] = useState(
+    searchParams.get('ds') == 'true' ?? true,
+  );
+  const [paramGD, setParamGD] = useState(
+    searchParams.get('gd') == 'true' ?? true,
+  );
 
   function toggleFilter(id: string) {
-    workParams[id] = !workParams[id];
-    navigate(updateLink());
+    if (id == 'se') setParamSE(!paramSE);
+    else if (id == 'pd') setParamPD(!paramPD);
+    else if (id == 'gd') setParamGD(!paramGD);
+    else if (id == 'ds') setParamDS(!paramDS);
   }
 
   function toggleSort(id: string) {
-    sortParams = id;
-    navigate(updateLink());
+    setParamSort(id);
   }
 
   function FilterSection(): JSX.Element {
@@ -70,7 +53,17 @@ export const Work: React.FC<WorkProps> = ({
       <>
         {Object.entries(workField).map((params) => {
           const field = params[1];
-          const isActive = workParams[field['ID']] ? ' active' : '';
+          const isActive =
+            field['ID'] == 'se' && paramSE
+              ? ' active'
+              : field['ID'] == 'pd' && paramPD
+              ? ' active'
+              : field['ID'] == 'gd' && paramGD
+              ? ' active'
+              : field['ID'] == 'ds' && paramDS
+              ? ' active'
+              : '';
+
           return (
             <>
               <div
@@ -100,10 +93,18 @@ export const Work: React.FC<WorkProps> = ({
   function WorksSection(): JSX.Element {
     return (
       <>
-        {workFilter[sortParams]['Index'].map((id: string) => {
+        {workFilter[paramSort]['Index'].map((id: string) => {
           const workInclude =
-            ['se', 'pd', 'gd', 'ds']
-              .map((e) => workParams[e] && workField[e]['PostID'].includes(id))
+            Object.entries({
+              se: paramSE,
+              pd: paramPD,
+              gd: paramGD,
+              ds: paramDS,
+            })
+              .map(
+                (field) =>
+                  field[1] && workField[field[0]]['PostID'].includes(id),
+              )
               .reduce((m, o) => m + o) >= 1;
 
           return workInclude ? (
@@ -161,7 +162,7 @@ export const Work: React.FC<WorkProps> = ({
               <ul id="sort-container">
                 {['Curated', 'Name', 'Recent'].map((e) => {
                   const newID = e.toLowerCase();
-                  const isActive = newID == sortParams ? ' active' : '';
+                  const isActive = newID == paramSort ? ' active' : '';
                   return (
                     <>
                       <li
