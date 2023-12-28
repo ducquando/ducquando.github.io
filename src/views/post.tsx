@@ -183,18 +183,21 @@ export const Post: React.FC<PostProps> = ({ icons, workField, allPosts }) => {
       <div className="main-container">
         {/* Title */}
         <div id="heading-section" className="width-90">
-          <picture className="width-90">
+          <picture>
             <source
               media="(max-width: 640px)"
               srcSet={`../assets/graphics/${workPost['Title']}@0.5x.svg`}
+              className="width-90"
             />
             <source
               media="(min-width: 641px)"
               srcSet={`../assets/graphics/${workPost['Title']}.svg`}
+              className="width-90"
             />
             <img
               src={`../assets/graphics/${workPost['Title']}.svg`}
               alt={title}
+              className="width-90"
             />
           </picture>
         </div>

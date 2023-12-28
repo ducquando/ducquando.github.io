@@ -147,16 +147,22 @@ export const About: React.FC<AboutProps> = ({
     <>
       <div className="main-container" id="about-page">
         {/* Intro section */}
-        <picture className="width-90">
+        <picture>
           <source
             media="(max-width: 640px)"
             srcSet={`../assets/graphics/About@0.5x.svg`}
+            className="width-90"
           />
           <source
             media="(min-width: 641px)"
             srcSet={`../assets/graphics/About.svg`}
+            className="width-90"
           />
-          <img src={`../assets/graphics/About.svg`} alt="About" />
+          <img
+            src={`../assets/graphics/About.svg`}
+            alt="About"
+            className="width-90"
+          />
         </picture>
         <div className="width-90">
           <p className="mid width-60">

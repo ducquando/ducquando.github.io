@@ -35,16 +35,22 @@ export const Home: React.FC<HomeProps> = ({
                 "image-set('../assets/pictures/Thumbnail.png' 1x, '../assets/pictures/Thumbnail@0.33x.png' 0.33x, '../assets/pictures/Thumbnail@0.5x.png' 0.5x, '../assets/pictures/Thumbnail@2x.png' 2x)",
             }}
           >
-            <picture className="width-90">
+            <picture>
               <source
                 media="(max-width: 640px)"
                 srcSet={`../assets/graphics/DoDucQuan@0.5x.svg`}
+                className="width-90"
               />
               <source
                 media="(min-width: 641px)"
                 srcSet={`../assets/graphics/DoDucQuan.svg`}
+                className="width-90"
               />
-              <img src={`../assets/graphics/DoDucQuan.svg`} alt="Do Duc Quan" />
+              <img
+                src={`../assets/graphics/DoDucQuan.svg`}
+                alt="Do Duc Quan"
+                className="width-90"
+              />
             </picture>
             <div id="thumbnail-section" className="width-25">
               <p className="mid">
