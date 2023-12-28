@@ -105,11 +105,35 @@ export const About: React.FC<AboutProps> = ({
                   </div>
                 </div>
 
-                <img
-                  className="width-60"
-                  src={exp['Thumbnail'] + exp['Format']}
-                  alt={exp['Name']}
-                ></img>
+                <div
+                  style={{
+                    gap: '1rem',
+                    display: 'flex',
+                    flexDirection: 'column',
+                  }}
+                >
+                  <img
+                    src={exp['Thumbnail'] + exp['Format']}
+                    alt={exp['Name']}
+                    className="width-60"
+                  />
+                  <a
+                    href={
+                      exp['Name'] == 'Software Engineering'
+                        ? '/works?pd=false&ds=false&gd=false'
+                        : exp['Name'] == 'Product Development'
+                        ? '/works?se=false&ds=false&gd=false'
+                        : exp['Name'] == 'Data Science and AI'
+                        ? '/works?se=false&pd=false&gd=false'
+                        : exp['Name'] == 'Graphic Design'
+                        ? '/works?se=false&pd=false&ds=false'
+                        : '/works'
+                    }
+                    className="button large width-60"
+                  >
+                    <p className="button-text">{`View ${exp['Name']} works`}</p>
+                  </a>
+                </div>
               </div>
               <div className="divider"></div>
             </>
@@ -123,11 +147,17 @@ export const About: React.FC<AboutProps> = ({
     <>
       <div className="main-container" id="about-page">
         {/* Intro section */}
-        <img
-          src="../assets/graphics/About.svg"
-          alt="About"
-          className="width-90"
-        ></img>
+        <picture className="width-90">
+          <source
+            media="(max-width: 640px)"
+            srcSet={`../assets/graphics/About@0.5x.svg`}
+          />
+          <source
+            media="(min-width: 641px)"
+            srcSet={`../assets/graphics/About.svg`}
+          />
+          <img src={`../assets/graphics/About.svg`} alt="About" />
+        </picture>
         <div className="width-90">
           <p className="mid width-60">
             I am Quan, a creative UX engineer with 3 years of experience in

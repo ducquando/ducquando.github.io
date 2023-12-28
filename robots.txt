@@ -1,1 +1,1 @@
-Sitemap: http://www.dodquan.com/sitemap.txt
+Sitemap: https://www.dodquan.com/sitemap.txt

@@ -3,18 +3,21 @@
   .mobile {
     display: none;
   }
+
   .desktop {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
 }
+
 @media all and (max-width: 640px) {
   .mobile {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
+
   .desktop {
     display: none;
   }
@@ -50,7 +53,9 @@
   display: none;
   position: fixed;
   top: 3.5rem;
-  left: 2.5rem;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   z-index: 8;
 }
 
@@ -58,6 +63,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding: 0px;
 }
 
 .metadata-container {
@@ -153,7 +159,7 @@
 
 @media screen and (max-width: 1024px) {
   #content-container .width-30 {
-    width: calc(100vw - 2.5rem * 2);
+    width: calc((100vw - 2.5rem * 2 - 16px) / 2);
   }
 }
 

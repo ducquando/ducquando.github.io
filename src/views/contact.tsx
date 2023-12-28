@@ -80,11 +80,17 @@ export const Contact: React.FC<ContactProps> = ({
   return (
     <>
       <div className="main-container">
-        <img
-          src={'../assets/graphics/' + title + '.svg'}
-          alt={title}
-          className="width-90"
-        />
+        <picture className="width-90">
+          <source
+            media="(max-width: 640px)"
+            srcSet={`../assets/graphics/${title}@0.5x.svg`}
+          />
+          <source
+            media="(min-width: 641px)"
+            srcSet={`../assets/graphics/${title}.svg`}
+          />
+          <img src={`../assets/graphics/${title}.svg`} alt={title} />
+        </picture>
         <p className="mid width-90">
           Let's create memorable experiences together
         </p>

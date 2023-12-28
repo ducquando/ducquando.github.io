@@ -62,16 +62,22 @@ body {
     width: calc((100vw - 2.5rem * 2 - 16px) / 2);
   }
 }
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 641px) {
   .width-90,
   .width-70,
   .width-60,
   .width-50,
   .width-30 {
-    width: calc(100vw - 2.5rem * 2);
+    width: calc(100vw - 1rem * 2);
   }
+  .width-25,
+  .width-20 {
+    width: calc((100vw - 1.25rem * 2 - 16px) / 2);
+  }
+}
+@media screen and (max-width: 481px) {
   .width-25 {
-    width: calc((100vw - 2.5rem * 2 - 0.25rem) / 2);
+    width: calc((100vw - 1.25rem * 2) * 3 / 4);
   }
 }
 

@@ -12,8 +12,8 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ icons }) => {
   // Change states
-  const [openSymbol, setOpenSymbol] = useState('block');
-  const [closeSymbol, setCloseSymbol] = useState('none');
+  const [openSymbol, setOpenSymbol] = useState('active');
+  const [closeSymbol, setCloseSymbol] = useState('');
   const [navView, setNavView] = useState('none');
 
   const pages = [
@@ -24,13 +24,15 @@ export const Header: React.FC<HeaderProps> = ({ icons }) => {
   ];
 
   function changeState() {
-    if (openSymbol == 'none') {
-      setOpenSymbol('block');
-      setCloseSymbol('none');
+    if (openSymbol == '') {
+      document.body.style.overflow = 'visible';
+      setOpenSymbol('active');
+      setCloseSymbol('');
       setNavView('none');
     } else {
-      setOpenSymbol('none');
-      setCloseSymbol('block');
+      document.body.style.overflow = 'hidden';
+      setOpenSymbol('');
+      setCloseSymbol('active');
       setNavView('flex');
     }
   }
@@ -71,6 +73,10 @@ export const Header: React.FC<HeaderProps> = ({ icons }) => {
     <>
       <nav>
         <div id="header-container" className="width-100">
+          <a href="/" id="nav-logo">
+            <img src="/assets/graphics/Header.svg" alt="Do Duc Quan's logo" />
+          </a>
+
           <span></span>
 
           {/* Desktop version */}
@@ -80,20 +86,20 @@ export const Header: React.FC<HeaderProps> = ({ icons }) => {
           <div id="nav-burger" onClick={changeState}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
+              width="1.25rem"
+              height="1.25rem"
               viewBox="0 0 20 20"
               fill="none"
             >
               <path
                 d={icons['HamburgerClose']}
                 id="burger-close"
-                display={closeSymbol}
+                className={closeSymbol}
               />
               <path
                 d={icons['HamburgerOpen']}
                 id="burger-open"
-                display={openSymbol}
+                className={openSymbol}
               />
             </svg>
           </div>

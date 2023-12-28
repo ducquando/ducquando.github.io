@@ -10,8 +10,8 @@ const dbAbout = {
       "Image": "/assets/pictures/about/2012",
       "Format": ".png",
       "Landspace": false,
-      "HorizontalOffset": "9",
-      "VerticalOffset": "2"
+      "HorizontalOffset": "4",
+      "VerticalOffset": "-1"
     },
     {
       "Year": "2017",
@@ -19,7 +19,7 @@ const dbAbout = {
       "Image": "/assets/pictures/about/2017",
       "Format": ".png",
       "Landspace": false,
-      "HorizontalOffset": "5",
+      "HorizontalOffset": "7",
       "VerticalOffset": "-1"
     },
     {
@@ -28,8 +28,8 @@ const dbAbout = {
       "Image": "/assets/pictures/about/2020",
       "Format": ".png",
       "Landspace": true,
-      "HorizontalOffset": "4",
-      "VerticalOffset": "4"
+      "HorizontalOffset": "7",
+      "VerticalOffset": "0"
     },
     {
       "Year": "2021",
@@ -37,7 +37,7 @@ const dbAbout = {
       "Image": "/assets/pictures/about/2021",
       "Format": ".png",
       "Landspace": true,
-      "HorizontalOffset": "8",
+      "HorizontalOffset": "6",
       "VerticalOffset": "0"
     },
     {
@@ -46,8 +46,8 @@ const dbAbout = {
       "Image": "/assets/pictures/about/2022",
       "Format": ".png",
       "Landspace": false,
-      "HorizontalOffset": "7",
-      "VerticalOffset": "2"
+      "HorizontalOffset": "6",
+      "VerticalOffset": "-1"
     },
     {
       "Year": "2023",
@@ -56,7 +56,7 @@ const dbAbout = {
       "Format": ".png",
       "Landspace": false,
       "HorizontalOffset": "7",
-      "VerticalOffset": "-2"
+      "VerticalOffset": "-1"
     },
     {
       "Year": "Now",
@@ -64,8 +64,8 @@ const dbAbout = {
       "Image": "/assets/pictures/about/2024",
       "Format": ".png",
       "Landspace": true,
-      "HorizontalOffset": "6.5",
-      "VerticalOffset": "5"
+      "HorizontalOffset": "9",
+      "VerticalOffset": "0"
     }
   ],
 

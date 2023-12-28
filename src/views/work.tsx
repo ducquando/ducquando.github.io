@@ -120,11 +120,17 @@ export const Work: React.FC<WorkProps> = ({
   return (
     <>
       <div className="main-container">
-        <img
-          src="/assets/graphics/Works.svg"
-          alt="Works"
-          className="width-90"
-        />
+        <picture className="width-90">
+          <source
+            media="(max-width: 640px)"
+            srcSet={`../assets/graphics/Works@0.5x.svg`}
+          />
+          <source
+            media="(min-width: 641px)"
+            srcSet={`../assets/graphics/Works.svg`}
+          />
+          <img src={`../assets/graphics/Works.svg`} alt="Works" />
+        </picture>
         <div id="work-container">
           <div id="tool-container" className="width-90">
             {/* Filter */}

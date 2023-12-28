@@ -88,9 +88,31 @@ export const Post: React.FC<PostProps> = ({ icons, workField, allPosts }) => {
                         __html: subcontent['Details'],
                       }}
                     />
+                  ) : subcontent['Type'] == 'img-responsive' ? (
+                    <picture key={index}>
+                      <source
+                        media="(max-width: 640px)"
+                        srcSet={`../assets/pictures/post/${subcontent['Source']}@0.5x${subcontent['Format']}`}
+                        onError={(e) => {
+                          const target = e.target as HTMLSourceElement;
+                          target.src = `../assets/pictures/post/${subcontent['Source']}${subcontent['Format']}`;
+                        }}
+                        className={subcontent['Style']}
+                      />
+                      <source
+                        media="(min-width: 641px)"
+                        srcSet={`../assets/pictures/post/${subcontent['Source']}${subcontent['Format']}`}
+                        className={subcontent['Style']}
+                      />
+                      <img
+                        src={`../assets/pictures/post/${subcontent['Source']}${subcontent['Format']}`}
+                        className={subcontent['Style']}
+                        alt={subcontent['Caption']}
+                      />
+                    </picture>
                   ) : subcontent['Type'] == 'img' ? (
                     <img
-                      src={subcontent['Source']}
+                      src={`../assets/pictures/post/${subcontent['Source']}${subcontent['Format']}`}
                       alt={subcontent['Caption']}
                       className={subcontent['Style']}
                       key={index}
@@ -122,41 +144,59 @@ export const Post: React.FC<PostProps> = ({ icons, workField, allPosts }) => {
       {/* Metadata */}
       <div
         id="title-container"
-        className="width-90"
+        className="width-100"
         style={{ display: subHeader }}
       >
-        {/* Desktop */}
-        <div className="metadata-container desktop">
-          {workPost['Source'] ? (
-            <div className="metadata-section">
+        <div className="width-90">
+          {/* Desktop */}
+          <div className="metadata-container desktop">
+            {workPost['Source'] ? (
+              <div className="metadata-section">
+                <h3 className="metadata-items">{workPost['Name']}</h3>
+                <a href={workPost['Source']} className="button">
+                  <p>View report</p>
+                </a>
+              </div>
+            ) : (
               <h3 className="metadata-items">{workPost['Name']}</h3>
+            )}
+          </div>
+
+          {/* Mobile */}
+          <div
+            className="metadata-container mobile"
+            style={{ maxWidth: '50vw' }}
+          >
+            <h3 className="metadata-items">{workPost['Name']}</h3>
+          </div>
+          {workPost['Source'] && (
+            <div className="metadata-section mobile">
               <a href={workPost['Source']} className="button">
                 <p>View report</p>
               </a>
             </div>
-          ) : (
-            <h3 className="metadata-items">{workPost['Name']}</h3>
           )}
         </div>
-
-        {/* Mobile */}
-        <div className="metadata-container mobile" style={{ maxWidth: '50vw' }}>
-          <h3 className="metadata-items">{workPost['Name']}</h3>
-        </div>
-        {workPost['Source'] && (
-          <div className="metadata-section mobile">
-            <a href={workPost['Source']} className="button">
-              <p>View report</p>
-            </a>
-          </div>
-        )}
       </div>
 
       {/* Post */}
       <div className="main-container">
         {/* Title */}
         <div id="heading-section" className="width-90">
-          <img src={workPost['Title']} alt={title} className="width-90" />
+          <picture className="width-90">
+            <source
+              media="(max-width: 640px)"
+              srcSet={`../assets/graphics/${workPost['Title']}@0.5x.svg`}
+            />
+            <source
+              media="(min-width: 641px)"
+              srcSet={`../assets/graphics/${workPost['Title']}.svg`}
+            />
+            <img
+              src={`../assets/graphics/${workPost['Title']}.svg`}
+              alt={title}
+            />
+          </picture>
         </div>
 
         {/* Metadata */}
@@ -240,7 +280,7 @@ export const Post: React.FC<PostProps> = ({ icons, workField, allPosts }) => {
             </a>
           </div>
         )}
-        {workPost['Similar'].length && (
+        {workPost['Similar'].length != 0 && (
           <>
             <div className="divider" />
             <div className="main-section width-90">

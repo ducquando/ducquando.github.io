@@ -3,13 +3,13 @@
 // Copyright (c) Do Duc Quan. All rights reserved.
 
 import * as React from 'react';
-import { lazy } from 'react';
+import { lazy, useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Header, Footer } from './views';
 
 import dbAbout from '../assets/data/about.js';
 import dbContact from '../assets/data/contact.js';
-import dbWork from '../assets/data/workSimplified.js';
+import dbWork from '../assets/data/work.js';
 import dbIcon from '../assets/data/icon.js';
 
 const About = lazy(async () => ({ default: (await import('./views')).About }));

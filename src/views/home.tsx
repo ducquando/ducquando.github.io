@@ -35,16 +35,22 @@ export const Home: React.FC<HomeProps> = ({
                 "image-set('../assets/pictures/Thumbnail.png' 1x, '../assets/pictures/Thumbnail@0.33x.png' 0.33x, '../assets/pictures/Thumbnail@0.5x.png' 0.5x, '../assets/pictures/Thumbnail@2x.png' 2x)",
             }}
           >
-            <img
-              src="/assets/graphics/DoDucQuan.svg"
-              alt="Do Duc Quan"
-              className="width-90"
-            />
+            <picture className="width-90">
+              <source
+                media="(max-width: 640px)"
+                srcSet={`../assets/graphics/DoDucQuan@0.5x.svg`}
+              />
+              <source
+                media="(min-width: 641px)"
+                srcSet={`../assets/graphics/DoDucQuan.svg`}
+              />
+              <img src={`../assets/graphics/DoDucQuan.svg`} alt="Do Duc Quan" />
+            </picture>
             <div id="thumbnail-section" className="width-25">
               <p className="mid">
                 Computer intelligence fuels my visual creations
               </p>
-              <h2>I am QUAN, and this is my portfolio</h2>
+              <h2>I am QUAN. Welcome to my site 👋</h2>
             </div>
           </div>
         </div>
@@ -122,7 +128,7 @@ export const Home: React.FC<HomeProps> = ({
             <p className="mid">
               If you want to start a new project or have questions, feel free to
               reach out at
-              <span>
+              <span style={{ position: 'relative', left: '-0.375rem' }}>
                 <a href={'mailto:' + contactEmail['Link']} className="button">
                   {contactEmail['Details']}
                 </a>

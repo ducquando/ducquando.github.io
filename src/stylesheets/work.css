@@ -130,7 +130,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 0.5rem 0.85rem 0.5rem 0.85rem;
+  padding: 0.5rem 0.85rem;
   border-radius: 0.84375rem;
   border: 1px solid var(--illuminating-yellow);
   -webkit-box-orient: horizontal;
@@ -144,6 +144,11 @@
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+}
+@media (max-width: 641px) {
+  .filter-section {
+    padding: 0.25rem 0.5rem;
+  }
 }
 
 .filter-section svg {
@@ -198,6 +203,17 @@
   -webkit-box-align: start;
   -ms-flex-align: start;
   align-items: flex-start;
+}
+@media (max-width: 641px) {
+  .sort-section {
+    padding: 0.25rem 0.425rem;
+  }
+  .sort-section:first-child {
+    padding: 0.25rem 0.425rem 0.25rem 0.675rem;
+  }
+  .sort-section:last-child {
+    padding: 0.25rem 0.675rem 0.25rem 0.425rem;
+  }
 }
 
 /* Save changes button */

@@ -95,6 +95,11 @@
   right: 2.5rem;
   text-align: right;
 }
+@media screen and (max-width: 641px) {
+  #thumbnail-section {
+    right: 1.25rem;
+  }
+}
 
 /* About section */
 #about-container {

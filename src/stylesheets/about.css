@@ -58,6 +58,7 @@
   z-index: 1;
 }
 .journey-section img {
+  display: block;
   position: absolute;
   -webkit-filter: brightness(0.7);
   filter: brightness(0.7);
@@ -70,6 +71,11 @@
 }
 .journey-section img.portrait {
   height: 10rem;
+}
+@media all and (max-width: 641px) {
+  .journey-section img {
+    display: none;
+  }
 }
 @media screen and (min-width: 1024px) {
   #journey-container :nth-child(4n + 2).journey-section {
@@ -94,6 +100,12 @@
     -webkit-column-gap: 16px;
     -moz-column-gap: 16px;
     column-gap: 16px;
+  }
+}
+@media screen and (max-width: 641px) {
+  #about-page .width-30,
+  #about-page .width-60 {
+    width: calc(100vw - 1rem * 2);
   }
 }
 

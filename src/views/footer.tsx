@@ -83,7 +83,9 @@ export const Footer: React.FC<FooterProps> = ({
         </div>
 
         {/* Connect */}
-        <p className="large">Stay connected</p>
+        <p className="large" style={{ textAlign: 'center' }}>
+          Stay connected
+        </p>
         <div id="footer-link-section" className="width-90">
           {/* Mail */}
           {LinkSection(
