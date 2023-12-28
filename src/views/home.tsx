@@ -50,7 +50,7 @@ export const Home: React.FC<HomeProps> = ({
               <p className="mid">
                 Computer intelligence fuels my visual creations
               </p>
-              <h2>I am QUAN. Welcome to my site 👋</h2>
+              <h2>I am QUAN. Welcome to my nomadic advanture 👋</h2>
             </div>
           </div>
         </div>
@@ -80,8 +80,8 @@ export const Home: React.FC<HomeProps> = ({
           <div id="about-container">
             <div className="width-90" style={{ margin: 'auto' }}>
               <p className="mid width-60">
-                Quan is a creative UX engineer with 5 years of experience in
-                developing and designing innovative solutions.
+                Quan is an UX engineer with 5 years of experience in developing
+                and designing innovative solutions.
               </p>
             </div>
             <div className="about-section width-90" style={{ margin: 'auto' }}>

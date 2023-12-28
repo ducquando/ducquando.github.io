@@ -160,7 +160,7 @@ export const About: React.FC<AboutProps> = ({
         </picture>
         <div className="width-90">
           <p className="mid width-60">
-            I am Quan, a creative UX engineer with 3 years of experience in
+            I am Quan, a creative UX engineer with 5 years of experience in
             developing and designing innovative solutions. <br />
             <br /> My main fields are Product Development and Software
             Engineering. I also enjoy experimenting with AI and designing
