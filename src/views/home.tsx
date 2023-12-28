@@ -133,7 +133,7 @@ export const Home: React.FC<HomeProps> = ({
           <div className="width-60">
             <p className="mid">
               If you want to start a new project or have questions, feel free to
-              reach out at
+              reach out at <br />
               <span style={{ position: 'relative', left: '-0.375rem' }}>
                 <a href={'mailto:' + contactEmail['Link']} className="button">
                   {contactEmail['Details']}

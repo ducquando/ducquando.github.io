@@ -86,8 +86,8 @@ export const Header: React.FC<HeaderProps> = ({ icons }) => {
           <div id="nav-burger" onClick={changeState}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="1.25rem"
-              height="1.25rem"
+              width="17.5"
+              height="17.5"
               viewBox="0 0 20 20"
               fill="none"
             >
