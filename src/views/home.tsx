@@ -56,7 +56,7 @@ export const Home: React.FC<HomeProps> = ({
               <p className="mid">
                 Computer intelligence fuels my visual creations
               </p>
-              <h2>I am QUAN. Welcome to my nomadic advanture 👋</h2>
+              <h2>I am QUAN. Welcome to my euphoric journey 👋</h2>
             </div>
           </div>
         </div>

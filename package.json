@@ -2,7 +2,7 @@
   "name": "ducquando.github.io",
   "version": "1.0.0",
   "private": true,
-  "description": "Do Duc Quan - The Adventures of a Digital Nomad",
+  "description": "An Euphoric Adventure of Do Duc Quan",
   "scripts": {
     "start": "webpack-dev-server --host 0.0.0.0 --disable-host-check --open",
     "build": "webpack -p"
