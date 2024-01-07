@@ -215,7 +215,7 @@ export function WorkSection(
       <a href={'/works' + posts[id]['Link']} className="post-section width-30">
         <FastImage
           src={`${posts[id]['Thumbnail']}${posts[id]['Format']}`}
-          placeholderSrc={`${posts[id]['Thumbnail']}@0.33x${posts[id]['Format']}`}
+          placeholderSrc={`${posts[id]['Thumbnail']}@0.33x.webp`}
           className="width-30"
           alt={posts[id]['Name']}
         />

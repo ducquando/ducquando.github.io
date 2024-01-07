@@ -5,6 +5,7 @@
 import * as React from 'react';
 import { useEffect } from 'react';
 import '../stylesheets/about.css';
+import { FastImage } from './image';
 
 interface AboutProps {
   title: string;
@@ -30,15 +31,14 @@ export const About: React.FC<AboutProps> = ({
               <div className="journey-section width-20" key={journey['Year']}>
                 <p className="large">{journey['Year']}</p>
                 <p>{journey['Description']}</p>
-                <img
-                  src={journey['Image'] + journey['Format']}
-                  alt={journey['Year']}
-                  style={{
-                    left: journey['HorizontalOffset'] + 'rem',
-                    top: journey['VerticalOffset'] + 'rem',
-                  }}
+                <FastImage
+                  src={`${journey['Image']}${journey['Format']}`}
+                  placeholderSrc={`${journey['Image']}@0.33x.webp`}
                   className={journey['Landspace'] ? 'landscape' : 'portrait'}
-                ></img>
+                  left={journey['HorizontalOffset'] + 'rem'}
+                  top={journey['VerticalOffset'] + 'rem'}
+                  alt={journey['Year']}
+                />
               </div>
             </>
           );
@@ -68,7 +68,7 @@ export const About: React.FC<AboutProps> = ({
                 <img
                   src={tool['Image'] + tool['Format']}
                   alt={tool['SkillName']}
-                ></img>
+                />
                 <p>{tool['SkillName']}</p>
               </div>
             </>
@@ -112,10 +112,11 @@ export const About: React.FC<AboutProps> = ({
                     flexDirection: 'column',
                   }}
                 >
-                  <img
-                    src={exp['Thumbnail'] + exp['Format']}
-                    alt={exp['Name']}
+                  <FastImage
+                    src={`${exp['Thumbnail']}${exp['Format']}`}
+                    placeholderSrc={`${exp['Thumbnail']}@0.33x.webp`}
                     className="width-60"
+                    alt={exp['Name']}
                   />
                   <a
                     href={

@@ -31,7 +31,7 @@ export const Home: React.FC<HomeProps> = ({
           <div id="thumbnail-container" className="width-100">
             <FastImage
               src={'../assets/pictures/Thumbnail.png'}
-              placeholderSrc={'../assets/pictures/Thumbnail@0.33x.png'}
+              placeholderSrc={'../assets/pictures/Thumbnail@0.33x.webp'}
               id="thumbnail-image"
               className="width-100"
               alt="Thumbnail hero image"
@@ -175,15 +175,10 @@ export const Home: React.FC<HomeProps> = ({
           return workPost[id]['Highlight'] ? (
             <>
               <a href={'/works' + workPost[id]['Link']} key={workPost[id]}>
-                <div
-                  style={{
-                    backgroundImage: 'url(' + workPost[id]['Thumbnail'] + ')',
-                  }}
-                  className="post-section width-30"
-                >
+                <div className="post-section width-30">
                   <FastImage
                     src={`${workPost[id]['Thumbnail']}${workPost[id]['Format']}`}
-                    placeholderSrc={`${workPost[id]['Thumbnail']}@0.33x${workPost[id]['Format']}`}
+                    placeholderSrc={`${workPost[id]['Thumbnail']}@0.33x.webp`}
                     className="width-30"
                     alt={workPost[id]['Name']}
                   />

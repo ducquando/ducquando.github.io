@@ -137,14 +137,32 @@ path {
   }
 }
 
-/* Fast image */
-.image-loading {
-  position: absolute;
-  filter: blur(10px);
-  clip-path: inset(0);
+/* Fading */
+.fading {
+  -webkit-animation: fade 5s linear infinite;
+  animation: fade 5s linear infinite;
 }
-.image-loaded {
-  position: absolute;
-  filter: blur(0px);
-  transition: filter 0.5s linear;
+@-webkit-keyframes fade {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    opacity: 66%;
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    opacity: 33%;
+  }
+}
+@keyframes fade {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    opacity: 66%;
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    opacity: 33%;
+  }
 }

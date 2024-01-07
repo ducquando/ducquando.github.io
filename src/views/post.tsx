@@ -9,6 +9,7 @@ import { WorkSection } from './work';
 import '../stylesheets/post.css';
 import '../stylesheets/home.css';
 import '../stylesheets/work.css';
+import { FastImage } from './image';
 
 interface PostProps {
   workField: { [key: string]: any };
@@ -111,11 +112,11 @@ export const Post: React.FC<PostProps> = ({ icons, workField, allPosts }) => {
                       />
                     </picture>
                   ) : subcontent['Type'] == 'img' ? (
-                    <img
+                    <FastImage
                       src={`../assets/pictures/post/${subcontent['Source']}${subcontent['Format']}`}
-                      alt={subcontent['Caption']}
+                      placeholderSrc={`../assets/pictures/post/${subcontent['Source']}@0.33x.webp`}
                       className={subcontent['Style']}
-                      key={index}
+                      alt={subcontent['Caption']}
                     />
                   ) : (
                     <div className="divider" key={index} />

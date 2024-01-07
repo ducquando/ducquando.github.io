@@ -184,7 +184,7 @@ const dbWork = {
           {
             "Type": "img",
             "Style": "width-60",
-            "Source": "NextLap-7",
+            "Source": "NextLap-6",
             'Format': ".png",
             "Caption": "About: desktop"
           }
@@ -193,7 +193,7 @@ const dbWork = {
           {
             "Type": "img",
             "Style": "width-60",
-            "Source": "NextLap-9",
+            "Source": "NextLap-7",
             'Format': ".png",
             "Caption": "Services: desktop"
           }
@@ -202,7 +202,7 @@ const dbWork = {
           {
             "Type": "img",
             "Style": "width-60",
-            "Source": "NextLap-11",
+            "Source": "NextLap-8",
             'Format': ".png",
             "Caption": "Tuition: desktop"
           }
@@ -211,7 +211,7 @@ const dbWork = {
           {
             "Type": "img",
             "Style": "width-60",
-            "Source": "NextLap-13",
+            "Source": "NextLap-9",
             'Format': ".png",
             "Caption": "Enrichment: desktop"
           }
@@ -220,7 +220,7 @@ const dbWork = {
           {
             "Type": "img",
             "Style": "width-60",
-            "Source": "NextLap-15",
+            "Source": "NextLap-10",
             'Format': ".png",
             "Caption": "Franchise: desktop"
           }
@@ -229,7 +229,7 @@ const dbWork = {
           {
             "Type": "img",
             "Style": "width-60",
-            "Source": "NextLap-17",
+            "Source": "NextLap-11",
             'Format': ".png",
             "Caption": "Career: desktop"
           }
@@ -238,7 +238,7 @@ const dbWork = {
           {
             "Type": "img",
             "Style": "width-60",
-            "Source": "NextLap-19",
+            "Source": "NextLap-12",
             'Format': ".png",
             "Caption": "Contact: desktop"
           }
