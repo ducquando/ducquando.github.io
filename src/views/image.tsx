@@ -1,3 +1,7 @@
+// Do Duc Quan's Personal Website
+// GNL General Public License v3
+// Copyright (c) Do Duc Quan. All rights reserved.
+
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 import '../stylesheets/image.css';
@@ -23,12 +27,10 @@ export const FastImage = ({
   }, [src]);
 
   return (
-    <div className={className}>
-      <img
-        {...{ src: imgSource, ...props }}
-        className={`loading-image ${customClass} ${className}`}
-        alt={props.alt || ''}
-      />
-    </div>
+    <img
+      {...{ src: imgSource, ...props }}
+      className={`loading-image ${customClass} ${className}`}
+      alt={props.alt || ''}
+    />
   );
 };
