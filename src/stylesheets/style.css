@@ -136,33 +136,3 @@ path {
     transform: rotate(360deg);
   }
 }
-
-/* Fading */
-.fading {
-  -webkit-animation: fade 5s linear infinite;
-  animation: fade 5s linear infinite;
-}
-@-webkit-keyframes fade {
-  from {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-    opacity: 66%;
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-    opacity: 33%;
-  }
-}
-@keyframes fade {
-  from {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-    opacity: 66%;
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-    opacity: 33%;
-  }
-}

@@ -1,7 +1,7 @@
 # Do Duc Quan's Personal Website
 
 ## Website
-Live at [www.dodquan.com](http://www.dodquan.com).
+Live at [https://dodquan.com](https://www.dodquan.com).
 
 ## Sitemap
 ```
@@ -21,7 +21,11 @@ Live at [www.dodquan.com](http://www.dodquan.com).
 ```
 
 ## Technology Stack
-- Front-end: ReactJS
-- Business logic: TypeScript
-- Middleware: Webpack
-- Hosting: GitHub Pages
+- Front-end: *ReactJS*
+- Business logic: *TypeScript*
+- Middleware: *Webpack*
+- Hosting: *GitHub Pages*
+
+## Image Loading
+- Fast loading with *.webp*
+- Lazy loading for *.png, .gif, etc*.

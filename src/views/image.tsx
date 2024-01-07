@@ -23,20 +23,12 @@ export const FastImage = ({
   }, [src]);
 
   return (
-    // <div className={className} >
-    <>
+    <div className={className}>
       <img
         {...{ src: imgSource, ...props }}
         className={`loading-image ${customClass} ${className}`}
         alt={props.alt || ''}
       />
-      <div className={`loading-overlay ${customClass}`} />
-      <img
-        src="/assets/graphics/Loading.svg"
-        className={`loading-logo fading ${customClass}`}
-        alt="Loading icon"
-      />
-    </>
-    // </div>
+    </div>
   );
 };

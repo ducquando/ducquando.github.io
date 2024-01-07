@@ -1,32 +1,10 @@
-.loading-logo {
-  display: block;
-  float: left;
-  width: 10%;
-  height: 10%;
-  left: 45%;
-  top: 45%;
-}
-.loading-logo.loaded {
-  display: none;
-}
-.loading-overlay {
-  display: block;
-  float: left;
-  width: 100%;
-  height: 100%;
-  background-color: var(--overlay);
-  opacity: 0.5;
-}
-.loading-overlay.loaded {
-  display: none;
-}
 .loading-image {
   display: block;
   float: left;
-  filter: blur(18px);
+  filter: blur(1px);
   clip-path: inset(0);
 }
-.loading-image {
+.loading-image.loaded {
   filter: blur(0px);
   transition: filter 0.5s linear;
 }
