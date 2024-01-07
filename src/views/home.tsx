@@ -3,6 +3,7 @@
 // Copyright (c) Do Duc Quan. All rights reserved.
 
 import * as React from 'react';
+import { FastImage } from './image';
 import '../stylesheets/home.css';
 import '../stylesheets/work.css';
 
@@ -27,15 +28,15 @@ export const Home: React.FC<HomeProps> = ({
     return (
       <>
         <div className="main-container">
-          <div
-            id="thumbnail-container"
-            className="width-100"
-            style={{
-              backgroundImage:
-                "image-set('../assets/pictures/Thumbnail.png' 1x, '../assets/pictures/Thumbnail@0.33x.png' 0.33x, '../assets/pictures/Thumbnail@0.5x.png' 0.5x, '../assets/pictures/Thumbnail@2x.png' 2x)",
-            }}
-          >
-            <picture>
+          <div id="thumbnail-container" className="width-100">
+            <FastImage
+              src={'../assets/pictures/Thumbnail.png'}
+              placeholderSrc={'../assets/pictures/Thumbnail@0.33x.png'}
+              id="thumbnail-image"
+              className="width-100"
+              alt="Thumbnail hero image"
+            />
+            <picture style={{ position: 'absolute' }}>
               <source
                 media="(max-width: 640px)"
                 srcSet={`../assets/graphics/DoDucQuan@0.5x.svg`}
@@ -180,6 +181,12 @@ export const Home: React.FC<HomeProps> = ({
                   }}
                   className="post-section width-30"
                 >
+                  <FastImage
+                    src={`${workPost[id]['Thumbnail']}${workPost[id]['Format']}`}
+                    placeholderSrc={`${workPost[id]['Thumbnail']}@0.33x${workPost[id]['Format']}`}
+                    className="width-30"
+                    alt={workPost[id]['Name']}
+                  />
                   <div className="post-overlay" />
                   <div className="post-title">
                     <h3>{workPost[id]['Name']}</h3>

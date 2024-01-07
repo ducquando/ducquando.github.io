@@ -95,6 +95,14 @@
   right: 2.5rem;
   text-align: right;
 }
+#thumbnail-container #thumbnail-image {
+  height: calc(100vh - 4rem);
+  object-fit: cover;
+}
+#thumbnail-container #thumbnail-picture {
+  position: absolute;
+  object-fit: cover;
+}
 @media screen and (max-width: 641px) {
   #thumbnail-section {
     right: 1.25rem;

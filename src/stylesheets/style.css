@@ -136,3 +136,15 @@ path {
     transform: rotate(360deg);
   }
 }
+
+/* Fast image */
+.image-loading {
+  position: absolute;
+  filter: blur(10px);
+  clip-path: inset(0);
+}
+.image-loaded {
+  position: absolute;
+  filter: blur(0px);
+  transition: filter 0.5s linear;
+}

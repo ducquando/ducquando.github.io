@@ -7,11 +7,11 @@ const dbWork = {
     "curated": {
       "Sort": "curated",
       "Index": [
-        "the-next-lap-web",
         "inquiry",
-        "lane-detection",
+        "momo-o2o",
+        "the-next-lap-web",
         "student-council",
-        "momo-o2o"
+        "lane-detection",
       ]
     },
     "name": {
@@ -67,8 +67,8 @@ const dbWork = {
     "the-next-lap-web": {
       "Link": "/the-next-lap-web",
       "Name": "The Next Lap: Business Web",
-      "Thumbnail": "/assets/pictures/post/NextLap-0.png",
-      "Format": [".png", ".apng"],
+      "Thumbnail": "/assets/pictures/post/NextLap-0",
+      "Format": ".png",
       "Title": "TheNextLap",
       "Duration": "1.5 months",
       "Date": "2023",
@@ -248,8 +248,8 @@ const dbWork = {
     "lane-detection": {
       "Link": "/lane-detection",
       "Name": "Computer Vision: Lane Detection",
-      "Thumbnail": "/assets/pictures/post/LaneDetection-0.png",
-      "Format": [".png", ".apng"],
+      "Thumbnail": "/assets/pictures/post/LaneDetection-0",
+      "Format": ".png",
       "Title": "LaneDetection",
       "Date": "2022",
       "Duration": "2 weeks",
@@ -319,8 +319,8 @@ const dbWork = {
     "inquiry": {
       "Link": "/inquiry",
       "Name": "Reimagined One-Stop: Inquiry",
-      "Thumbnail": "/assets/pictures/post/Inquiry-0.png",
-      "Format": [".png", ".apng"],
+      "Thumbnail": "/assets/pictures/post/Inquiry-0",
+      "Format": ".png",
       "Title": "Inquiry",
       "Duration": "1 week",
       "Date": "2022",
@@ -443,8 +443,8 @@ const dbWork = {
     "student-council": {
       "Link": "/student-council",
       "Name": "Fulbright Student Council: Branding and Posts",
-      "Thumbnail": "/assets/pictures/post/StudentCouncil-0.png",
-      "Format": [".png", ".apng"],
+      "Thumbnail": "/assets/pictures/post/StudentCouncil-0",
+      "Format": ".png",
       "Title": "StudentCouncil",
       "Duration": "3 months",
       "Date": "2020",
@@ -594,8 +594,8 @@ const dbWork = {
     "momo-o2o": {
       "Link": "/momo-o2o",
       "Name": "MoMo: O2O Proposal",
-      "Thumbnail": "/assets/pictures/post/MoMo-0.png",
-      "Format": [".png", ".apng"],
+      "Thumbnail": "/assets/pictures/post/MoMo-0",
+      "Format": ".png",
       "Title": "Momo",
       "Duration": "1.5 months",
       "Date": "2022",

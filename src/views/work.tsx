@@ -6,6 +6,7 @@ import * as React from 'react';
 import { useState } from 'react';
 import '../stylesheets/work.css';
 import { useSearchParams } from 'react-router-dom';
+import { FastImage } from './image';
 
 interface WorkProps {
   workField: { [key: string]: any };
@@ -211,11 +212,13 @@ export function WorkSection(
 ): JSX.Element {
   return (
     <>
-      <a
-        href={'/works' + posts[id]['Link']}
-        style={{ backgroundImage: 'url(' + posts[id]['Thumbnail'] + ')' }}
-        className="post-section width-30"
-      >
+      <a href={'/works' + posts[id]['Link']} className="post-section width-30">
+        <FastImage
+          src={`${posts[id]['Thumbnail']}${posts[id]['Format']}`}
+          placeholderSrc={`${posts[id]['Thumbnail']}@0.33x${posts[id]['Format']}`}
+          className="width-30"
+          alt={posts[id]['Name']}
+        />
         <div className="post-overlay" />
         <div className="post-title">
           <h3>{posts[id]['Name']}</h3>

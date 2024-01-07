@@ -363,6 +363,11 @@
   transition: all 0.2s ease-out;
 }
 
+.post-section #thumbnail-picture {
+  position: absolute;
+  object-fit: cover;
+}
+
 @media screen and (max-width: 1024px) {
   .post-section {
     height: calc((100vw - 2.5rem * 2 - 16px) * 2 / 3);
