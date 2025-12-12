@@ -77,7 +77,7 @@ const dbAbout = {
   },
 
   "Details": {
-    "Primary": "I am Quan, a software engineer with strong applied machine learning experience.",
+    "Primary": "I'm Quan, a software engineer with strong applied machine learning experience.",
     "Secondary": "I build end-to-end intelligent systems that combine engineering rigor, human-centered design, and creative problem-solving. I enjoy making arts in my free time."
   },
 

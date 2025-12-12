@@ -40,7 +40,8 @@ export const About: React.FC<AboutProps> = ({
                   placeholderSrc={`${journey['Image']}@0.33x.webp`}
                   className={journey['Landspace'] ? 'landscape' : 'portrait'}
                   alt={journey['Year']}
-                  style={`left: ${journey['HorizontalOffset']}rem; top: ${journey['VerticalOffset']}rem`}
+                  leftOffset={journey['HorizontalOffset']}
+                  topOffset={journey['VerticalOffset']}
                 />
               </div>
             </>
