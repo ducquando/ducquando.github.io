@@ -7,6 +7,7 @@ import { lazy, useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Header, Footer } from './views';
 
+import dbHome from '../assets/data/home.js';
 import dbAbout from '../assets/data/about.js';
 import dbContact from '../assets/data/contact.js';
 import dbWork from '../assets/data/work.js';
@@ -35,8 +36,10 @@ export const App: React.FC = () => {
             <Home
               workHighlight={dbWork.Filter.curated.Index}
               icons={dbIcon}
+              homeOverview={dbHome.Overview}
               aboutGen={dbAbout.General}
               contactEmail={dbContact.Email}
+              contactLocation={dbContact.Contact.Location}
               workPost={dbWork.Post}
               workField={dbWork.Field}
             />
@@ -81,7 +84,7 @@ export const App: React.FC = () => {
               icons={dbIcon}
               contactEmail={dbContact.Email}
               contactConnect={dbContact.Connect}
-              contactInfo={dbContact.Contact}
+              contactInfo={Object.values(dbContact.Contact)}
             />
           }
         />

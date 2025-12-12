@@ -10,16 +10,20 @@ import '../stylesheets/work.css';
 interface HomeProps {
   workHighlight: string[];
   icons: { [key: string]: any };
+  homeOverview: { [key: string]: any };
   aboutGen: { [key: string]: any };
   contactEmail: { [key: string]: any };
+  contactLocation: { [key: string]: any };
   workPost: { [key: string]: any };
   workField: { [key: string]: any };
 }
 
 export const Home: React.FC<HomeProps> = ({
   icons,
+  homeOverview,
   aboutGen,
   contactEmail,
+  contactLocation,
   workHighlight,
   workPost,
   workField,
@@ -54,10 +58,8 @@ export const Home: React.FC<HomeProps> = ({
               />
             </picture>
             <div id="thumbnail-section" className="width-25">
-              <p className="mid">
-                Computer intelligence fuels my visual creations
-              </p>
-              <h2>I am QUAN. Welcome to my euphoric journey 👋</h2>
+              <p className="mid">{homeOverview['Primary']}</p>
+              <h2>{homeOverview['Secondary']}</h2>
             </div>
           </div>
         </div>
@@ -86,10 +88,7 @@ export const Home: React.FC<HomeProps> = ({
           </div>
           <div id="about-container">
             <div className="width-90" style={{ margin: 'auto' }}>
-              <p className="mid width-60">
-                Quan is an UX engineer with 5 years of experience in developing
-                and designing innovative solutions.
-              </p>
+              <p className="mid width-60">{aboutGen['Overview']}</p>
             </div>
             <div className="about-section width-90" style={{ margin: 'auto' }}>
               <div className="about-items general-section">
@@ -143,7 +142,7 @@ export const Home: React.FC<HomeProps> = ({
             </p>
           </div>
           <p>
-            Based in Ho Chi Minh City, Vietnam <br /> Work worldwide
+            Based in {contactLocation.Details} <br /> Work worldwide
           </p>
         </div>
       </>

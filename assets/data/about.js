@@ -15,7 +15,7 @@ const dbAbout = {
     },
     {
       "Year": "2017",
-      "Description": "During my high school years, I developed and refined my graphic design skills by joining student clubs and non-profit social projects as Media & Design member and leader.",
+      "Description": "During high school, I developed visual communication and leadership skills through design roles in student clubs and non-profit projects.",
       "Image": "/assets/pictures/about/2017",
       "Format": ".png",
       "Landspace": false,
@@ -24,7 +24,7 @@ const dbAbout = {
     },
     {
       "Year": "2020",
-      "Description": "I started my undergraduate learning at Fulbright University Vietnam as an intended Arts and Media majored student.",
+      "Description": "I began my undergraduate studies at Fulbright University Vietnam and discovered my passion for building interactive, human-centered computational systems.",
       "Image": "/assets/pictures/about/2020",
       "Format": ".png",
       "Landspace": true,
@@ -33,7 +33,7 @@ const dbAbout = {
     },
     {
       "Year": "2021",
-      "Description": "In the summer of freshman year, I got the first internship at an international agency, TBWA, as a graphic designer.",
+      "Description": "I interned as a graphic designer at TBWA and had the best opportunity to sharpen my creative direction, visual reasoning, and product communication skills.",
       "Image": "/assets/pictures/about/2021",
       "Format": ".png",
       "Landspace": true,
@@ -41,18 +41,18 @@ const dbAbout = {
       "VerticalOffset": "0"
     },
     {
-      "Year": "2022",
-      "Description": "Inspired by a Computer Science professor, I made a huge switch to Computer Science and conducted my own studies for an emerging sub-field called Human-Computer Interaction.",
-      "Image": "/assets/pictures/about/2022",
+      "Year": "2023",
+      "Description": "I expanded into full-stack development, simulations, and applied ML. I built products involving navigation, agent-based models, and time-series prediction.",
+      "Image": "/assets/pictures/about/2023",
       "Format": ".png",
       "Landspace": false,
       "HorizontalOffset": "6",
       "VerticalOffset": "-1"
     },
     {
-      "Year": "2023",
-      "Description": "I continued pursuing my interest in UX/UI development while also exploring other fields of study. I challenged myself by taking courses in Security, Mathematics, and Artificial Intelligence. I also tried apply those knowledge into my human-centric product creation.",
-      "Image": "/assets/pictures/about/2023",
+      "Year": "2024",
+      "Description": "I joined KMS Technology and developed automated testing frameworks for web and mobile apps. This experience shaped my interest in making reliable softwares and human-in-the-loop systems.",
+      "Image": "/assets/pictures/about/2024",
       "Format": ".png",
       "Landspace": false,
       "HorizontalOffset": "7",
@@ -60,8 +60,8 @@ const dbAbout = {
     },
     {
       "Year": "Now",
-      "Description": "I'm in my last year of college and looking for an opportunity to continue learning and strengthening skill sets.",
-      "Image": "/assets/pictures/about/2024",
+      "Description": "I focus on software engineering and machine learning research, currently pursuing an M.S. in Computer Science and working on physics-informed neural networks and computer simulations.",
+      "Image": "/assets/pictures/about/2025",
       "Format": ".png",
       "Landspace": true,
       "HorizontalOffset": "9",
@@ -70,6 +70,7 @@ const dbAbout = {
   ],
 
   "General": {
+    "Overview": "Quan is an UX engineer with 5 years of experience in developing and designing innovative solutions.",
     "Years": "5+",
     "Project": "30+",
     "Stakeholders": "20+"
@@ -77,11 +78,118 @@ const dbAbout = {
 
   "Experience": [
     {
-      "Name": "Product Development",
-      "Description": "As an undergraduate student majoring in Computer Science with  minor in Psychology, I'm confident in my ability to develop user-centric products. I enjoy working on challenging and impactful problems that require creativity and innovation. <br><br> I have some experience working on UX/UI projects within both academic and business contexts, where I applied my skills in data analysis, user research, prototyping, testing, and deployment.",
-      "Thumbnail": "/assets/pictures/about/Journey1",
+      "Name": "Machine Learning & Applied AI",
+      "Description": "My machine learning work focuses on building applied, end-to-end intelligent systems. I have experience with neural networks, simulations, agent-based modeling, and computer vision. My recent research includes developing Physics-Informed Neural Networks (PINNs) for scientific modeling and designing network simulations for social influence dynamics.",
+      "Thumbnail": "/assets/pictures/about/Journey3",
       "Format": ".png",
       "Years": "2+",
+      "Project": "4+",
+      "Stakeholders": "3+",
+      "Skills": [
+        {
+          "Image": "/assets/pictures/tools/Python",
+          "Format": ".png",
+          "SkillName": "Python"
+        },
+        {
+          "Image": "/assets/pictures/tools/PyTorch",
+          "Format": ".png",
+          "SkillName": "PyTorch"
+        },
+        {
+          "Image": "/assets/pictures/tools/ScikitLearn",
+          "Format": ".png",
+          "SkillName": "Scikit-learn"
+        },
+        {
+          "Image": "/assets/pictures/tools/TensorFlow",
+          "Format": ".png",
+          "SkillName": "TensorFlow"
+        },
+        {
+          "Image": "/assets/pictures/tools/R",
+          "Format": ".png",
+          "SkillName": "R"
+        },
+      ]
+    },
+    {
+      "Name": "Software Engineering",
+      "Description": "I specialize in building full-stack applications, automation systems, and computational tools. I enjoy designing architectures, optimizing performance, and creating interactive experiences. My engineering work spans frontend development, backend APIs, cloud deployment, and scalable automation frameworks.",
+      "Thumbnail": "/assets/pictures/about/Journey2",
+      "Format": ".png",
+      "Years": "3+",
+      "Project": "10+",
+      "Stakeholders": "5+",
+      "Skills": [
+        {
+          "Image": "/assets/pictures/tools/Python",
+          "Format": ".png",
+          "SkillName": "Python"
+        },
+        {
+          "Image": "/assets/pictures/tools/TypeScript",
+          "Format": ".png",
+          "SkillName": "TypeScript"
+        },
+        {
+          "Image": "/assets/pictures/tools/JavaScript",
+          "Format": ".png",
+          "SkillName": "JavaScript"
+        },
+        {
+          "Image": "/assets/pictures/tools/Java",
+          "Format": ".png",
+          "SkillName": "Java"
+        },
+        {
+          "Image": "/assets/pictures/tools/Swift",
+          "Format": ".png",
+          "SkillName": "Swift"
+        },
+        {
+          "Image": "/assets/pictures/tools/React",
+          "Format": ".png",
+          "SkillName": "React"
+        },
+        {
+          "Image": "/assets/pictures/tools/NodeJS",
+          "Format": ".png",
+          "SkillName": "NodeJS"
+        },
+        {
+          "Image": "/assets/pictures/tools/SQL",
+          "Format": ".png",
+          "SkillName": "SQL"
+        },
+        {
+          "Image": "/assets/pictures/tools/Docker",
+          "Format": ".png",
+          "SkillName": "Docker"
+        },
+        {
+          "Image": "/assets/pictures/tools/AmazonEC2",
+          "Format": ".png",
+          "SkillName": "Amazon EC2"
+        },
+        {
+          "Image": "/assets/pictures/tools/Playwright",
+          "Format": ".png",
+          "SkillName": "Playwright"
+        },
+        {
+          "Image": "/assets/pictures/tools/Appium",
+          "Format": ".png",
+          "SkillName": "Appium"
+        },
+      ]
+    },
+    {
+      "Name": "Product & Human-Centered Engineering",
+      "Description": "With a foundation in Computer Science and Psychology, I design and build human-centered digital systems. I combine UX reasoning with engineering execution to deliver intuitive, performant, and data-driven products. I have experience conducting user research, prototyping, and deploying full-featured applications in academic and industry settings.",
+      "Thumbnail": "/assets/pictures/about/Journey1",
+      "Format": ".png",
+      "Years": "3+",
       "Project": "10+",
       "Stakeholders": "5+",
       "Skills": [
@@ -103,80 +211,8 @@ const dbAbout = {
       ]
     },
     {
-      "Name": "Software Engineering",
-      "Description": "I'm on my way to make programming aesthetically beautiful. I love making cool things with programming languages such as websites, apps, games, and even art. For example, I made programs that can guess suggest research paper you might like, connect students' voices, navigate rooms on campus, and beautify images. <br><br> I have experience in using various technologies and frameworks, such as HTML, CSS, JavaScript, Swift, Java, Dart, and Python. I'm always curious about learning new things and exploring new possibilities with programming.",
-      "Thumbnail": "/assets/pictures/about/Journey2",
-      "Format": ".png",
-      "Years": "3+",
-      "Project": "10+",
-      "Stakeholders": "5+",
-      "Skills": [
-        {
-          "Image": "/assets/pictures/tools/Python",
-          "Format": ".png",
-          "SkillName": "Python"
-        },
-        {
-          "Image": "/assets/pictures/tools/JavaScript",
-          "Format": ".png",
-          "SkillName": "JavaScript"
-        },
-        {
-          "Image": "/assets/pictures/tools/Swift",
-          "Format": ".png",
-          "SkillName": "Swift"
-        },
-        {
-          "Image": "/assets/pictures/tools/SQL",
-          "Format": ".png",
-          "SkillName": "SQL"
-        },
-        {
-          "Image": "/assets/pictures/tools/Java",
-          "Format": ".png",
-          "SkillName": "Java"
-        },
-        {
-          "Image": "/assets/pictures/tools/Dart",
-          "Format": ".png",
-          "SkillName": "Dart"
-        }
-      ]
-    },
-    {
-      "Name": "Data Science and AI",
-      "Description": "Data science is not my expertise, yet my realm is to combine machine learning with visual elements to create aesthetically user-centric products. Some of my applications that integrate machine learning models are lane detection program, recommender system, covid simulation, and stocks price prediction.",
-      "Thumbnail": "/assets/pictures/about/Journey3",
-      "Format": ".png",
-      "Years": "1+",
-      "Project": "4+",
-      "Stakeholders": "2+",
-      "Skills": [
-        {
-          "Image": "/assets/pictures/tools/Python",
-          "Format": ".png",
-          "SkillName": "Python"
-        },
-        {
-          "Image": "/assets/pictures/tools/R",
-          "Format": ".png",
-          "SkillName": "R"
-        },
-        {
-          "Image": "/assets/pictures/tools/ScikitLearn",
-          "Format": ".png",
-          "SkillName": "Scikit-learn"
-        },
-        {
-          "Image": "/assets/pictures/tools/TensorFlow",
-          "Format": ".png",
-          "SkillName": "Tensorflow"
-        }
-      ]
-    },
-    {
-      "Name": "Graphic Design",
-      "Description": "My graphic collection contains various deliverables: from branding, art directions, posters to social posts. I'm committed to modern 21st-century styles such as flat design, collage, and minimalism. I enjoy experimenting with different colors, shapes, and typography to create eye-catching and memorable designs. <br><br> I have worked with clients from various industries, such as education, entertainment, and fashion. After 5 years of experience, I officially retired to focus on developing products and softwares. However, graphic design is still my passion and if you're interested in my artworks, please leave me a note.",
+      "Name": "Visual Design",
+      "Description": "I have professional experience in branding, visual communication, and digital media. Although my focus is now on engineering and machine learning, my design background continues to influence my approach to product thinking and user experience.",
       "Thumbnail": "/assets/pictures/about/Journey4",
       "Format": ".png",
       "Years": "5",

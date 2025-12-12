@@ -3,16 +3,16 @@
 // Copyright (c) Do Duc Quan. All rights reserved.
 
 const dbContact = {
-  "Contact": [
-    {
-      "Details": "Do Duc Quan (he/him)",
+  "Contact": {
+    "Name": {
+      "Details": "Quan Do (he/him)",
       "SVG": "Person"
     },
-    {
-      "Details": "Ho Chi Minh City, Viet Nam",
+    "Location": {
+      "Details": "Atlanta, Georgia, USA",
       "SVG": "Location"
     }
-  ],
+  },
 
   "Email": {
     "Details": "dodquan@gmail.com",
@@ -25,11 +25,19 @@ const dbContact = {
   "Connect": [
     {
       "Name": "LinkedIn",
-      "Details": "Duc-Quan Do (@quannz)",
-      "Link": "https://www.linkedin.com/in/quannz/",
+      "Details": "Duc Quan Do (@dodquan)",
+      "Link": "https://www.linkedin.com/in/dodquan/",
       "ViewBox": "0 0 150.4 155.83",
       "Size": "12",
       "SVG": "LinkedIn"
+    },
+    {
+      "Name": "GitHub",
+      "Details": "Duc-Quan Do (@ducquando)",
+      "Link": "https://github.com/ducquando",
+      "ViewBox": "0 0 172.36 167.82",
+      "Size": "16",
+      "SVG": "GitHub"
     },
     {
       "Name": "Behance",
@@ -39,14 +47,6 @@ const dbContact = {
       "Size": "16",
       "SVG": "Behance"
     },
-    {
-      "Name": "GitHub",
-      "Details": "Duc-Quan Do (@ducquando)",
-      "Link": "https://github.com/ducquando",
-      "ViewBox": "0 0 172.36 167.82",
-      "Size": "16",
-      "SVG": "GitHub"
-    }
   ]
 }
 
