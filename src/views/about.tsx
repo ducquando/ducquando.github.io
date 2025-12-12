@@ -11,12 +11,16 @@ interface AboutProps {
   title: string;
   aboutJourney: { [key: string]: any }[];
   aboutExp: { [key: string]: any }[];
+  aboutDetails: { [key: string]: any };
+  aboutFuture: { [key: string]: any };
 }
 
 export const About: React.FC<AboutProps> = ({
   title,
   aboutJourney,
   aboutExp,
+  aboutDetails,
+  aboutFuture,
 }) => {
   useEffect(() => {
     document.title = title;
@@ -35,9 +39,8 @@ export const About: React.FC<AboutProps> = ({
                   src={`${journey['Image']}${journey['Format']}`}
                   placeholderSrc={`${journey['Image']}@0.33x.webp`}
                   className={journey['Landspace'] ? 'landscape' : 'portrait'}
-                  left={journey['HorizontalOffset'] + 'rem'}
-                  top={journey['VerticalOffset'] + 'rem'}
                   alt={journey['Year']}
+                  style={`left: ${journey['HorizontalOffset']}rem; top: ${journey['VerticalOffset']}rem`}
                 />
               </div>
             </>
@@ -118,20 +121,7 @@ export const About: React.FC<AboutProps> = ({
                     className="width-60"
                     alt={exp['Name']}
                   />
-                  <a
-                    href={
-                      exp['Name'] == 'Software Engineering'
-                        ? '/works?pd=false&ds=false&gd=false'
-                        : exp['Name'] == 'Product Development'
-                        ? '/works?se=false&ds=false&gd=false'
-                        : exp['Name'] == 'Data Science and AI'
-                        ? '/works?se=false&pd=false&gd=false'
-                        : exp['Name'] == 'Graphic Design'
-                        ? '/works?se=false&pd=false&ds=false'
-                        : '/works'
-                    }
-                    className="button large width-60"
-                  >
+                  <a href={exp['CTA']} className="button large width-60">
                     <p className="button-text">{`View ${exp['Name']} works`}</p>
                   </a>
                 </div>
@@ -167,11 +157,10 @@ export const About: React.FC<AboutProps> = ({
         </picture>
         <div className="width-90">
           <p className="mid width-60">
-            I am Quan, a creative UX engineer with 5 years of experience in
-            developing and designing innovative solutions. <br />
-            <br /> My main fields are Product Development and Software
-            Engineering. I also enjoy experimenting with AI and designing
-            graphic arts in my free time.
+            {aboutDetails['Primary']}
+            <br />
+            <br />
+            {aboutDetails['Secondary']}
           </p>
         </div>
         <div className="divider"></div>
@@ -192,17 +181,13 @@ export const About: React.FC<AboutProps> = ({
 
         {/* Future section */}
         <div className="about-container width-90">
-          <h1>Future Development</h1>
+          <h1>Future Direction</h1>
           <div className="width-90">
             <p className="width-60">
-              I am seeking to leverage my expertise in software engineer and
-              product development by joining cutting-edge projects that aims at
-              solving real-world problems. <br />
-              <br /> Besides, a job/title in academia is what I'm aiming for in
-              longer terms. I am fascinated in the phenomenally interactive
-              application of AI and Large Language Model (i.e., Chat GPT) on
-              everyday's tasks, including but not limited to write emails,
-              design graphics, browse inspirations, and write “bugs”.
+              {aboutFuture['Primary']}
+              <br />
+              <br />
+              {aboutFuture['Secondary']}
             </p>
           </div>
         </div>

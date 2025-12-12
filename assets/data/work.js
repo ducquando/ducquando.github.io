@@ -37,11 +37,11 @@ const dbWork = {
   },
 
   "Field": {
-    "pd": {
-      "ID": "pd",
-      "Name": "Product development",
-      "Alias": "Product",
-      "PostID": ["the-next-lap-web", "inquiry", "momo-o2o"]
+    "ds": {
+      "ID": "ds",
+      "Name": "Machine Learning & Applied AI",
+      "Alias": "Machine Learning",
+      "PostID": ["lane-detection"]
     },
     "se": {
       "ID": "se",
@@ -49,16 +49,16 @@ const dbWork = {
       "Alias": "Software",
       "PostID": ["the-next-lap-web", "lane-detection"]
     },
-    "ds": {
-      "ID": "ds",
-      "Name": "Data science and AI",
-      "Alias": "Data",
-      "PostID": ["lane-detection"]
+    "pd": {
+      "ID": "pd",
+      "Name": "Product & Human-Centered Engineering",
+      "Alias": "Product",
+      "PostID": ["the-next-lap-web", "inquiry", "momo-o2o"]
     },
     "gd": {
       "ID": "gd",
-      "Name": "Graphic design",
-      "Alias": "Graphic",
+      "Name": "Visual design",
+      "Alias": "Design",
       "PostID": ["student-council"]
     }
   },

@@ -52,6 +52,8 @@ export const App: React.FC = () => {
               title="About"
               aboutJourney={dbAbout.Journey}
               aboutExp={dbAbout.Experience}
+              aboutDetails={dbAbout.Details}
+              aboutFuture={dbAbout.Future}
             />
           }
         />
