@@ -34,7 +34,7 @@ export const App: React.FC = () => {
           path="/"
           element={
             <Home
-              workHighlight={dbWork.Filter.curated.Index}
+              workHighlight={dbWork.Filter.default.Index}
               icons={dbIcon}
               homeOverview={dbHome.Overview}
               aboutGen={dbAbout.General}

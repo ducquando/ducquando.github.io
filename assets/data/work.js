@@ -4,8 +4,8 @@
 
 const dbWork = {
   "Filter": {
-    "curated": {
-      "Sort": "curated",
+    "default": {
+      "Sort": "default",
       "Index": [
         "inquiry",
         "momo-o2o",
@@ -24,8 +24,8 @@ const dbWork = {
         "the-next-lap-web"
       ]
     },
-    "recent": {
-      "Sort": "recent",
+    "date": {
+      "Sort": "date",
       "Index": [
         "the-next-lap-web",
         "lane-detection",

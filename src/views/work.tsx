@@ -23,7 +23,7 @@ export const Work: React.FC<WorkProps> = ({
 }) => {
   const [searchParams] = useSearchParams();
   const [paramSort, setParamSort] = useState(
-    searchParams.get('sort') ?? 'curated',
+    searchParams.get('sort') ?? 'default',
   );
   const [paramSE, setParamSE] = useState(
     (searchParams.get('se') && searchParams.get('se') == 'true') ?? true,
@@ -152,7 +152,7 @@ export const Work: React.FC<WorkProps> = ({
                 >
                   <path d={icons['Field']} />
                 </svg>
-                <h2>Field</h2>
+                <h2>Filter</h2>
               </div>
               <div id="filter-container">{FilterSection()}</div>
             </div>
@@ -169,11 +169,11 @@ export const Work: React.FC<WorkProps> = ({
                 >
                   <path d={icons['Sort']} />
                 </svg>
-                <h2>Sort</h2>
+                <h2>Sort by</h2>
               </div>
 
               <ul id="sort-container">
-                {['Curated', 'Name', 'Recent'].map((e) => {
+                {['Default', 'Name', 'Date'].map((e) => {
                   const newID = e.toLowerCase();
                   const isActive = newID == paramSort ? ' active' : '';
                   return (
