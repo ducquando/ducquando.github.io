@@ -10,8 +10,6 @@ export const FastImage = ({
   placeholderSrc,
   src,
   className,
-  leftOffset,
-  rightOffset,
   ...props
 }: {
   [key: string]: string;
@@ -33,7 +31,10 @@ export const FastImage = ({
       {...{ src: imgSource, ...props }}
       className={`loading-image ${customClass} ${className}`}
       alt={props.alt || ''}
-      style={{ left: leftOffset + 'rem', right: rightOffset + 'rem' }}
+      style={{
+        left: (props.leftOffset || '0') + 'rem',
+        right: (props.rightOffset || '0') + 'rem',
+      }}
     />
   );
 };

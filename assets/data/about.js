@@ -54,7 +54,7 @@ const dbAbout = {
       "Description": "I joined KMS Technology and developed automated testing frameworks for web and mobile apps. This experience shaped my interest in making reliable softwares and human-in-the-loop systems.",
       "Image": "/assets/pictures/about/2024",
       "Format": ".png",
-      "Landspace": false,
+      "Landspace": true,
       "HorizontalOffset": "7",
       "VerticalOffset": "-1"
     },
