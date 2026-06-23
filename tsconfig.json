@@ -1,17 +1,19 @@
 {
   "compilerOptions": {
-    "target": "ES5",
+    "target": "ES2022",
     "module": "ESNext",
-    "moduleResolution": "node",
-    "allowJs": true,
-    "jsx": "react",
+    "moduleResolution": "Bundler",
+    "allowJs": false,
+    "jsx": "react-jsx",
     "sourceMap": true,
-    "outDir": "./generated",
     "strict": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    // "noEmit": true
   },
-  "include": ["./src/**.*"],
+  "include": ["src"],
 }

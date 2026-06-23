@@ -1,11 +1,12 @@
 {
   "name": "ducquando.github.io",
-  "version": "1.1.1",
+  "version": "2.0.0",
   "private": true,
-  "description": "Quan's Journey In Tech",
+  "description": "Quan Do",
   "scripts": {
-    "start": "webpack-dev-server --host 0.0.0.0 --open",
-    "build": "webpack --mode=production"
+    "start": "webpack serve --mode=development --open",
+    "build": "webpack --mode=production",
+    "prepare": "husky"
   },
   "repository": {
     "type": "git",
@@ -14,39 +15,38 @@
   "author": "Do Duc Quan <dodquan@gmail.com>",
   "license": "GPL-3.0",
   "dependencies": {
-    "@radix-ui/react-icons": "^1.0.3",
+    "@radix-ui/react-icons": "^1.3.2",
     "@stitches/react": "^0.1.9",
-    "@uidotdev/usehooks": "^2.4.1",
+    "@uidotdev/usehooks": "^2.4.x",
     "lodash": "^4.17.21",
-    "prop-types": "^15.7.2",
+    "prop-types": "^15.8.x",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-interactive": "^1.1.2",
-    "react-router-dom": "^6.21.1"
+    "react-router-dom": "^7.18.0"
   },
   "devDependencies": {
+    "@eslint/js": "^9.39.4",
     "@types/lodash": "^4.14.202",
-    "@types/react": "^18.2.45",
-    "@types/react-dom": "^18.2.18",
-    "@types/react-router-dom": "^5.1.7",
-    "@typescript-eslint/eslint-plugin": "^4.22.0",
-    "@typescript-eslint/parser": "^4.22.0",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@typescript-eslint/eslint-plugin": "^8",
+    "@typescript-eslint/parser": "^8",
     "css-loader": "^7.1.2",
-    "eslint": "^7.25.0",
-    "eslint-config-react-app": "^6.0.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-react": "^7.23.2",
-    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint": "9.7",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.1.1",
     "glob": "^10.5.0",
-    "husky": "^4.3.8",
-    "lint-staged": "^10.5.4",
-    "prettier": "^2.2.1",
-    "source-map-loader": "^1.1.3",
-    "style-loader": "^2.0.0",
-    "terser-webpack-plugin": "^4.2.3",
-    "ts-loader": "^8.2.0",
-    "typescript": "^4.2.4",
+    "globals": "^17.7.0",
+    "html-webpack-plugin": "^5.6.7",
+    "husky": "^9",
+    "lint-staged": "^16",
+    "prettier": "^3",
+    "source-map-loader": "^5",
+    "style-loader": "^4",
+    "ts-loader": "^9",
+    "typescript": "^5.8",
+    "typescript-eslint": "^8.62.0",
     "webpack": "^5.103.0",
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.2"
@@ -54,11 +54,6 @@
   "prettier": {
     "trailingComma": "all",
     "singleQuote": true
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "lint-staged": {
     "src/**/*": "prettier --write --ignore-unknown"

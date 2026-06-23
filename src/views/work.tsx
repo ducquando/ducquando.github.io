@@ -49,7 +49,7 @@ export const Work: React.FC<WorkProps> = ({
     setParamSort(id);
   }
 
-  function FilterSection(): JSX.Element {
+  function FilterSection() {
     return (
       <>
         {Object.entries(workField).map((params) => {
@@ -91,7 +91,7 @@ export const Work: React.FC<WorkProps> = ({
     );
   }
 
-  function WorksSection(): JSX.Element {
+  function WorksSection() {
     return (
       <>
         {workFilter[paramSort]['Index'].map((id: string) => {
@@ -124,16 +124,16 @@ export const Work: React.FC<WorkProps> = ({
         <picture>
           <source
             media="(max-width: 640px)"
-            srcSet={`../assets/graphics/Works@0.5x.svg`}
+            srcSet={`/graphics/Works@0.5x.svg`}
             className="width-90"
           />
           <source
             media="(min-width: 641px)"
-            srcSet={`../assets/graphics/Works.svg`}
+            srcSet={`/graphics/Works.svg`}
             className="width-90"
           />
           <img
-            src={`../assets/graphics/Works.svg`}
+            src={`/graphics/Works.svg`}
             alt="Works"
             className="width-90"
           />
@@ -209,7 +209,7 @@ export function WorkSection(
   posts: { [key: string]: any },
   fields: { [key: string]: any },
   icons: { [key: string]: any },
-): JSX.Element {
+) {
   return (
     <>
       <a href={'/works' + posts[id]['Link']} className="post-section width-30">

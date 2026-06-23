@@ -2,8 +2,8 @@
 // GNL General Public License v3
 // Copyright (c) Do Duc Quan. All rights reserved.
 
-const dbContact = {
-  "Contact": {
+export const dbContact: Record<string, any> = {
+  Contact: {
     "Name": {
       "Details": "Quan Do (he/him)",
       "SVG": "Person"
@@ -14,15 +14,15 @@ const dbContact = {
     }
   },
 
-  "Email": {
-    "Details": "dodquan@gmail.com",
-    "Link": "dodquan@gmail.com",
+  Email: {
+    "Details": "contact@dodquan.com",
+    "Link": "contact@dodquan.com",
     "ViewBox": "0 0 20 20",
     "Size": "16",
     "SVG": "Email"
   },
 
-  "Connect": [
+  Connect: [
     {
       "Name": "LinkedIn",
       "Details": "Duc Quan Do (@dodquan)",
@@ -49,5 +49,3 @@ const dbContact = {
     },
   ]
 }
-
-export default dbContact;

@@ -27,13 +27,13 @@ export const NotFound: React.FC<NotFoundProps> = ({
         <div className="message-container width-90">
           <p className="mid">{message}</p>
           <div id="message-section">
-            <img src="/assets/graphics/4.svg" alt="4" className="title" />
+            <img src="/graphics/4.svg" alt="4" className="title" />
             <img
-              src="/assets/graphics/LogoFull.svg"
+              src="/graphics/LogoFull.svg"
               alt="Quan\'s logo representing 0"
               className="title rotating"
             />
-            <img src="/assets/graphics/4.svg" alt="4" className="title" />
+            <img src="/graphics/4.svg" alt="4" className="title" />
           </div>
           <a href="/" className="button large width-25">
             <svg

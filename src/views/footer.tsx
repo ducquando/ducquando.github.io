@@ -23,7 +23,7 @@ export const Footer: React.FC<FooterProps> = ({
     viewbox: string,
     size: string,
     width: string,
-  ): JSX.Element {
+  ) {
     return (
       <>
         <a href={link} className={'button large ' + width}>
@@ -43,7 +43,7 @@ export const Footer: React.FC<FooterProps> = ({
 
   function ConnectSection(
     contactConnect: { [key: string]: any }[],
-  ): JSX.Element {
+  ) {
     return (
       <>
         {contactConnect?.map((connect: { [key: string]: any }) => {
@@ -69,7 +69,7 @@ export const Footer: React.FC<FooterProps> = ({
       <div className="width-100" style={{ height: '5.775rem' }}></div>
       <div
         id="footer-container"
-        style={{ backgroundImage: 'url(../assets/graphics/Footer.svg)' }}
+        style={{ backgroundImage: 'url(/graphics/Footer.svg)' }}
       >
         {/* Logo */}
         <div id="footer-logo-section" className="width-100">
@@ -77,7 +77,7 @@ export const Footer: React.FC<FooterProps> = ({
           <img
             id="footer-logo"
             className="rotating"
-            src="/assets/graphics/LogoFull.svg"
+            src="/graphics/LogoFull.svg"
             alt="Quan smiley logo"
           />
         </div>
