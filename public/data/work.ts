@@ -67,7 +67,7 @@ export const dbWork: Record<string, any> = {
     "the-next-lap-web": {
       "Link": "/the-next-lap-web",
       "Name": "The Next Lap: Business Web",
-      "Thumbnail": "/assets/pictures/post/NextLap-0",
+      "Thumbnail": "/pictures/post/NextLap-0",
       "Format": ".png",
       "Title": "TheNextLap",
       "Duration": "1.5 months",
@@ -248,7 +248,7 @@ export const dbWork: Record<string, any> = {
     "lane-detection": {
       "Link": "/lane-detection",
       "Name": "Computer Vision: Lane Detection",
-      "Thumbnail": "/assets/pictures/post/LaneDetection-0",
+      "Thumbnail": "/pictures/post/LaneDetection-0",
       "Format": ".png",
       "Title": "LaneDetection",
       "Date": "2022",
@@ -319,7 +319,7 @@ export const dbWork: Record<string, any> = {
     "inquiry": {
       "Link": "/inquiry",
       "Name": "Reimagined One-Stop: Inquiry",
-      "Thumbnail": "/assets/pictures/post/Inquiry-0",
+      "Thumbnail": "/pictures/post/Inquiry-0",
       "Format": ".png",
       "Title": "Inquiry",
       "Duration": "1 week",
@@ -443,7 +443,7 @@ export const dbWork: Record<string, any> = {
     "student-council": {
       "Link": "/student-council",
       "Name": "Fulbright Student Council: Branding and Posts",
-      "Thumbnail": "/assets/pictures/post/StudentCouncil-0",
+      "Thumbnail": "/pictures/post/StudentCouncil-0",
       "Format": ".png",
       "Title": "StudentCouncil",
       "Duration": "3 months",
@@ -594,7 +594,7 @@ export const dbWork: Record<string, any> = {
     "momo-o2o": {
       "Link": "/momo-o2o",
       "Name": "MoMo: O2O Proposal",
-      "Thumbnail": "/assets/pictures/post/MoMo-0",
+      "Thumbnail": "/pictures/post/MoMo-0",
       "Format": ".png",
       "Title": "Momo",
       "Duration": "1.5 months",

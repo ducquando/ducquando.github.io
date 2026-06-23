@@ -69,7 +69,7 @@ export const Footer: React.FC<FooterProps> = ({
       <div className="width-100" style={{ height: '5.775rem' }}></div>
       <div
         id="footer-container"
-        style={{ backgroundImage: 'url(../assets/graphics/Footer.svg)' }}
+        style={{ backgroundImage: 'url(/graphics/Footer.svg)' }}
       >
         {/* Logo */}
         <div id="footer-logo-section" className="width-100">
@@ -77,7 +77,7 @@ export const Footer: React.FC<FooterProps> = ({
           <img
             id="footer-logo"
             className="rotating"
-            src="/assets/graphics/LogoFull.svg"
+            src="/graphics/LogoFull.svg"
             alt="Quan smiley logo"
           />
         </div>

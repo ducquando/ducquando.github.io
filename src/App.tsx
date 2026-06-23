@@ -6,7 +6,7 @@ import * as React from 'react';
 import { lazy, useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Header, Footer } from './views';
-import { dbHome, dbAbout, dbContact, dbWork, dbIcon } from '../assets/data';
+import { dbHome, dbAbout, dbContact, dbWork, dbIcon } from '../public/data';
 
 const About = lazy(async () => ({ default: (await import('./views')).About }));
 const Contact = lazy(async () => ({

@@ -124,16 +124,16 @@ export const Work: React.FC<WorkProps> = ({
         <picture>
           <source
             media="(max-width: 640px)"
-            srcSet={`../assets/graphics/Works@0.5x.svg`}
+            srcSet={`/graphics/Works@0.5x.svg`}
             className="width-90"
           />
           <source
             media="(min-width: 641px)"
-            srcSet={`../assets/graphics/Works.svg`}
+            srcSet={`/graphics/Works.svg`}
             className="width-90"
           />
           <img
-            src={`../assets/graphics/Works.svg`}
+            src={`/graphics/Works.svg`}
             alt="Works"
             className="width-90"
           />

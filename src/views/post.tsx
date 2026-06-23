@@ -93,28 +93,28 @@ export const Post: React.FC<PostProps> = ({ icons, workField, allPosts }) => {
                     <picture key={index}>
                       <source
                         media="(max-width: 640px)"
-                        srcSet={`../assets/pictures/post/${subcontent['Source']}@0.5x${subcontent['Format']}`}
+                        srcSet={`/pictures/post/${subcontent['Source']}@0.5x${subcontent['Format']}`}
                         onError={(e) => {
                           const target = e.target as HTMLSourceElement;
-                          target.src = `../assets/pictures/post/${subcontent['Source']}${subcontent['Format']}`;
+                          target.src = `/pictures/post/${subcontent['Source']}${subcontent['Format']}`;
                         }}
                         className={subcontent['Style']}
                       />
                       <source
                         media="(min-width: 641px)"
-                        srcSet={`../assets/pictures/post/${subcontent['Source']}${subcontent['Format']}`}
+                        srcSet={`/pictures/post/${subcontent['Source']}${subcontent['Format']}`}
                         className={subcontent['Style']}
                       />
                       <img
-                        src={`../assets/pictures/post/${subcontent['Source']}${subcontent['Format']}`}
+                        src={`/pictures/post/${subcontent['Source']}${subcontent['Format']}`}
                         className={subcontent['Style']}
                         alt={subcontent['Caption']}
                       />
                     </picture>
                   ) : subcontent['Type'] == 'img' ? (
                     <FastImage
-                      src={`../assets/pictures/post/${subcontent['Source']}${subcontent['Format']}`}
-                      placeholderSrc={`../assets/pictures/post/${subcontent['Source']}@0.33x.webp`}
+                      src={`/pictures/post/${subcontent['Source']}${subcontent['Format']}`}
+                      placeholderSrc={`/pictures/post/${subcontent['Source']}@0.33x.webp`}
                       className={subcontent['Style']}
                       alt={subcontent['Caption']}
                     />
@@ -187,16 +187,16 @@ export const Post: React.FC<PostProps> = ({ icons, workField, allPosts }) => {
           <picture>
             <source
               media="(max-width: 640px)"
-              srcSet={`../assets/graphics/${workPost['Title']}@0.5x.svg`}
+              srcSet={`/graphics/${workPost['Title']}@0.5x.svg`}
               className="width-90"
             />
             <source
               media="(min-width: 641px)"
-              srcSet={`../assets/graphics/${workPost['Title']}.svg`}
+              srcSet={`/graphics/${workPost['Title']}.svg`}
               className="width-90"
             />
             <img
-              src={`../assets/graphics/${workPost['Title']}.svg`}
+              src={`/graphics/${workPost['Title']}.svg`}
               alt={title}
               className="width-90"
             />

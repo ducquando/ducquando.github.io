@@ -58,7 +58,7 @@ export const Header: React.FC<HeaderProps> = ({ icons }) => {
           return (
             <a href={page['Link']} key={page['Name']}>
               <img
-                src={'/assets/graphics/' + page['Name'] + '.svg'}
+                src={'/graphics/' + page['Name'] + '.svg'}
                 alt={page['Name'] + ' page'}
                 className="width-90"
               />
@@ -74,7 +74,7 @@ export const Header: React.FC<HeaderProps> = ({ icons }) => {
       <nav>
         <div id="header-container" className="width-100">
           <a href="/" id="nav-logo">
-            <img src="/assets/graphics/Header.svg" alt="Do Duc Quan's logo" />
+            <img src="/graphics/Header.svg" alt="Do Duc Quan's logo" />
           </a>
 
           <span></span>
