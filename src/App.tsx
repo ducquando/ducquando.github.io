@@ -5,7 +5,7 @@
 import { FC, lazy, Suspense, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { Header, Footer, Loading } from './views';
-import { dbHome, dbAbout, dbContact, dbWork, dbIcon } from '../public/data';
+import { dbHome, dbAbout, dbContact, dbWork, dbIcon } from './data';
 
 const About = lazy(() => import('./views/about'));
 const Contact = lazy(() => import('./views/contact'));
