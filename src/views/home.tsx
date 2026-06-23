@@ -2,12 +2,15 @@
 // GNL General Public License v3
 // Copyright (c) Do Duc Quan. All rights reserved.
 
-import * as React from 'react';
+import { FC } from 'react';
+import { Link } from 'react-router-dom';
 import { FastImage } from './image';
 import '../stylesheets/home.css';
 import '../stylesheets/work.css';
+import { useEffect } from 'react';
 
 interface HomeProps {
+  title: string,
   workHighlight: string[];
   icons: { [key: string]: any };
   homeOverview: { [key: string]: any };
@@ -18,7 +21,8 @@ interface HomeProps {
   workField: { [key: string]: any };
 }
 
-export const Home: React.FC<HomeProps> = ({
+const Home: FC<HomeProps> = ({
+  title,
   icons,
   homeOverview,
   aboutGen,
@@ -28,6 +32,10 @@ export const Home: React.FC<HomeProps> = ({
   workPost,
   workField,
 }) => {
+  useEffect(() => {
+    document.title = title;
+  }, []);
+
   function ContentSection() {
     return (
       <>
@@ -73,7 +81,7 @@ export const Home: React.FC<HomeProps> = ({
         <div className="main-section width-100">
           <div className="more-container width-90" style={{ margin: 'auto' }}>
             <h1>About</h1>
-            <a href="/about" className="button more">
+            <Link to="/about" className="button more">
               <p className="button-text">More</p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -84,7 +92,7 @@ export const Home: React.FC<HomeProps> = ({
               >
                 <path d={icons['More']} />
               </svg>
-            </a>
+            </Link>
           </div>
           <div id="about-container">
             <div className="width-90" style={{ margin: 'auto' }}>
@@ -116,7 +124,7 @@ export const Home: React.FC<HomeProps> = ({
         <div className="main-section width-90" style={{ margin: 'auto' }}>
           <div className="more-container">
             <h1>Contact</h1>
-            <a href="/contact" className="button more">
+            <Link to="/contact" className="button more">
               <p className="button-text">More</p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -127,7 +135,7 @@ export const Home: React.FC<HomeProps> = ({
               >
                 <path d={icons['More']} />
               </svg>
-            </a>
+            </Link>
           </div>
 
           <div className="width-60">
@@ -135,9 +143,9 @@ export const Home: React.FC<HomeProps> = ({
               If you want to start a new project or have questions, feel free to
               reach out at <br />
               <span style={{ position: 'relative', left: '-0.375rem' }}>
-                <a href={'mailto:' + contactEmail['Link']} className="button">
+                <Link to={'mailto:' + contactEmail['Link']} className="button">
                   {contactEmail['Details']}
-                </a>
+                </Link>
               </span>
             </p>
           </div>
@@ -173,7 +181,7 @@ export const Home: React.FC<HomeProps> = ({
         {workHighlight?.map((id: string) => {
           return workPost[id]['Highlight'] ? (
             <>
-              <a href={'/works' + workPost[id]['Link']} key={workPost[id]}>
+              <Link to={'/works' + workPost[id]['Link']} key={workPost[id]}>
                 <div className="post-section width-30">
                   <FastImage
                     src={`${workPost[id]['Thumbnail']}${workPost[id]['Format']}`}
@@ -242,7 +250,7 @@ export const Home: React.FC<HomeProps> = ({
                     <p className="button-text">View project</p>
                   </div>
                 </div>
-              </a>
+              </Link>
             </>
           ) : (
             <></>
@@ -258,7 +266,7 @@ export const Home: React.FC<HomeProps> = ({
         <div className="main-section width-90" style={{ margin: 'auto' }}>
           <div className="more-container">
             <h1>Featured works</h1>
-            <a href="/works" className="button more">
+            <Link to="/works" className="button more">
               <p className="button-text">More</p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -269,7 +277,7 @@ export const Home: React.FC<HomeProps> = ({
               >
                 <path d={icons['More']} />
               </svg>
-            </a>
+            </Link>
           </div>
 
           <div id="post-container" className="width-90">
@@ -296,3 +304,5 @@ export const Home: React.FC<HomeProps> = ({
     </>
   );
 };
+
+export default Home;

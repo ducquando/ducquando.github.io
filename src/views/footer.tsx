@@ -2,7 +2,8 @@
 // GNL General Public License v3
 // Copyright © Do Duc Quan. All rights reserved.
 
-import * as React from 'react';
+import { FC } from 'react';
+import { Link } from 'react-router-dom';
 import '../stylesheets/footer.css';
 
 interface FooterProps {
@@ -11,7 +12,7 @@ interface FooterProps {
   icons: { [key: string]: any };
 }
 
-export const Footer: React.FC<FooterProps> = ({
+export const Footer: FC<FooterProps> = ({
   contactEmail,
   contactConnect,
   icons,
@@ -26,7 +27,7 @@ export const Footer: React.FC<FooterProps> = ({
   ) {
     return (
       <>
-        <a href={link} className={'button large ' + width}>
+        <Link to={link} className={'button large ' + width}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width={size}
@@ -36,7 +37,7 @@ export const Footer: React.FC<FooterProps> = ({
             <path d={icon} />
           </svg>
           <p className="button-text">{name}</p>
-        </a>
+        </Link>
       </>
     );
   }
@@ -108,18 +109,18 @@ export const Footer: React.FC<FooterProps> = ({
             Copyright © 2023 Do Duc Quan. All rights reserved.
           </p>
           <div id="footer-nav-links">
-            <a href="/" className="button mid-2">
+            <Link to="/" className="button mid-2">
               <h2>Home</h2>
-            </a>
-            <a href="/about" className="button mid-2">
+            </Link>
+            <Link to="/about" className="button mid-2">
               <h2>About</h2>
-            </a>
-            <a href="/works" className="button mid-2">
+            </Link>
+            <Link to="/works" className="button mid-2">
               <h2>Works</h2>
-            </a>
-            <a href="/contact" className="button mid-2">
+            </Link>
+            <Link to="/contact" className="button mid-2">
               <h2>Contact</h2>
-            </a>
+            </Link>
           </div>
         </div>
 

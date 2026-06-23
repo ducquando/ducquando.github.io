@@ -2,10 +2,10 @@
 // GNL General Public License v3
 // Copyright (c) Do Duc Quan. All rights reserved.
 
-import * as React from 'react';
-import { useEffect } from 'react';
-import '../stylesheets/about.css';
+import { FC, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { FastImage } from './image';
+import '../stylesheets/about.css';
 
 interface AboutProps {
   title: string;
@@ -15,7 +15,7 @@ interface AboutProps {
   aboutFuture: { [key: string]: any };
 }
 
-export const About: React.FC<AboutProps> = ({
+const About: FC<AboutProps> = ({
   title,
   aboutJourney,
   aboutExp,
@@ -122,9 +122,9 @@ export const About: React.FC<AboutProps> = ({
                     className="width-60"
                     alt={exp['Name']}
                   />
-                  <a href={exp['CTA']} className="button large width-60">
+                  <Link to={exp['CTA']} className="button large width-60">
                     <p className="button-text">{`View ${exp['Name']} works`}</p>
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="divider"></div>
@@ -196,3 +196,5 @@ export const About: React.FC<AboutProps> = ({
     </>
   );
 };
+
+export default About;

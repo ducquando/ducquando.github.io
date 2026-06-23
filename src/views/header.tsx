@@ -2,15 +2,15 @@
 // GNL General Public License v3
 // Copyright (c) Do Duc Quan. All rights reserved.
 
-import * as React from 'react';
-import { useState } from 'react';
+import { FC, useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../stylesheets/header.css';
 
 interface HeaderProps {
   icons: { [key: string]: any };
 }
 
-export const Header: React.FC<HeaderProps> = ({ icons }) => {
+export const Header: FC<HeaderProps> = ({ icons }) => {
   // Change states
   const [openSymbol, setOpenSymbol] = useState('active');
   const [closeSymbol, setCloseSymbol] = useState('');
@@ -42,9 +42,9 @@ export const Header: React.FC<HeaderProps> = ({ icons }) => {
       <>
         {pages?.map((page: { [key: string]: any }) => {
           return (
-            <a href={page['Link']} className="button mid-1" key={page['Name']}>
+            <Link to={page['Link']} className="button mid-1" key={page['Name']}>
               <h2>{page['Name']}</h2>
-            </a>
+            </Link>
           );
         })}
       </>
@@ -56,13 +56,13 @@ export const Header: React.FC<HeaderProps> = ({ icons }) => {
       <>
         {pages?.map((page: { [key: string]: any }) => {
           return (
-            <a href={page['Link']} key={page['Name']}>
+            <Link to={page['Link']} key={page['Name']}>
               <img
                 src={'/graphics/' + page['Name'] + '.svg'}
                 alt={page['Name'] + ' page'}
                 className="width-90"
               />
-            </a>
+            </Link>
           );
         })}
       </>
@@ -73,9 +73,9 @@ export const Header: React.FC<HeaderProps> = ({ icons }) => {
     <>
       <nav>
         <div id="header-container" className="width-100">
-          <a href="/" id="nav-logo">
+          <Link to="/" id="nav-logo">
             <img src="/graphics/Header.svg" alt="Do Duc Quan's logo" />
-          </a>
+          </Link>
 
           <span></span>
 
