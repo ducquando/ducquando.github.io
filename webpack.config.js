@@ -6,7 +6,7 @@ module.exports = (_, argv) => ({
 
   output: {
     path: path.resolve(__dirname, 'build'),
-    publicPath: '/',
+    publicPath: argv.mode == 'development' ? '/' : './',
     filename: 'bundle.js',
     clean: true,
   },
@@ -27,9 +27,7 @@ module.exports = (_, argv) => ({
   plugins: [new HtmlWebpackPlugin({template: './public/index.html'})],
 
   devServer: {
-    static: {
-      directory: path.join(__dirname, 'public'),
-    },
+    static: { directory: path.join(__dirname, 'public') },
     allowedHosts: 'all',
     historyApiFallback: true,
   },

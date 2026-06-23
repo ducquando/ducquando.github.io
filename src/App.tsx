@@ -2,8 +2,7 @@
 // GNL General Public License v3
 // Copyright (c) Do Duc Quan. All rights reserved.
 
-import * as React from 'react';
-import { lazy, Suspense, useEffect } from 'react';
+import { FC, lazy, Suspense, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { Header, Footer, Loading } from './views';
 import { dbHome, dbAbout, dbContact, dbWork, dbIcon } from '../public/data';
@@ -17,9 +16,9 @@ const Work = lazy(() => import('./views/work'));
 
 const pageTitle = (title: string) => `${title} | Quan Do`;
 
-export const App: React.FC = () => {
+export const App: FC = () => {
   return (
-    <div>
+    <>
       <Header icons={dbIcon} />
       <div style={{ height: '3.5rem' }}></div>
       <Suspense fallback={<Loading />}>
@@ -103,11 +102,11 @@ export const App: React.FC = () => {
         contactConnect={dbContact.Connect}
         icons={dbIcon}
       />
-    </div>
+    </>
   );
 };
 
-export const ScrollToTop: React.FC = () => {
+export const ScrollToTop: FC = () => {
   const { pathname } = useLocation();
   useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
   return null;

@@ -51,7 +51,7 @@ const About: FC<AboutProps> = ({
     );
   }
 
-  function ExperienceStats(type: string, data: string): React.JSX.Element {
+  function ExperienceStats(type: string, data: string) {
     return (
       <>
         <div className="stats-section">

@@ -2,6 +2,7 @@
 // GNL General Public License v3
 // Copyright (c) Do Duc Quan. All rights reserved.
 
+import { FC } from "react";
 import { Link } from "react-router-dom";
 import { FastImage } from "./image";
 
@@ -12,7 +13,7 @@ interface ThumbnailProps {
   icons: { [key: string]: any },
 }
 
-export const Thumbnail: React.FC<ThumbnailProps> = ({
+export const Thumbnail: FC<ThumbnailProps> = ({
   id,
   posts,
   fields,

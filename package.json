@@ -1,6 +1,6 @@
 {
   "name": "ducquando.github.io",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "private": true,
   "description": "Quan Do",
   "scripts": {
@@ -39,7 +39,7 @@
     "eslint": "9.7",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.1.1",
-    "glob": "^10.5.0",
+    "glob": "^13.0.6",
     "globals": "^17.7.0",
     "html-webpack-plugin": "^5.6.7",
     "husky": "^9",
@@ -52,7 +52,7 @@
     "typescript-eslint": "^8.62.0",
     "webpack": "^5.103.0",
     "webpack-cli": "^6.0.1",
-    "webpack-dev-server": "^5.2.2"
+    "webpack-dev-server": "^5.2.5"
   },
   "prettier": {
     "trailingComma": "all",
@@ -66,5 +66,8 @@
     "src/**/*.{css,json,md}": [
       "prettier --write"
     ]
+  },
+  "overrides": {
+    "uuid": "^11.1.0"
   }
 }
