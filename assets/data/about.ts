@@ -2,8 +2,8 @@
 // GNL General Public License v3
 // Copyright (c) Do Duc Quan. All rights reserved.
 
-const dbAbout = {
-  "Journey": [
+export const dbAbout: Record<string, any> = {
+  Journey: [
     {
       "Year": "2012",
       "Description": "I learned to use computer by playing with different desktop applications. My first mastered tool was Adobe Photoshop.",
@@ -69,24 +69,24 @@ const dbAbout = {
     }
   ],
 
-  "General": {
+  General: {
     "Overview": "Quan is a software engineer and applied ML researcher with a background in human-centered product design.",
     "Years": "5+",
     "Project": "30+",
     "Stakeholders": "20+"
   },
 
-  "Details": {
+  Details: {
     "Primary": "I'm Quan, a software engineer with strong applied machine learning experience.",
     "Secondary": "I build end-to-end intelligent systems that combine engineering rigor, human-centered design, and creative problem-solving. I enjoy making arts in my free time."
   },
 
-  "Future": {
+  Future: {
     "Primary": "I aim to deepen my expertise in software engineering and applied machine learning by contributing to projects that solve real-world challenges through intelligent, human-centered systems.",
     "Secondary": "Long term, I hope to pursue an academic path where I can work on research at the intersection of ML, simulations, and interactive technologies. I'm especially fascinated by AI-augmented workflows, especially about how tools like LLMs can support creativity, design, and everyday problem-solving.",
   },
 
-  "Experience": [
+  Experience: [
     {
       "Name": "Machine Learning & Applied AI",
       "Description": "My machine learning work focuses on building applied, end-to-end intelligent systems. I have experience with neural networks, simulations, agent-based modeling, and computer vision. My recent research includes developing Physics-Informed Neural Networks (PINNs) for scientific modeling and designing network simulations for social influence dynamics.",
@@ -257,5 +257,3 @@ const dbAbout = {
     }
   ]
 };
-
-export default dbAbout;

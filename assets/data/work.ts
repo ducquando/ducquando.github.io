@@ -2,8 +2,8 @@
 // GNL General Public License v3
 // Copyright (c) Do Duc Quan. All rights reserved.
 
-const dbWork = {
-  "Filter": {
+export const dbWork: Record<string, any> = {
+  Filter: {
     "default": {
       "Sort": "default",
       "Index": [
@@ -36,7 +36,7 @@ const dbWork = {
     }
   },
 
-  "Field": {
+  Field: {
     "ds": {
       "ID": "ds",
       "Name": "Machine Learning & Applied AI",
@@ -63,7 +63,7 @@ const dbWork = {
     }
   },
 
-  "Post": {
+  Post: {
     "the-next-lap-web": {
       "Link": "/the-next-lap-web",
       "Name": "The Next Lap: Business Web",
@@ -719,5 +719,3 @@ const dbWork = {
     }
   }
 }
-
-export default dbWork;

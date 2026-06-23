@@ -66,7 +66,7 @@ export const Post: React.FC<PostProps> = ({ icons, workField, allPosts }) => {
     );
   }
 
-  function ContentSection(): JSX.Element {
+  function ContentSection() {
     return (
       <>
         {workPost['Content']?.map(
@@ -130,7 +130,7 @@ export const Post: React.FC<PostProps> = ({ icons, workField, allPosts }) => {
     );
   }
 
-  function PostsSection(): JSX.Element {
+  function PostsSection() {
     return (
       <>
         {workPost['Similar'].map((id: string) => {

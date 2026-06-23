@@ -37,7 +37,7 @@ export const Header: React.FC<HeaderProps> = ({ icons }) => {
     }
   }
 
-  function ItemSection(): JSX.Element {
+  function ItemSection() {
     return (
       <>
         {pages?.map((page: { [key: string]: any }) => {
@@ -51,7 +51,7 @@ export const Header: React.FC<HeaderProps> = ({ icons }) => {
     );
   }
 
-  function BurgerSection(): JSX.Element {
+  function BurgerSection() {
     return (
       <>
         {pages?.map((page: { [key: string]: any }) => {

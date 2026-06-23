@@ -28,7 +28,7 @@ export const Home: React.FC<HomeProps> = ({
   workPost,
   workField,
 }) => {
-  function ContentSection(): JSX.Element {
+  function ContentSection() {
     return (
       <>
         <div className="main-container">
@@ -67,7 +67,7 @@ export const Home: React.FC<HomeProps> = ({
     );
   }
 
-  function AboutSection(): JSX.Element {
+  function AboutSection() {
     return (
       <>
         <div className="main-section width-100">
@@ -110,7 +110,7 @@ export const Home: React.FC<HomeProps> = ({
     );
   }
 
-  function ContactSection(): JSX.Element {
+  function ContactSection() {
     return (
       <>
         <div className="main-section width-90" style={{ margin: 'auto' }}>
@@ -149,7 +149,7 @@ export const Home: React.FC<HomeProps> = ({
     );
   }
 
-  function HighlightHelper(id: string): JSX.Element {
+  function HighlightHelper(id: string) {
     return (
       <>
         {Object.entries(workField).map((fields: { [key: string]: any }) => {
@@ -167,7 +167,7 @@ export const Home: React.FC<HomeProps> = ({
     );
   }
 
-  function HighlightSection(): JSX.Element {
+  function HighlightSection() {
     return (
       <>
         {workHighlight?.map((id: string) => {
@@ -252,7 +252,7 @@ export const Home: React.FC<HomeProps> = ({
     );
   }
 
-  function WorkSection(): JSX.Element {
+  function WorkSection() {
     return (
       <>
         <div className="main-section width-90" style={{ margin: 'auto' }}>

@@ -25,7 +25,7 @@ export const Contact: React.FC<ContactProps> = ({
     document.title = title;
   }, []);
 
-  function InfoSection(): JSX.Element {
+  function InfoSection() {
     return (
       <>
         {contactInfo?.map((info: { [key: string]: any }) => {
@@ -50,7 +50,7 @@ export const Contact: React.FC<ContactProps> = ({
     );
   }
 
-  function SocialSection(): JSX.Element {
+  function SocialSection() {
     return (
       <>
         {contactConnect?.map((connect: { [key: string]: any }) => {

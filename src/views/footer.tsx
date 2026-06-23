@@ -23,7 +23,7 @@ export const Footer: React.FC<FooterProps> = ({
     viewbox: string,
     size: string,
     width: string,
-  ): JSX.Element {
+  ) {
     return (
       <>
         <a href={link} className={'button large ' + width}>
@@ -43,7 +43,7 @@ export const Footer: React.FC<FooterProps> = ({
 
   function ConnectSection(
     contactConnect: { [key: string]: any }[],
-  ): JSX.Element {
+  ) {
     return (
       <>
         {contactConnect?.map((connect: { [key: string]: any }) => {

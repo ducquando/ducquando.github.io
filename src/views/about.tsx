@@ -26,7 +26,7 @@ export const About: React.FC<AboutProps> = ({
     document.title = title;
   }, []);
 
-  function JourneySection(): JSX.Element {
+  function JourneySection() {
     return (
       <>
         {aboutJourney?.map((journey: { [key: string]: any }) => {
@@ -51,7 +51,7 @@ export const About: React.FC<AboutProps> = ({
     );
   }
 
-  function ExperienceStats(type: string, data: string): JSX.Element {
+  function ExperienceStats(type: string, data: string): React.JSX.Element {
     return (
       <>
         <div className="stats-section">
@@ -62,7 +62,7 @@ export const About: React.FC<AboutProps> = ({
     );
   }
 
-  function ExperienceTools(tools: { [key: string]: any }[]): JSX.Element {
+  function ExperienceTools(tools: { [key: string]: any }[]) {
     return (
       <>
         {tools?.map((tool: { [key: string]: any }) => {
@@ -82,7 +82,7 @@ export const About: React.FC<AboutProps> = ({
     );
   }
 
-  function ExperienceSection(): JSX.Element {
+  function ExperienceSection() {
     return (
       <>
         {aboutExp?.map((exp: { [key: string]: any }) => {
