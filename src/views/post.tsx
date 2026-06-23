@@ -2,11 +2,10 @@
 // GNL General Public License v3
 // Copyright (c) Do Duc Quan. All rights reserved.
 
-import * as React from 'react';
-import { useEffect, useRef, useState } from 'react';
+import { FC, useEffect, useRef, useState } from 'react';
 import { Navigate, Link, useParams } from 'react-router-dom';
-import { WorkSection } from './work';
 import { FastImage } from './image';
+import { Thumbnail } from './thumbnail';
 import '../stylesheets/post.css';
 import '../stylesheets/home.css';
 import '../stylesheets/work.css';
@@ -17,7 +16,7 @@ interface PostProps {
   icons: { [key: string]: any };
 }
 
-export const Post: React.FC<PostProps> = ({ icons, workField, allPosts }) => {
+const Post: FC<PostProps> = ({ icons, workField, allPosts }) => {
   const { workID } = useParams();
   const scrollRef = useRef<HTMLInputElement>(null);
   const [scrollTop, setScrollTop] = useState(0);
@@ -133,9 +132,7 @@ export const Post: React.FC<PostProps> = ({ icons, workField, allPosts }) => {
   function PostsSection() {
     return (
       <>
-        {workPost['Similar'].map((id: string) => {
-          return <>{WorkSection(id, allPosts, workField, icons)}</>;
-        })}
+        {workPost['Similar'].map((id: string) => <Thumbnail id={id} posts={allPosts} fields={workField} icons={icons} />)}
       </>
     );
   }
@@ -313,3 +310,5 @@ export const Post: React.FC<PostProps> = ({ icons, workField, allPosts }) => {
     </>
   );
 };
+
+export default Post;

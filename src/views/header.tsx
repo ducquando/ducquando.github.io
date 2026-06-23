@@ -2,8 +2,7 @@
 // GNL General Public License v3
 // Copyright (c) Do Duc Quan. All rights reserved.
 
-import * as React from 'react';
-import { useState } from 'react';
+import { FC, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../stylesheets/header.css';
 
@@ -11,7 +10,7 @@ interface HeaderProps {
   icons: { [key: string]: any };
 }
 
-export const Header: React.FC<HeaderProps> = ({ icons }) => {
+export const Header: FC<HeaderProps> = ({ icons }) => {
   // Change states
   const [openSymbol, setOpenSymbol] = useState('active');
   const [closeSymbol, setCloseSymbol] = useState('');

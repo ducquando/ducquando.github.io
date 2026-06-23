@@ -2,8 +2,7 @@
 // GNL General Public License v3
 // Copyright (c) Do Duc Quan. All rights reserved.
 
-import * as React from 'react';
-import { useEffect } from 'react';
+import { FC, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FastImage } from './image';
 import '../stylesheets/about.css';
@@ -16,7 +15,7 @@ interface AboutProps {
   aboutFuture: { [key: string]: any };
 }
 
-export const About: React.FC<AboutProps> = ({
+const About: FC<AboutProps> = ({
   title,
   aboutJourney,
   aboutExp,
@@ -197,3 +196,5 @@ export const About: React.FC<AboutProps> = ({
     </>
   );
 };
+
+export default About;

@@ -2,8 +2,7 @@
 // GNL General Public License v3
 // Copyright (c) Do Duc Quan. All rights reserved.
 
-import * as React from 'react';
-import { useEffect } from 'react';
+import { FC, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../stylesheets/error.css';
 
@@ -13,7 +12,7 @@ interface NotFoundProps {
   icons: { [key: string]: any };
 }
 
-export const NotFound: React.FC<NotFoundProps> = ({
+const NotFound: FC<NotFoundProps> = ({
   title,
   message,
   icons,
@@ -53,3 +52,5 @@ export const NotFound: React.FC<NotFoundProps> = ({
     </>
   );
 };
+
+export default NotFound;

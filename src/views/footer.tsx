@@ -2,7 +2,7 @@
 // GNL General Public License v3
 // Copyright © Do Duc Quan. All rights reserved.
 
-import * as React from 'react';
+import { FC } from 'react';
 import { Link } from 'react-router-dom';
 import '../stylesheets/footer.css';
 
@@ -12,7 +12,7 @@ interface FooterProps {
   icons: { [key: string]: any };
 }
 
-export const Footer: React.FC<FooterProps> = ({
+export const Footer: FC<FooterProps> = ({
   contactEmail,
   contactConnect,
   icons,

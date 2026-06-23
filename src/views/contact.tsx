@@ -2,8 +2,7 @@
 // GNL General Public License v3
 // Copyright (c) Do Duc Quan. All rights reserved.
 
-import * as React from 'react';
-import { useEffect } from 'react';
+import { FC, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../stylesheets/contact.css';
 
@@ -15,7 +14,7 @@ interface ContactProps {
   contactInfo: { [key: string]: any }[];
 }
 
-export const Contact: React.FC<ContactProps> = ({
+const Contact: FC<ContactProps> = ({
   title,
   contactEmail,
   contactConnect,
@@ -84,17 +83,17 @@ export const Contact: React.FC<ContactProps> = ({
         <picture>
           <source
             media="(max-width: 640px)"
-            srcSet={`/graphics/${title}@0.5x.svg`}
+            srcSet={`/graphics/Contact@0.5x.svg`}
             className="width-90"
           />
           <source
             media="(min-width: 641px)"
-            srcSet={`/graphics/${title}.svg`}
+            srcSet={`/graphics/Contact.svg`}
             className="width-90"
           />
           <img
-            src={`/graphics/${title}.svg`}
-            alt={title}
+            src={`/graphics/Contact.svg`}
+            alt="Contact thumbnail"
             className="width-90"
           />
         </picture>
@@ -134,3 +133,5 @@ export const Contact: React.FC<ContactProps> = ({
     </>
   );
 };
+
+export default Contact;

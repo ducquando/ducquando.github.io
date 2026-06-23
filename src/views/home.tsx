@@ -2,13 +2,15 @@
 // GNL General Public License v3
 // Copyright (c) Do Duc Quan. All rights reserved.
 
-import * as React from 'react';
+import { FC } from 'react';
 import { Link } from 'react-router-dom';
 import { FastImage } from './image';
 import '../stylesheets/home.css';
 import '../stylesheets/work.css';
+import { useEffect } from 'react';
 
 interface HomeProps {
+  title: string,
   workHighlight: string[];
   icons: { [key: string]: any };
   homeOverview: { [key: string]: any };
@@ -19,7 +21,8 @@ interface HomeProps {
   workField: { [key: string]: any };
 }
 
-export const Home: React.FC<HomeProps> = ({
+const Home: FC<HomeProps> = ({
+  title,
   icons,
   homeOverview,
   aboutGen,
@@ -29,6 +32,10 @@ export const Home: React.FC<HomeProps> = ({
   workPost,
   workField,
 }) => {
+  useEffect(() => {
+    document.title = title;
+  }, []);
+
   function ContentSection() {
     return (
       <>
@@ -297,3 +304,5 @@ export const Home: React.FC<HomeProps> = ({
     </>
   );
 };
+
+export default Home;
