@@ -6,7 +6,10 @@
   "scripts": {
     "start": "webpack serve --mode=development --open",
     "build": "webpack --mode=production",
-    "prepare": "husky"
+    "prepare": "husky",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "npm run lint"
   },
   "repository": {
     "type": "git",
@@ -56,6 +59,12 @@
     "singleQuote": true
   },
   "lint-staged": {
-    "src/**/*": "prettier --write --ignore-unknown"
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "src/**/*.{css,json,md}": [
+      "prettier --write"
+    ]
   }
 }

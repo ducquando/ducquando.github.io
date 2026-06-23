@@ -18,7 +18,7 @@ interface PostProps {
 }
 
 export const Post: React.FC<PostProps> = ({ icons, workField, allPosts }) => {
-  let { workID } = useParams();
+  const { workID } = useParams();
   const scrollRef = useRef<HTMLInputElement>(null);
   const [scrollTop, setScrollTop] = useState(0);
   const [subHeader, setSubHeader] = useState('none');
@@ -37,7 +37,7 @@ export const Post: React.FC<PostProps> = ({ icons, workField, allPosts }) => {
     document.title = title;
 
     // Stick the subheader to the page
-    const stickyHeader = (event: Event) => {
+    const stickyHeader = () => {
       const offetSticky = convertRemToPixels(4.5);
       let position = scrollTop;
 
