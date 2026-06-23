@@ -4,9 +4,9 @@
 
 import * as React from 'react';
 import { useState } from 'react';
-import '../stylesheets/work.css';
-import { useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { FastImage } from './image';
+import '../stylesheets/work.css';
 
 interface WorkProps {
   workField: { [key: string]: any };
@@ -212,7 +212,7 @@ export function WorkSection(
 ) {
   return (
     <>
-      <a href={'/works' + posts[id]['Link']} className="post-section width-30">
+      <Link to={'/works' + posts[id]['Link']} className="post-section width-30">
         <FastImage
           src={`${posts[id]['Thumbnail']}${posts[id]['Format']}`}
           placeholderSrc={`${posts[id]['Thumbnail']}@0.33x.webp`}
@@ -282,7 +282,7 @@ export function WorkSection(
           </svg>
           <p className="button-text">View project</p>
         </div>
-      </a>
+      </Link>
     </>
   );
 }

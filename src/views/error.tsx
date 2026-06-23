@@ -4,6 +4,7 @@
 
 import * as React from 'react';
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import '../stylesheets/error.css';
 
 interface NotFoundProps {
@@ -35,7 +36,7 @@ export const NotFound: React.FC<NotFoundProps> = ({
             />
             <img src="/graphics/4.svg" alt="4" className="title" />
           </div>
-          <a href="/" className="button large width-25">
+          <Link to="/" className="button large width-25">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="22"
@@ -46,7 +47,7 @@ export const NotFound: React.FC<NotFoundProps> = ({
               <path d={icons['Home']} />
             </svg>
             <p className="button-text">Back to Home</p>
-          </a>
+          </Link>
         </div>
       </div>
     </>

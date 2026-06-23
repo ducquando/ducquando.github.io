@@ -4,8 +4,9 @@
 
 import * as React from 'react';
 import { useEffect } from 'react';
-import '../stylesheets/about.css';
+import { Link } from 'react-router-dom';
 import { FastImage } from './image';
+import '../stylesheets/about.css';
 
 interface AboutProps {
   title: string;
@@ -122,9 +123,9 @@ export const About: React.FC<AboutProps> = ({
                     className="width-60"
                     alt={exp['Name']}
                   />
-                  <a href={exp['CTA']} className="button large width-60">
+                  <Link to={exp['CTA']} className="button large width-60">
                     <p className="button-text">{`View ${exp['Name']} works`}</p>
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="divider"></div>

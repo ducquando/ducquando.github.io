@@ -3,8 +3,8 @@
 // Copyright (c) Do Duc Quan. All rights reserved.
 
 import * as React from 'react';
-import { lazy, useEffect, useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { lazy, useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { Header, Footer } from './views';
 import { dbHome, dbAbout, dbContact, dbWork, dbIcon } from '../public/data';
 
@@ -89,8 +89,8 @@ export const App: React.FC = () => {
           path="*"
           element={
             <NotFound
-              title="404 Error"
-              message="Error: Page not found"
+              title="Redirecting..."
+              message="Page not found"
               icons={dbIcon}
             />
           }
@@ -103,4 +103,10 @@ export const App: React.FC = () => {
       />
     </div>
   );
+};
+
+export const ScrollToTop: React.FC = () => {
+  const { pathname } = useLocation();
+  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  return null;
 };

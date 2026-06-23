@@ -4,6 +4,7 @@
 
 import * as React from 'react';
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import '../stylesheets/contact.css';
 
 interface ContactProps {
@@ -67,9 +68,9 @@ export const Contact: React.FC<ContactProps> = ({
                 </svg>
                 <h3>{connect['Name']}</h3>
               </div>
-              <a href={connect['Link']} className="button">
+              <Link to={connect['Link']} className="button">
                 <p>{connect['Details']}</p>
-              </a>
+              </Link>
             </div>
           );
         })}
@@ -118,9 +119,9 @@ export const Contact: React.FC<ContactProps> = ({
               >
                 <path d={icons[contactEmail['SVG']]} />
               </svg>
-              <a href={'mailto:' + contactEmail['Link']} className="button">
+              <Link to={'mailto:' + contactEmail['Link']} className="button">
                 <p>{contactEmail['Details']}</p>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

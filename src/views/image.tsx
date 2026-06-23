@@ -2,7 +2,6 @@
 // GNL General Public License v3
 // Copyright (c) Do Duc Quan. All rights reserved.
 
-import * as React from 'react';
 import { useState, useEffect } from 'react';
 import '../stylesheets/image.css';
 

@@ -4,12 +4,12 @@
 
 import * as React from 'react';
 import { useEffect, useRef, useState } from 'react';
-import { Navigate, useParams } from 'react-router-dom';
+import { Navigate, Link, useParams } from 'react-router-dom';
 import { WorkSection } from './work';
+import { FastImage } from './image';
 import '../stylesheets/post.css';
 import '../stylesheets/home.css';
 import '../stylesheets/work.css';
-import { FastImage } from './image';
 
 interface PostProps {
   workField: { [key: string]: any };
@@ -154,9 +154,9 @@ export const Post: React.FC<PostProps> = ({ icons, workField, allPosts }) => {
             {workPost['Source'] ? (
               <div className="metadata-section">
                 <h3 className="metadata-items">{workPost['Name']}</h3>
-                <a href={workPost['Source']} className="button">
+                <Link to={workPost['Source']} className="button">
                   <p>View report</p>
-                </a>
+                </Link>
               </div>
             ) : (
               <h3 className="metadata-items">{workPost['Name']}</h3>
@@ -172,9 +172,9 @@ export const Post: React.FC<PostProps> = ({ icons, workField, allPosts }) => {
           </div>
           {workPost['Source'] && (
             <div className="metadata-section mobile">
-              <a href={workPost['Source']} className="button">
+              <Link to={workPost['Source']} className="button">
                 <p>View report</p>
-              </a>
+              </Link>
             </div>
           )}
         </div>
@@ -218,9 +218,9 @@ export const Post: React.FC<PostProps> = ({ icons, workField, allPosts }) => {
             {workPost['Source'] && (
               <div className="metadata-section ">
                 <h3 className="metadata-items">Project</h3>
-                <a href={workPost['Source']} className="button">
+                <Link to={workPost['Source']} className="button">
                   <p>View report</p>
-                </a>
+                </Link>
               </div>
             )}
           </div>
@@ -262,9 +262,9 @@ export const Post: React.FC<PostProps> = ({ icons, workField, allPosts }) => {
             </div>
             {workPost['Source'] && (
               <div className="mobile-section">
-                <a href={workPost['Source']} className="button">
+                <Link to={workPost['Source']} className="button">
                   <p>View project</p>
-                </a>
+                </Link>
               </div>
             )}
           </div>
@@ -279,9 +279,9 @@ export const Post: React.FC<PostProps> = ({ icons, workField, allPosts }) => {
         {workPost['Source'] && (
           <div id="cta-button" className="width-90">
             <h1>{workPost['Name']}</h1>
-            <a href={workPost['Source']} className="button large">
+            <Link to={workPost['Source']} className="button large">
               <p>View report</p>
-            </a>
+            </Link>
           </div>
         )}
         {workPost['Similar'].length != 0 && (
@@ -290,7 +290,7 @@ export const Post: React.FC<PostProps> = ({ icons, workField, allPosts }) => {
             <div className="main-section width-90">
               <div className="more-container">
                 <h1>More like this </h1>
-                <a href={'/works?' + filtering} className="button more">
+                <Link to={'/works?' + filtering} className="button more">
                   <p className="button-text">More</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -301,7 +301,7 @@ export const Post: React.FC<PostProps> = ({ icons, workField, allPosts }) => {
                   >
                     <path d={icons['More']} />
                   </svg>
-                </a>
+                </Link>
               </div>
               <div id="post-container" className="width-90">
                 {PostsSection()}
