@@ -12,7 +12,7 @@ export const Loading: FC = () => {
         <div className="message-container width-90">
           <div id="message-section">
             <img
-              src="/graphics/LogoFull.svg"
+              src="./graphics/LogoFull.svg"
               alt="Quan\'s logo representing 0"
               className="title rotating"
             />

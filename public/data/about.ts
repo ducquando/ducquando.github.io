@@ -7,7 +7,7 @@ export const dbAbout: Record<string, any> = {
     {
       "Year": "2012",
       "Description": "I learned to use computer by playing with different desktop applications. My first mastered tool was Adobe Photoshop.",
-      "Image": "/pictures/about/2012",
+      "Image": "./pictures/about/2012",
       "Format": ".png",
       "Landspace": false,
       "HorizontalOffset": "4",
@@ -16,7 +16,7 @@ export const dbAbout: Record<string, any> = {
     {
       "Year": "2017",
       "Description": "During high school, I developed visual communication and leadership skills through design roles in student clubs and non-profit projects.",
-      "Image": "/pictures/about/2017",
+      "Image": "./pictures/about/2017",
       "Format": ".png",
       "Landspace": false,
       "HorizontalOffset": "7",
@@ -25,7 +25,7 @@ export const dbAbout: Record<string, any> = {
     {
       "Year": "2020",
       "Description": "I began my undergraduate studies at Fulbright University Vietnam and discovered my passion for building interactive, human-centered computational systems.",
-      "Image": "/pictures/about/2020",
+      "Image": "./pictures/about/2020",
       "Format": ".png",
       "Landspace": true,
       "HorizontalOffset": "7",
@@ -34,7 +34,7 @@ export const dbAbout: Record<string, any> = {
     {
       "Year": "2021",
       "Description": "I interned as a graphic designer at TBWA and had the best opportunity to sharpen my creative direction, visual reasoning, and product communication skills.",
-      "Image": "/pictures/about/2021",
+      "Image": "./pictures/about/2021",
       "Format": ".png",
       "Landspace": true,
       "HorizontalOffset": "6",
@@ -43,7 +43,7 @@ export const dbAbout: Record<string, any> = {
     {
       "Year": "2023",
       "Description": "I expanded into full-stack development, simulations, and applied ML. I built products involving navigation, agent-based models, and time-series prediction.",
-      "Image": "/pictures/about/2023",
+      "Image": "./pictures/about/2023",
       "Format": ".png",
       "Landspace": false,
       "HorizontalOffset": "6",
@@ -52,7 +52,7 @@ export const dbAbout: Record<string, any> = {
     {
       "Year": "2024",
       "Description": "I joined KMS Technology and developed automated testing frameworks for web and mobile apps. This experience shaped my interest in making reliable softwares and human-in-the-loop systems.",
-      "Image": "/pictures/about/2024",
+      "Image": "./pictures/about/2024",
       "Format": ".png",
       "Landspace": false,
       "HorizontalOffset": "7",
@@ -61,7 +61,7 @@ export const dbAbout: Record<string, any> = {
     {
       "Year": "Now",
       "Description": "I focus on software engineering and machine learning research, currently pursuing an M.S. in Computer Science and working on physics-informed neural networks and computer simulations.",
-      "Image": "/pictures/about/2025",
+      "Image": "./pictures/about/2025",
       "Format": ".png",
       "Landspace": true,
       "HorizontalOffset": "9",
@@ -91,29 +91,29 @@ export const dbAbout: Record<string, any> = {
       "Name": "Machine Learning & Applied AI",
       "Description": "My machine learning work focuses on building applied, end-to-end intelligent systems. I have experience with neural networks, simulations, agent-based modeling, and computer vision. My recent research includes developing Physics-Informed Neural Networks (PINNs) for scientific modeling and designing network simulations for social influence dynamics.",
       "CTA": "/works?se=false&pd=false&gd=false",
-      "Thumbnail": "/pictures/about/Journey3",
+      "Thumbnail": "./pictures/about/Journey3",
       "Format": ".png",
       "Years": "2+",
       "Project": "4+",
       "Stakeholders": "3+",
       "Skills": [
         {
-          "Image": "/pictures/tools/Python",
+          "Image": "./pictures/tools/Python",
           "Format": ".png",
           "SkillName": "Python"
         },
         {
-          "Image": "/pictures/tools/PyTorch",
+          "Image": "./pictures/tools/PyTorch",
           "Format": ".png",
           "SkillName": "PyTorch"
         },
         {
-          "Image": "/pictures/tools/ScikitLearn",
+          "Image": "./pictures/tools/ScikitLearn",
           "Format": ".png",
           "SkillName": "Scikit-learn"
         },
         {
-          "Image": "/pictures/tools/TensorFlow",
+          "Image": "./pictures/tools/TensorFlow",
           "Format": ".png",
           "SkillName": "TensorFlow"
         },
@@ -128,69 +128,69 @@ export const dbAbout: Record<string, any> = {
       "Name": "Software Engineering",
       "Description": "I specialize in building full-stack applications, automation systems, and computational tools. I enjoy designing architectures, optimizing performance, and creating interactive experiences. My engineering work spans frontend development, backend APIs, cloud deployment, and scalable automation frameworks.",
       "CTA": "/works?pd=false&ds=false&gd=false",
-      "Thumbnail": "/pictures/about/Journey2",
+      "Thumbnail": "./pictures/about/Journey2",
       "Format": ".png",
       "Years": "3+",
       "Project": "10+",
       "Stakeholders": "5+",
       "Skills": [
         {
-          "Image": "/pictures/tools/Python",
+          "Image": "./pictures/tools/Python",
           "Format": ".png",
           "SkillName": "Python"
         },
         {
-          "Image": "/pictures/tools/TypeScript",
+          "Image": "./pictures/tools/TypeScript",
           "Format": ".png",
           "SkillName": "TypeScript"
         },
         {
-          "Image": "/pictures/tools/JavaScript",
+          "Image": "./pictures/tools/JavaScript",
           "Format": ".png",
           "SkillName": "JavaScript"
         },
         {
-          "Image": "/pictures/tools/Java",
+          "Image": "./pictures/tools/Java",
           "Format": ".png",
           "SkillName": "Java"
         },
         {
-          "Image": "/pictures/tools/Swift",
+          "Image": "./pictures/tools/Swift",
           "Format": ".png",
           "SkillName": "Swift"
         },
         {
-          "Image": "/pictures/tools/React",
+          "Image": "./pictures/tools/React",
           "Format": ".png",
           "SkillName": "React"
         },
         {
-          "Image": "/pictures/tools/NodeJS",
+          "Image": "./pictures/tools/NodeJS",
           "Format": ".png",
           "SkillName": "NodeJS"
         },
         {
-          "Image": "/pictures/tools/SQL",
+          "Image": "./pictures/tools/SQL",
           "Format": ".png",
           "SkillName": "SQL"
         },
         {
-          "Image": "/pictures/tools/Docker",
+          "Image": "./pictures/tools/Docker",
           "Format": ".png",
           "SkillName": "Docker"
         },
         {
-          "Image": "/pictures/tools/AmazonEC2",
+          "Image": "./pictures/tools/AmazonEC2",
           "Format": ".png",
           "SkillName": "Amazon EC2"
         },
         {
-          "Image": "/pictures/tools/Playwright",
+          "Image": "./pictures/tools/Playwright",
           "Format": ".png",
           "SkillName": "Playwright"
         },
         {
-          "Image": "/pictures/tools/Appium",
+          "Image": "./pictures/tools/Appium",
           "Format": ".png",
           "SkillName": "Appium"
         },
@@ -200,24 +200,24 @@ export const dbAbout: Record<string, any> = {
       "Name": "Product & Human-Centered Engineering",
       "Description": "With a foundation in Computer Science and Psychology, I design and build human-centered digital systems. I combine UX reasoning with engineering execution to deliver intuitive, performant, and data-driven products. I have experience conducting user research, prototyping, and deploying full-featured applications in academic and industry settings.",
       "CTA": "/works?se=false&ds=false&gd=false",
-      "Thumbnail": "/pictures/about/Journey1",
+      "Thumbnail": "./pictures/about/Journey1",
       "Format": ".png",
       "Years": "3+",
       "Project": "10+",
       "Stakeholders": "5+",
       "Skills": [
         {
-          "Image": "/pictures/tools/Figma",
+          "Image": "./pictures/tools/Figma",
           "Format": ".png",
           "SkillName": "Figma"
         },
         {
-          "Image": "/pictures/tools/XD",
+          "Image": "./pictures/tools/XD",
           "Format": ".png",
           "SkillName": "XD"
         },
         {
-          "Image": "/pictures/tools/Agile",
+          "Image": "./pictures/tools/Agile",
           "Format": ".png",
           "SkillName": "Agile"
         }
@@ -227,29 +227,29 @@ export const dbAbout: Record<string, any> = {
       "Name": "Visual Design",
       "Description": "I have professional experience in branding, visual communication, and digital media. Although my focus is now on engineering and machine learning, my design background continues to influence my approach to product thinking and user experience.",
       "CTA": "/works?se=false&pd=false&ds=false",
-      "Thumbnail": "/pictures/about/Journey4",
+      "Thumbnail": "./pictures/about/Journey4",
       "Format": ".png",
       "Years": "5",
       "Project": "15+",
       "Stakeholders": "10+",
       "Skills": [
         {
-          "Image": "/pictures/tools/Illustrator",
+          "Image": "./pictures/tools/Illustrator",
           "Format": ".png",
           "SkillName": "Illustrator"
         },
         {
-          "Image": "/pictures/tools/Photoshop",
+          "Image": "./pictures/tools/Photoshop",
           "Format": ".png",
           "SkillName": "Photoshop"
         },
         {
-          "Image": "/pictures/tools/AfterEffects",
+          "Image": "./pictures/tools/AfterEffects",
           "Format": ".png",
           "SkillName": "After Effects"
         },
         {
-          "Image": "/pictures/tools/Canva",
+          "Image": "./pictures/tools/Canva",
           "Format": ".png",
           "SkillName": "Canva"
         }

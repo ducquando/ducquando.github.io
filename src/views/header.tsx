@@ -58,7 +58,7 @@ export const Header: FC<HeaderProps> = ({ icons }) => {
           return (
             <Link to={page['Link']} key={page['Name']}>
               <img
-                src={'/graphics/' + page['Name'] + '.svg'}
+                src={'./graphics/' + page['Name'] + '.svg'}
                 alt={page['Name'] + ' page'}
                 className="width-90"
               />
@@ -74,7 +74,7 @@ export const Header: FC<HeaderProps> = ({ icons }) => {
       <nav>
         <div id="header-container" className="width-100">
           <Link to="/" id="nav-logo">
-            <img src="/graphics/Header.svg" alt="Do Duc Quan's logo" />
+            <img src="./graphics/Header.svg" alt="Do Duc Quan's logo" />
           </Link>
 
           <span></span>

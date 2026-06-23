@@ -83,16 +83,16 @@ const Contact: FC<ContactProps> = ({
         <picture>
           <source
             media="(max-width: 640px)"
-            srcSet={`/graphics/Contact@0.5x.svg`}
+            srcSet={`./graphics/Contact@0.5x.svg`}
             className="width-90"
           />
           <source
             media="(min-width: 641px)"
-            srcSet={`/graphics/Contact.svg`}
+            srcSet={`./graphics/Contact.svg`}
             className="width-90"
           />
           <img
-            src={`/graphics/Contact.svg`}
+            src={`./graphics/Contact.svg`}
             alt="Contact thumbnail"
             className="width-90"
           />

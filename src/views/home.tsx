@@ -42,8 +42,8 @@ const Home: FC<HomeProps> = ({
         <div className="main-container">
           <div id="thumbnail-container" className="width-100">
             <FastImage
-              src={'../pictures/Thumbnail.png'}
-              placeholderSrc={'/pictures/Thumbnail@0.33x.webp'}
+              src={'./pictures/Thumbnail.png'}
+              placeholderSrc={'./pictures/Thumbnail@0.33x.webp'}
               id="thumbnail-image"
               className="width-100"
               alt="Thumbnail hero image"
@@ -51,16 +51,16 @@ const Home: FC<HomeProps> = ({
             <picture style={{ position: 'absolute' }}>
               <source
                 media="(max-width: 640px)"
-                srcSet={`/graphics/DoDucQuan@0.5x.svg`}
+                srcSet={`./graphics/DoDucQuan@0.5x.svg`}
                 className="width-90"
               />
               <source
                 media="(min-width: 641px)"
-                srcSet={`/graphics/DoDucQuan.svg`}
+                srcSet={`./graphics/DoDucQuan.svg`}
                 className="width-90"
               />
               <img
-                src={`/graphics/DoDucQuan.svg`}
+                src={`./graphics/DoDucQuan.svg`}
                 alt="Do Duc Quan"
                 className="width-90"
               />

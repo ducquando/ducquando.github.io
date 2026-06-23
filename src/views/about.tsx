@@ -142,16 +142,16 @@ const About: FC<AboutProps> = ({
         <picture>
           <source
             media="(max-width: 640px)"
-            srcSet={`/graphics/About@0.5x.svg`}
+            srcSet={`./graphics/About@0.5x.svg`}
             className="width-90"
           />
           <source
             media="(min-width: 641px)"
-            srcSet={`/graphics/About.svg`}
+            srcSet={`./graphics/About.svg`}
             className="width-90"
           />
           <img
-            src={`/graphics/About.svg`}
+            src={`./graphics/About.svg`}
             alt="About"
             className="width-90"
           />
