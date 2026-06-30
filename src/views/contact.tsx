@@ -65,7 +65,7 @@ const Contact: FC<ContactProps> = ({
                 >
                   <path d={icons[connect['SVG']]} />
                 </svg>
-                <h3>{connect['Name']}</h3>
+                <h4>{connect['Name']}</h4>
               </div>
               <Link to={connect['Link']} className="button">
                 <p>{connect['Details']}</p>
@@ -80,13 +80,13 @@ const Contact: FC<ContactProps> = ({
   return (
     <>
       <div className="main-container">
-        <h6 className='width-90'>Contact</h6>
+        <h1 className='width-90'>Contact</h1>
         <p className="mid width-90">
           Let's create memorable experiences together
         </p>
 
         <div className="contact-section width-90">
-          <h1>CONTACT INFORMATION</h1>
+          <h2>CONTACT INFORMATION</h2>
           <div className="info-connect-container">
             {/* Basic information */}
             {InfoSection()}
@@ -110,7 +110,7 @@ const Contact: FC<ContactProps> = ({
         </div>
 
         <div className="contact-section width-90">
-          <h1>CONNECT ME ON</h1>
+          <h2>CONNECT ME ON</h2>
           <div className="info-connect-container">{SocialSection()}</div>
         </div>
       </div>

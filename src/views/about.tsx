@@ -55,7 +55,7 @@ const About: FC<AboutProps> = ({
     return (
       <>
         <div className="stats-section">
-          <h3>{type}</h3>
+          <h4>{type}</h4>
           <p className="large-number">{data}</p>
         </div>
       </>
@@ -91,7 +91,7 @@ const About: FC<AboutProps> = ({
               <div className="experience-section" id={exp['Name']}>
                 <div className="description-container width-30">
                   {/* Heading */}
-                  <h2>{exp['Name']}</h2>
+                  <h3>{exp['Name']}</h3>
                   <p dangerouslySetInnerHTML={{ __html: exp['Description'] }} />
 
                   {/* Statistics */}
@@ -102,7 +102,7 @@ const About: FC<AboutProps> = ({
 
                   {/* Tools & skills */}
                   <div className="tool-container">
-                    <h3>Tools and skills</h3>
+                    <h4>Tools and skills</h4>
                     <div className="tool-section-about">
                       {ExperienceTools(exp['Skills'])}
                     </div>
@@ -139,7 +139,7 @@ const About: FC<AboutProps> = ({
     <>
       <div className="main-container" id="about-page">
         {/* Intro section */}
-        <h6 className='width-90'>About</h6>
+        <h1 className='width-90'>About</h1>
         <div className="width-90">
           <p className="mid width-60">
             {aboutDetails['Primary']}
@@ -152,21 +152,21 @@ const About: FC<AboutProps> = ({
 
         {/* Journey section */}
         <div className="about-container width-90">
-          <h1>Journey</h1>
+          <h2>Journey</h2>
           <div id="journey-container">{JourneySection()}</div>
         </div>
         <div className="divider"></div>
 
         {/* Experience section */}
         <div className="about-container width-90">
-          <h1>Experience</h1>
+          <h2>Experience</h2>
           <div id="experience-container">{ExperienceSection()}</div>
         </div>
         <div className="divider"></div>
 
         {/* Future section */}
         <div className="about-container width-90">
-          <h1>Future Direction</h1>
+          <h2>Future Direction</h2>
           <div className="width-90">
             <p className="width-60">
               {aboutFuture['Primary']}

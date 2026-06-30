@@ -67,7 +67,7 @@ const Home: FC<HomeProps> = ({
             </picture>
             <div id="thumbnail-section" className="width-25">
               <p className="mid">{homeOverview['Primary']}</p>
-              <h2>{homeOverview['Secondary']}</h2>
+              <h3>{homeOverview['Secondary']}</h3>
             </div>
           </div>
         </div>
@@ -80,7 +80,7 @@ const Home: FC<HomeProps> = ({
       <>
         <div className="main-section width-100">
           <div className="more-container width-90" style={{ margin: 'auto' }}>
-            <h1>About</h1>
+            <h2>About</h2>
             <Link to="/about" className="button more">
               <p className="button-text">More</p>
               <svg
@@ -100,15 +100,15 @@ const Home: FC<HomeProps> = ({
             </div>
             <div className="about-section width-90" style={{ margin: 'auto' }}>
               <div className="about-items general-section">
-                <h3>Experience</h3>
+                <h4>Experience</h4>
                 <p className="large-number">{aboutGen['Years']}</p>
               </div>
               <div className="about-items general-section">
-                <h3>Projects</h3>
+                <h4>Projects</h4>
                 <p className="large-number">{aboutGen['Project']}</p>
               </div>
               <div className="about-items general-section desktop">
-                <h3>Happy clients</h3>
+                <h4>Happy clients</h4>
                 <p className="large-number">{aboutGen['Stakeholders']}</p>
               </div>
             </div>
@@ -123,7 +123,7 @@ const Home: FC<HomeProps> = ({
       <>
         <div className="main-section width-90" style={{ margin: 'auto' }}>
           <div className="more-container">
-            <h1>Contact</h1>
+            <h2>Contact</h2>
             <Link to="/contact" className="button more">
               <p className="button-text">More</p>
               <svg
@@ -191,7 +191,7 @@ const Home: FC<HomeProps> = ({
                   />
                   <div className="post-overlay" />
                   <div className="post-title">
-                    <h3>{workPost[id]['Name']}: {workPost[id]['Subtitle']}</h3>
+                    <h4>{workPost[id]['Name']}: {workPost[id]['Subtitle']}</h4>
                     <div className="post-items">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -265,7 +265,7 @@ const Home: FC<HomeProps> = ({
       <>
         <div className="main-section width-90" style={{ margin: 'auto' }}>
           <div className="more-container">
-            <h1>Featured works</h1>
+            <h2>Featured works</h2>
             <Link to="/works" className="button more">
               <p className="button-text">More</p>
               <svg

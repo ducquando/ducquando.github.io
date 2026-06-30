@@ -112,16 +112,16 @@ export const Footer: FC<FooterProps> = ({
           </p>
           <div id="footer-nav-links">
             <Link to="/" className="button mid-2">
-              <h2>Home</h2>
+              <h3>Home</h3>
             </Link>
             <Link to="/about" className="button mid-2">
-              <h2>About</h2>
+              <h3>About</h3>
             </Link>
             <Link to="/works" className="button mid-2">
-              <h2>Works</h2>
+              <h3>Works</h3>
             </Link>
             <Link to="/contact" className="button mid-2">
-              <h2>Contact</h2>
+              <h3>Contact</h3>
             </Link>
           </div>
         </div>

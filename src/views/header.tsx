@@ -43,7 +43,7 @@ export const Header: FC<HeaderProps> = ({ icons }) => {
         {pages?.map((page: { [key: string]: any }) => {
           return (
             <Link to={page['Link']} className="button mid-1" key={page['Name']}>
-              <h2>{page['Name']}</h2>
+              <h3>{page['Name']}</h3>
             </Link>
           );
         })}
@@ -57,7 +57,7 @@ export const Header: FC<HeaderProps> = ({ icons }) => {
         {pages?.map((page: { [key: string]: any }) => {
           return (
             <Link to={page['Link']} key={page['Name']}>
-              {/* <h6 className="width-90">{page['Name']}</h6> */}
+              {/* <h6 className="width-90">{page['Name']}</h1> */}
               <img
                 src={'./graphics/' + page['Name'] + '.svg'}
                 alt={page['Name'] + ' page'}

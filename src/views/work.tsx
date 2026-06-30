@@ -126,7 +126,7 @@ const Work: FC<WorkProps> = ({
   return (
     <>
       <div className="main-container">
-        <h6 className='width-90'>Works</h6>
+        <h1 className='width-90'>Works</h1>
         <div id="work-container">
           <div id="tool-container" className="width-90">
             {/* Filter */}
@@ -141,7 +141,7 @@ const Work: FC<WorkProps> = ({
                 >
                   <path d={icons['Field']} />
                 </svg>
-                <h2>Filter</h2>
+                <h3>Filter</h3>
               </div>
               <div id="filter-container">{FilterSection()}</div>
             </div>
@@ -158,7 +158,7 @@ const Work: FC<WorkProps> = ({
                 >
                   <path d={icons['Sort']} />
                 </svg>
-                <h2>Sort by</h2>
+                <h3>Sort by</h3>
               </div>
 
               <ul id="sort-container">

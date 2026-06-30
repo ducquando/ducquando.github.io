@@ -74,12 +74,12 @@ const Post: FC<PostProps> = ({ icons, workField, allPosts }) => {
               <div className="content-section width-90" key={index}>
                 {content?.map((subcontent, index) => {
                   return subcontent['Type'] == 'h1' ? (
-                    <h2
+                    <h3
                       className={subcontent['Style'] + ' content-heading'}
                       key={index}
                     >
                       {subcontent['Details']}
-                    </h2>
+                    </h3>
                   ) : subcontent['Type'] == 'p' ? (
                     <p
                       className={subcontent['Style']}
@@ -150,13 +150,13 @@ const Post: FC<PostProps> = ({ icons, workField, allPosts }) => {
           <div className="metadata-container desktop">
             {workPost['Source'] ? (
               <div className="metadata-section">
-                <h3 className="metadata-items">{title}</h3>
+                <h4 className="metadata-items">{title}</h4>
                 <Link to={workPost['Source']} className="button">
                   <p>View report</p>
                 </Link>
               </div>
             ) : (
-              <h3 className="metadata-items">{title}</h3>
+              <h4 className="metadata-items">{title}</h4>
             )}
           </div>
 
@@ -165,7 +165,7 @@ const Post: FC<PostProps> = ({ icons, workField, allPosts }) => {
             className="metadata-container mobile"
             style={{ maxWidth: '50vw' }}
           >
-            <h3 className="metadata-items">{title}</h3>
+            <h4 className="metadata-items">{title}</h4>
           </div>
           {workPost['Source'] && (
             <div className="metadata-section mobile">
@@ -181,23 +181,23 @@ const Post: FC<PostProps> = ({ icons, workField, allPosts }) => {
       <div className="main-container">
         {/* Title */}
         <h5 id="heading-section" className='width-90'>{workPost['Name']}:</h5>
-        <h6 id="heading-section" className='width-90'>{workPost['Subtitle']}</h6>
+        <h1 id="heading-section" className='width-90'>{workPost['Subtitle']}</h1>
 
         {/* Metadata */}
         <div id="title-section" className="width-90" ref={scrollRef}>
           {/* Desktop */}
           <div className="metadata-container desktop">
             <div className="metadata-section">
-              <h3>Duration</h3>
+              <h4>Duration</h4>
               <p>{workPost['Duration'] + ' (' + workPost['Date'] + ')'}</p>
             </div>
             <div className="metadata-section">
-              <h3>Role</h3>
+              <h4>Role</h4>
               <p>{workPost['Role']}</p>
             </div>
             {workPost['Source'] && (
               <div className="metadata-section ">
-                <h3 className="metadata-items">Project</h3>
+                <h4 className="metadata-items">Project</h4>
                 <Link to={workPost['Source']} className="button">
                   <p>View report</p>
                 </Link>
@@ -258,7 +258,7 @@ const Post: FC<PostProps> = ({ icons, workField, allPosts }) => {
         {/* CTA */}
         {workPost['Source'] && (
           <div id="cta-button" className="width-90">
-            <h1>{title}</h1>
+            <h2>{title}</h2>
             <Link to={workPost['Source']} className="button large">
               <p>View report</p>
             </Link>
@@ -269,7 +269,7 @@ const Post: FC<PostProps> = ({ icons, workField, allPosts }) => {
             <div className="divider" />
             <div className="main-section width-90">
               <div className="more-container">
-                <h1>More like this </h1>
+                <h2>More like this </h2>
                 <Link to={'/works?' + filtering} className="button more">
                   <p className="button-text">More</p>
                   <svg
