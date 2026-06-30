@@ -12,6 +12,8 @@ interface FooterProps {
   icons: { [key: string]: any };
 }
 
+const currentYear = new Date().getFullYear();
+
 export const Footer: FC<FooterProps> = ({
   contactEmail,
   contactConnect,
@@ -106,7 +108,7 @@ export const Footer: FC<FooterProps> = ({
         {/* Sitemap */}
         <div id="footer-sitemap-section" className="width-90">
           <p className="caption">
-            Copyright © 2023 Do Duc Quan. All rights reserved.
+            Copyright © {currentYear} Do Duc Quan. All rights reserved.
           </p>
           <div id="footer-nav-links">
             <Link to="/" className="button mid-2">

@@ -2,50 +2,68 @@
 // GNL General Public License v3
 // Copyright (c) Do Duc Quan. All rights reserved.
 
-export const dbContact: Record<string, any> = {
+interface ContactValueType {
+  Details: string,
+  SVG: string,
+  Link?: string,
+  ViewBox?: string,
+  Size?: string,
+  Name?: string,
+}
+
+interface ContactType {
   Contact: {
-    "Name": {
-      "Details": "Quan Do (he/him)",
-      "SVG": "Person"
+    Name: ContactValueType,
+    Location: ContactValueType,
+  },
+  Email: ContactValueType,
+  Connect: ContactValueType[],
+}
+
+export const dbContact: ContactType = {
+  Contact: {
+    Name: {
+      Details: "Quan Do (he/him)",
+      SVG: "Person"
     },
     "Location": {
-      "Details": "Atlanta, Georgia, USA",
-      "SVG": "Location"
+      Details: "Atlanta, Georgia, USA",
+      SVG: "Location"
     }
   },
 
   Email: {
-    "Details": "contact@dodquan.com",
-    "Link": "contact@dodquan.com",
-    "ViewBox": "0 0 20 20",
-    "Size": "16",
-    "SVG": "Email"
+    Details: "contact@dodquan.com",
+    Link: "contact@dodquan.com",
+    ViewBox: "0 0 20 20",
+    Size: "16",
+    SVG: "Email"
   },
 
   Connect: [
     {
-      "Name": "LinkedIn",
-      "Details": "Duc Quan Do (@dodquan)",
-      "Link": "https://www.linkedin.com/in/dodquan/",
-      "ViewBox": "0 0 150.4 155.83",
-      "Size": "12",
-      "SVG": "LinkedIn"
+      Name: "LinkedIn",
+      Details: "Duc Quan Do (@dodquan)",
+      Link: "https://www.linkedin.com/in/dodquan/",
+      ViewBox: "0 0 150.4 155.83",
+      Size: "12",
+      SVG: "LinkedIn"
     },
     {
-      "Name": "GitHub",
-      "Details": "Duc-Quan Do (@ducquando)",
-      "Link": "https://github.com/ducquando",
-      "ViewBox": "0 0 172.36 167.82",
-      "Size": "16",
-      "SVG": "GitHub"
+      Name: "GitHub",
+      Details: "Duc-Quan Do (@ducquando)",
+      Link: "https://github.com/ducquando",
+      ViewBox: "0 0 172.36 167.82",
+      Size: "16",
+      SVG: "GitHub"
     },
     {
-      "Name": "Behance",
-      "Details": "Duc Quan Do (@quannz)",
-      "Link": "https://www.behance.net/quannz",
-      "ViewBox": "0 0 210.4 132.42",
-      "Size": "16",
-      "SVG": "Behance"
+      Name: "Behance",
+      Details: "Duc Quan Do (@quannz)",
+      Link: "https://www.behance.net/quannz",
+      ViewBox: "0 0 210.4 132.42",
+      Size: "16",
+      SVG: "Behance"
     },
   ]
 }
