@@ -8,6 +8,7 @@ import { FastImage } from './image';
 import '../stylesheets/home.css';
 import '../stylesheets/work.css';
 import { useEffect } from 'react';
+import { Thumbnail } from './thumbnail';
 
 interface HomeProps {
   title: string,
@@ -157,104 +158,13 @@ const Home: FC<HomeProps> = ({
     );
   }
 
-  function HighlightHelper(id: string) {
-    return (
-      <>
-        {Object.entries(workField).map((fields: { [key: string]: any }) => {
-          const field = fields[1];
-
-          return field['PostID'].includes(id) ? (
-            <p className="caption" key={field['ID'] + id}>
-              {field['Alias']}
-            </p>
-          ) : (
-            <></>
-          );
-        })}
-      </>
-    );
-  }
-
   function HighlightSection() {
     return (
       <>
         {workHighlight?.map((id: string) => {
-          return workPost[id]['Highlight'] ? (
-            <>
-              <Link to={'/works' + workPost[id]['Link']} key={workPost[id]}>
-                <div className="post-section width-30">
-                  <FastImage
-                    src={`${workPost[id]['Thumbnail']}${workPost[id]['Format']}`}
-                    placeholderSrc={`${workPost[id]['Thumbnail']}@0.33x.webp`}
-                    className="width-30"
-                    alt={workPost[id]['Name']}
-                  />
-                  <div className="post-overlay" />
-                  <div className="post-title">
-                    <h4>{workPost[id]['Name']}: {workPost[id]['Subtitle']}</h4>
-                    <div className="post-items">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="15"
-                        height="15"
-                        viewBox="0 0 15 15"
-                        fill="none"
-                      >
-                        <path d={icons['Field']} />
-                      </svg>
-                      <div className="listing" style={{ display: 'flex' }}>
-                        {HighlightHelper(id)}
-                      </div>
-                    </div>
-                    <div className="post-items">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="14"
-                        height="16"
-                        viewBox="0 0 14 16"
-                        fill="none"
-                      >
-                        <path d={icons['Calendar']} />
-                      </svg>
-                      <p className="caption">
-                        {workPost[id]['Duration'] +
-                          ' (' +
-                          workPost[id]['Date'] +
-                          ')'}
-                      </p>
-                    </div>
-                    <div className="post-items">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="14"
-                        height="14"
-                        viewBox="0 0 16 16"
-                        fill="none"
-                      >
-                        <path d={icons['Tag']} />
-                      </svg>
-                      <p className="caption">{workPost[id]['Tags']}</p>
-                    </div>
-                  </div>
-
-                  <div className="post-view">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      height="12"
-                      viewBox="0 0 18 12"
-                      fill="none"
-                    >
-                      <path d={icons['Eye']} />
-                    </svg>
-                    <p className="button-text">View project</p>
-                  </div>
-                </div>
-              </Link>
-            </>
-          ) : (
-            <></>
-          );
+          return workPost[id]['Highlight']
+            ? <Thumbnail id={id} posts={workPost} fields={workField} icons={icons} />
+            : <></>
         })}
       </>
     );
