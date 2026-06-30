@@ -30,7 +30,7 @@ export const Thumbnail: FC<ThumbnailProps> = ({
         />
         <div className="post-overlay" />
         <div className="post-title">
-          <h3>{posts[id]['Name']}</h3>
+          <h3>{posts[id]['Name']}: {posts[id]['Subtitle']}</h3>
           <div className="post-items">
             <svg
               xmlns="http://www.w3.org/2000/svg"

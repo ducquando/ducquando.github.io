@@ -80,23 +80,7 @@ const Contact: FC<ContactProps> = ({
   return (
     <>
       <div className="main-container">
-        <picture>
-          <source
-            media="(max-width: 640px)"
-            srcSet={`./graphics/Contact@0.5x.svg`}
-            className="width-90"
-          />
-          <source
-            media="(min-width: 641px)"
-            srcSet={`./graphics/Contact.svg`}
-            className="width-90"
-          />
-          <img
-            src={`./graphics/Contact.svg`}
-            alt="Contact thumbnail"
-            className="width-90"
-          />
-        </picture>
+        <h6 className='width-90'>Contact</h6>
         <p className="mid width-90">
           Let's create memorable experiences together
         </p>

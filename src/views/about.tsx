@@ -139,23 +139,7 @@ const About: FC<AboutProps> = ({
     <>
       <div className="main-container" id="about-page">
         {/* Intro section */}
-        <picture>
-          <source
-            media="(max-width: 640px)"
-            srcSet={`./graphics/About@0.5x.svg`}
-            className="width-90"
-          />
-          <source
-            media="(min-width: 641px)"
-            srcSet={`./graphics/About.svg`}
-            className="width-90"
-          />
-          <img
-            src={`./graphics/About.svg`}
-            alt="About"
-            className="width-90"
-          />
-        </picture>
+        <h6 className='width-90'>About</h6>
         <div className="width-90">
           <p className="mid width-60">
             {aboutDetails['Primary']}

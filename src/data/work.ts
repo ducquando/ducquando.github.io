@@ -31,6 +31,7 @@ type FieldWorkType = Record<FieldEnum, {
 type PostWorkType = Record<WorkEnum, {
   Link: string,
   Name: string,
+  Subtitle: string,
   Thumbnail: string,
   Format: ImgFormatEnum,
   Title: string,
@@ -60,7 +61,8 @@ type PostWorkType = Record<WorkEnum, {
 const dbPostWork: PostWorkType = {
   "the-next-lap-web": {
     Link: "/the-next-lap-web",
-    Name: "The Next Lap: Business Web",
+    Name: "The Next Lap",
+    Subtitle: "Business Web",
     Thumbnail: "./pictures/post/NextLap-0",
     Format: ".png",
     Title: "TheNextLap",
@@ -242,7 +244,8 @@ const dbPostWork: PostWorkType = {
   },
   "lane-detection": {
     Link: "/lane-detection",
-    Name: "Computer Vision: Lane Detection",
+    Name: "Computer Vision",
+    Subtitle: "Lane Detection",
     Thumbnail: "./pictures/post/LaneDetection-0",
     Format: ".png",
     Title: "LaneDetection",
@@ -315,7 +318,8 @@ const dbPostWork: PostWorkType = {
   },
   "inquiry": {
     Link: "/inquiry",
-    Name: "Reimagined One-Stop: Inquiry",
+    Name: "Reimagined One-Stop",
+    Subtitle: "Inquiry",
     Thumbnail: "./pictures/post/Inquiry-0",
     Format: ".png",
     Title: "Inquiry",
@@ -440,7 +444,8 @@ const dbPostWork: PostWorkType = {
   },
   "student-council": {
     Link: "/student-council",
-    Name: "Fulbright Student Council: Branding and Posts",
+    Name: "Fulbright Student Council",
+    Subtitle: "Branding and Posts",
     Thumbnail: "./pictures/post/StudentCouncil-0",
     Format: ".png",
     Title: "StudentCouncil",
@@ -592,7 +597,8 @@ const dbPostWork: PostWorkType = {
   },
   "momo-o2o": {
     Link: "/momo-o2o",
-    Name: "MoMo: O2O Proposal",
+    Name: "MoMo",
+    Subtitle: "O2O Mini-app",
     Thumbnail: "./pictures/post/MoMo-0",
     Format: ".png",
     Title: "Momo",
@@ -719,10 +725,11 @@ const dbPostWork: PostWorkType = {
   },
   "connect-cards": {
     Link: "/connect-cards",
-    Name: "Connect Cards: Word-Puzzle Game",
+    Name: "Connect Cards",
+    Subtitle: "Puzzle Game",
     Thumbnail: "./pictures/post/ConnCards-0",
     Format: ".png",
-    Title: "Connect Cards",
+    Title: "ConnectCards",
     Duration: "1 month",
     Date: "2026",
     Tags: "Full-stack, Swift, TypeScript, Figma, Applied AI",

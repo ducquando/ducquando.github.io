@@ -57,6 +57,7 @@ export const Header: FC<HeaderProps> = ({ icons }) => {
         {pages?.map((page: { [key: string]: any }) => {
           return (
             <Link to={page['Link']} key={page['Name']}>
+              {/* <h6 className="width-90">{page['Name']}</h6> */}
               <img
                 src={'./graphics/' + page['Name'] + '.svg'}
                 alt={page['Name'] + ' page'}

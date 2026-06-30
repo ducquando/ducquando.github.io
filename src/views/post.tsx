@@ -30,7 +30,7 @@ const Post: FC<PostProps> = ({ icons, workField, allPosts }) => {
     .map((e) => e + '=' + workField[e]['PostID'].includes(workID))
     .reduce((m, o) => m + '&' + o);
   const workPost = allPosts[workID];
-  const title = workPost['Name'];
+  const title = workPost['Name'] + ': ' + workPost['Subtitle'];
 
   useEffect(() => {
     document.title = title;
@@ -150,13 +150,13 @@ const Post: FC<PostProps> = ({ icons, workField, allPosts }) => {
           <div className="metadata-container desktop">
             {workPost['Source'] ? (
               <div className="metadata-section">
-                <h3 className="metadata-items">{workPost['Name']}</h3>
+                <h3 className="metadata-items">{title}</h3>
                 <Link to={workPost['Source']} className="button">
                   <p>View report</p>
                 </Link>
               </div>
             ) : (
-              <h3 className="metadata-items">{workPost['Name']}</h3>
+              <h3 className="metadata-items">{title}</h3>
             )}
           </div>
 
@@ -165,7 +165,7 @@ const Post: FC<PostProps> = ({ icons, workField, allPosts }) => {
             className="metadata-container mobile"
             style={{ maxWidth: '50vw' }}
           >
-            <h3 className="metadata-items">{workPost['Name']}</h3>
+            <h3 className="metadata-items">{title}</h3>
           </div>
           {workPost['Source'] && (
             <div className="metadata-section mobile">
@@ -180,25 +180,8 @@ const Post: FC<PostProps> = ({ icons, workField, allPosts }) => {
       {/* Post */}
       <div className="main-container">
         {/* Title */}
-        <div id="heading-section" className="width-90">
-          <picture>
-            <source
-              media="(max-width: 640px)"
-              srcSet={`./graphics/${workPost['Title']}@0.5x.svg`}
-              className="width-90"
-            />
-            <source
-              media="(min-width: 641px)"
-              srcSet={`./graphics/${workPost['Title']}.svg`}
-              className="width-90"
-            />
-            <img
-              src={`./graphics/${workPost['Title']}.svg`}
-              alt={title}
-              className="width-90"
-            />
-          </picture>
-        </div>
+        <h5 id="heading-section" className='width-90'>{workPost['Name']}:</h5>
+        <h6 id="heading-section" className='width-90'>{workPost['Subtitle']}</h6>
 
         {/* Metadata */}
         <div id="title-section" className="width-90" ref={scrollRef}>
@@ -275,7 +258,7 @@ const Post: FC<PostProps> = ({ icons, workField, allPosts }) => {
         {/* CTA */}
         {workPost['Source'] && (
           <div id="cta-button" className="width-90">
-            <h1>{workPost['Name']}</h1>
+            <h1>{title}</h1>
             <Link to={workPost['Source']} className="button large">
               <p>View report</p>
             </Link>

@@ -20,6 +20,7 @@ module.exports = (_, argv) => ({
     rules: [
       { test: /\.(ts|tsx)$/, use: 'ts-loader', exclude: /node_modules/ },
       { test: /\.css$/, use: ['style-loader', 'css-loader'] },
+      { test: /\.(woff|woff2|ttf|otf)$/i, type: "asset/resource", generator: { filename: "fonts/[name][ext]"} },
     ],
   },
 

@@ -126,23 +126,7 @@ const Work: FC<WorkProps> = ({
   return (
     <>
       <div className="main-container">
-        <picture>
-          <source
-            media="(max-width: 640px)"
-            srcSet={`./graphics/Works@0.5x.svg`}
-            className="width-90"
-          />
-          <source
-            media="(min-width: 641px)"
-            srcSet={`./graphics/Works.svg`}
-            className="width-90"
-          />
-          <img
-            src={`./graphics/Works.svg`}
-            alt="Works"
-            className="width-90"
-          />
-        </picture>
+        <h6 className='width-90'>Works</h6>
         <div id="work-container">
           <div id="tool-container" className="width-90">
             {/* Filter */}
