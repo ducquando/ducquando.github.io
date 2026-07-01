@@ -193,7 +193,7 @@ const Post: FC<PostProps> = ({
           <div className="metadata-container desktop">
             <div className="metadata-section">
               <h4>Duration</h4>
-              <p>{workPost.Duration} -- {workPost.Date}</p>
+              <p>{workPost.Duration}, {workPost.Date}</p>
             </div>
             <div className="metadata-section">
               <h4>Role</h4>
