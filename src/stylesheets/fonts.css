@@ -1,8 +1,19 @@
 /* Typefaces */
 @import url('https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap');
+@font-face {
+  font-family: "LHanoienne";
+  src:
+    url("../fonts/LHanoienne.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
 h1,
+h5 {
+  font-family: "LHanoienne", sans-serif;
+}
 h2,
 h3,
+h4,
 p {
   font-family: 'Outfit', sans-serif;
 }
@@ -12,13 +23,15 @@ p.large-number {
 }
 
 /* Colors */
-h1,
 h2,
 h3,
+h4,
 p,
 ul {
   color: var(--white);
 }
+h1,
+h5,
 a {
   color: var(--illuminating-yellow);
 }
@@ -27,9 +40,17 @@ a {
 a {
   text-decoration: none;
 }
-h1,
+h1 {
+  line-height: 1;
+}
+h5 {
+  line-height: 1;
+  margin: 0px 0px -30px;
+  text-transform: uppercase;
+}
 h2,
 h3,
+h4,
 p,
 ul {
   font-style: normal;
@@ -40,26 +61,27 @@ ul {
 p {
   text-transform: none;
 }
-h3 {
+h4 {
   text-transform: capitalize;
 }
-h1,
 h2,
+h3,
 p.large,
 p.button-text {
   text-transform: uppercase;
 }
 
 /* Weights */
+h1,
 p {
   font-weight: 400;
 }
-h2,
+h3,
 p.mid {
   font-weight: 500;
 }
-h1,
-h3 {
+h2,
+h4 {
   font-weight: 600;
 }
 p.large,
@@ -73,14 +95,21 @@ p.button-text {
     font-size: 14px;
   }
   h1 {
-    font-size: 1rem;
+    font-size: 16vw;
+    margin: -5.5vw 0px 0px;
   }
   h2 {
+    font-size: 1rem;
+  }
+  h3 {
     font-size: 0.875rem;
   }
-  h3,
+  h4,
   p {
     font-size: 0.8125rem;
+  }
+  h5 {
+    font-size: 4vw;
   }
   p.large,
   p.large-number {
@@ -95,6 +124,15 @@ p.button-text {
     font-size: 0.75rem;
   }
 }
+@media all and (min-width: 641px) {
+  h1 {
+    font-size: 12vw;
+    margin: -4vw 0px 0px;
+  }
+  h5 {
+    font-size: 3vw;
+  }
+}
 @media all and (min-width: 641px) and (orientation: portrait) {
   p.mid {
     font-size: 1.75rem;
@@ -104,13 +142,13 @@ p.button-text {
   :root {
     font-size: 16px;
   }
-  h1 {
+  h2 {
     font-size: 1.5rem;
   }
-  h2 {
+  h3 {
     font-size: 1.125rem;
   }
-  h3,
+  h4,
   p {
     font-size: 1rem;
   }

@@ -5,14 +5,15 @@
 import { FC, useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Thumbnail } from './thumbnail';
+import { FieldEnum, FieldWorkType, FilterEnum, FilterWorkType, IconType, PostWorkType, WorkEnum } from '../data';
 import '../stylesheets/work.css';
 
 interface WorkProps {
   title: string,
-  workField: { [key: string]: any };
-  workFilter: { [key: string]: any };
-  allPosts: { [key: string]: any };
-  icons: { [key: string]: any };
+  workField: FieldWorkType;
+  workFilter: FilterWorkType;
+  allPosts: PostWorkType;
+  icons: IconType;
 }
 
 const Work: FC<WorkProps> = ({
@@ -27,21 +28,27 @@ const Work: FC<WorkProps> = ({
   }, []);
 
   const [searchParams] = useSearchParams();
-  const [paramSort, setParamSort] = useState(
-    searchParams.get('sort') ?? 'default',
+  const [paramSort, setParamSort] = useState<FilterEnum>(
+    searchParams.get('sort') as FilterEnum ?? 'default',
   );
-  const [paramSE, setParamSE] = useState(
-    (searchParams.get('se') && searchParams.get('se') == 'true') ?? true,
+  const [paramSE, setParamSE] = useState<boolean>(
+    searchParams.get('se') ? searchParams.get('se') === 'true' : true
   );
-  const [paramPD, setParamPD] = useState(
-    (searchParams.get('pd') && searchParams.get('pd') == 'true') ?? true,
+  const [paramPD, setParamPD] = useState<boolean>(
+    searchParams.get('pd') ? searchParams.get('pd') === 'true' : true
   );
-  const [paramDS, setParamDS] = useState(
-    (searchParams.get('ds') && searchParams.get('ds') == 'true') ?? true,
+  const [paramDS, setParamDS] = useState<boolean>(
+    searchParams.get('ds') ? searchParams.get('ds') === 'true' : true
   );
-  const [paramGD, setParamGD] = useState(
-    (searchParams.get('gd') && searchParams.get('gd') == 'true') ?? true,
+  const [paramGD, setParamGD] = useState<boolean>(
+    searchParams.get('gd') ? searchParams.get('gd') === 'true' : true
   );
+
+  const sortOptions: { label: string; id: FilterEnum }[] = [
+    { label: 'Default', id: 'default' },
+    { label: 'Name', id: 'name' },
+    { label: 'Date', id: 'date' },
+  ];
 
   function toggleFilter(id: string) {
     if (id == 'se') setParamSE(!paramSE);
@@ -50,7 +57,7 @@ const Work: FC<WorkProps> = ({
     else if (id == 'ds') setParamDS(!paramDS);
   }
 
-  function toggleSort(id: string) {
+  function toggleSort(id: FilterEnum) {
     setParamSort(id);
   }
 
@@ -60,13 +67,13 @@ const Work: FC<WorkProps> = ({
         {Object.entries(workField).map((params) => {
           const field = params[1];
           const isActive =
-            field['ID'] == 'se' && paramSE
+            field.ID == 'se' && paramSE
               ? ' active'
-              : field['ID'] == 'pd' && paramPD
+              : field.ID == 'pd' && paramPD
               ? ' active'
-              : field['ID'] == 'gd' && paramGD
+              : field.ID == 'gd' && paramGD
               ? ' active'
-              : field['ID'] == 'ds' && paramDS
+              : field.ID == 'ds' && paramDS
               ? ' active'
               : '';
 
@@ -74,11 +81,11 @@ const Work: FC<WorkProps> = ({
             <>
               <div
                 className={'filter-section' + isActive}
-                id={field['ID']}
-                key={field['ID']}
-                onClick={() => toggleFilter(field['ID'])}
+                id={field.ID}
+                key={field.ID}
+                onClick={() => toggleFilter(field.ID)}
               >
-                <p className="button-text">{field['Alias']}</p>
+                <p className="button-text">{field.Alias}</p>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="10"
@@ -86,7 +93,7 @@ const Work: FC<WorkProps> = ({
                   viewBox="0 0 10 8"
                   fill="none"
                 >
-                  <path d={icons['Check']} />
+                  <path d={icons.Check} />
                 </svg>
               </div>
             </>
@@ -99,25 +106,13 @@ const Work: FC<WorkProps> = ({
   function ThumbnailsSection() {
     return (
       <>
-        {workFilter[paramSort]['Index'].map((id: string) => {
-          const workInclude =
-            Object.entries({
-              se: paramSE,
-              pd: paramPD,
-              gd: paramGD,
-              ds: paramDS,
-            })
-              .map(
-                (field) =>
-                  field[1] && workField[field[0]]['PostID'].includes(id),
-              )
-              .reduce((m, o) => m + o) >= 1;
+        {workFilter[paramSort].Index.map((id: WorkEnum) => {
+          const activeFilters: [FieldEnum, boolean][] = [['se', paramSE], ['pd', paramPD], ['gd', paramGD], ['ds', paramDS]] as const;
+          const workInclude = activeFilters.some(([field, enabled]) => enabled && workField[field].PostID.includes(id));
 
-          return workInclude ? (
-            <Thumbnail id={id} posts={allPosts} fields={workField} icons={icons} />
-          ) : (
-            <></>
-          );
+          return workInclude 
+            ? <Thumbnail id={id} posts={allPosts} fields={workField} icons={icons} /> 
+            : <></>;
         })}
       </>
     );
@@ -126,23 +121,7 @@ const Work: FC<WorkProps> = ({
   return (
     <>
       <div className="main-container">
-        <picture>
-          <source
-            media="(max-width: 640px)"
-            srcSet={`./graphics/Works@0.5x.svg`}
-            className="width-90"
-          />
-          <source
-            media="(min-width: 641px)"
-            srcSet={`./graphics/Works.svg`}
-            className="width-90"
-          />
-          <img
-            src={`./graphics/Works.svg`}
-            alt="Works"
-            className="width-90"
-          />
-        </picture>
+        <h1 className='width-90'>Works</h1>
         <div id="work-container">
           <div id="tool-container" className="width-90">
             {/* Filter */}
@@ -155,11 +134,13 @@ const Work: FC<WorkProps> = ({
                   viewBox="0 -1 15 15"
                   fill="none"
                 >
-                  <path d={icons['Field']} />
+                  <path d={icons.Field} />
                 </svg>
-                <h2>Filter</h2>
+                <h3>Filter</h3>
               </div>
-              <div id="filter-container">{FilterSection()}</div>
+              <div id="filter-container">
+                <FilterSection />
+              </div>
             </div>
 
             {/* Sort */}
@@ -172,27 +153,22 @@ const Work: FC<WorkProps> = ({
                   viewBox="0 0 23 23"
                   fill="none"
                 >
-                  <path d={icons['Sort']} />
+                  <path d={icons.Sort} />
                 </svg>
-                <h2>Sort by</h2>
+                <h3>Sort by</h3>
               </div>
 
               <ul id="sort-container">
-                {['Default', 'Name', 'Date'].map((e) => {
-                  const newID = e.toLowerCase();
-                  const isActive = newID == paramSort ? ' active' : '';
-                  return (
-                    <>
-                      <li
-                        className={'sort-section' + isActive}
-                        id={newID}
-                        onClick={() => toggleSort(newID)}
-                      >
-                        <p className="button-text">{e}</p>
-                      </li>
-                    </>
-                  );
-                })}
+                {sortOptions.map(({ label, id }) => (
+                  <li
+                    key={id}
+                    className={`sort-section${id === paramSort ? ' active' : ''}`}
+                    id={id}
+                    onClick={() => toggleSort(id)}
+                  >
+                    <p className="button-text">{label}</p>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -200,7 +176,7 @@ const Work: FC<WorkProps> = ({
           <div className="divider" />
 
           <div id="post-container" className="width-90">
-            {ThumbnailsSection()}
+            <ThumbnailsSection />
           </div>
         </div>
       </div>

@@ -4,13 +4,16 @@
 
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
+import { IconType, EmailContactType, ConnectContactType } from '../data';
 import '../stylesheets/footer.css';
 
 interface FooterProps {
-  contactEmail: { [key: string]: any };
-  contactConnect: { [key: string]: any }[];
-  icons: { [key: string]: any };
+  contactEmail: EmailContactType;
+  contactConnect: ConnectContactType[];
+  icons: IconType;
 }
+
+const currentYear = new Date().getFullYear();
 
 export const Footer: FC<FooterProps> = ({
   contactEmail,
@@ -43,19 +46,19 @@ export const Footer: FC<FooterProps> = ({
   }
 
   function ConnectSection(
-    contactConnect: { [key: string]: any }[],
+    contactConnect: ConnectContactType[],
   ) {
     return (
       <>
-        {contactConnect?.map((connect: { [key: string]: any }) => {
+        {contactConnect.map((connect) => {
           return (
-            <div key={connect['Name']}>
+            <div key={connect.Name}>
               {LinkSection(
-                connect['Name'],
-                icons[connect['SVG']],
-                connect['Link'],
-                connect['ViewBox'],
-                connect['Size'],
+                connect.Name,
+                icons[connect.SVG],
+                connect.Link,
+                connect.ViewBox,
+                connect.Size,
                 'width-25',
               )}
             </div>
@@ -90,11 +93,11 @@ export const Footer: FC<FooterProps> = ({
         <div id="footer-link-section" className="width-90">
           {/* Mail */}
           {LinkSection(
-            contactEmail['Details'],
-            icons[contactEmail['SVG']],
-            'mailto:' + contactEmail['Link'],
-            contactEmail['ViewBox'],
-            contactEmail['Size'],
+            contactEmail.Details,
+            icons[contactEmail.SVG],
+            'mailto:' + contactEmail.Link,
+            contactEmail.ViewBox,
+            contactEmail.Size,
             'width-70',
           )}
 
@@ -106,20 +109,20 @@ export const Footer: FC<FooterProps> = ({
         {/* Sitemap */}
         <div id="footer-sitemap-section" className="width-90">
           <p className="caption">
-            Copyright © 2023 Do Duc Quan. All rights reserved.
+            Copyright © {currentYear} Do Duc Quan. All rights reserved.
           </p>
           <div id="footer-nav-links">
             <Link to="/" className="button mid-2">
-              <h2>Home</h2>
+              <h3>Home</h3>
             </Link>
             <Link to="/about" className="button mid-2">
-              <h2>About</h2>
+              <h3>About</h3>
             </Link>
             <Link to="/works" className="button mid-2">
-              <h2>Works</h2>
+              <h3>Works</h3>
             </Link>
             <Link to="/contact" className="button mid-2">
-              <h2>Contact</h2>
+              <h3>Contact</h3>
             </Link>
           </div>
         </div>

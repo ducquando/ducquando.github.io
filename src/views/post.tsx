@@ -6,31 +6,37 @@ import { FC, useEffect, useRef, useState } from 'react';
 import { Navigate, Link, useParams } from 'react-router-dom';
 import { FastImage } from './image';
 import { Thumbnail } from './thumbnail';
+import { FieldEnum, FieldWorkType, IconType, PostWorkType, WorkEnum } from '../data';
 import '../stylesheets/post.css';
 import '../stylesheets/home.css';
 import '../stylesheets/work.css';
 
 interface PostProps {
-  workField: { [key: string]: any };
-  allPosts: { [key: string]: any };
-  icons: { [key: string]: any };
+  workField: FieldWorkType;
+  allPosts: PostWorkType;
+  icons: IconType;
 }
 
-const Post: FC<PostProps> = ({ icons, workField, allPosts }) => {
+const Post: FC<PostProps> = ({ 
+  icons, 
+  workField, 
+  allPosts 
+}) => {
   const { workID } = useParams();
   const scrollRef = useRef<HTMLInputElement>(null);
   const [scrollTop, setScrollTop] = useState(0);
   const [subHeader, setSubHeader] = useState('none');
 
-  if (workID == undefined || allPosts[workID] == undefined) {
+  if ( !workID || allPosts[workID as WorkEnum] == undefined) {
     return <Navigate to="/404" replace />;
   }
 
-  const filtering = ['se', 'pd', 'gd', 'ds']
-    .map((e) => e + '=' + workField[e]['PostID'].includes(workID))
+  const fields: FieldEnum[] = ['se', 'pd', 'gd', 'ds']
+  const filtering = fields
+    .map((e) => e + '=' + workField[e].PostID.includes(workID as WorkEnum))
     .reduce((m, o) => m + '&' + o);
-  const workPost = allPosts[workID];
-  const title = workPost['Name'];
+  const workPost = allPosts[workID as WorkEnum];
+  const title = workPost.Name + ': ' + workPost.Subtitle;
 
   useEffect(() => {
     document.title = title;
@@ -68,63 +74,61 @@ const Post: FC<PostProps> = ({ icons, workField, allPosts }) => {
   function ContentSection() {
     return (
       <>
-        {workPost['Content']?.map(
-          (content: { [key: string]: any }[], index: number) => {
-            return (
-              <div className="content-section width-90" key={index}>
-                {content?.map((subcontent, index) => {
-                  return subcontent['Type'] == 'h1' ? (
-                    <h2
-                      className={subcontent['Style'] + ' content-heading'}
-                      key={index}
-                    >
-                      {subcontent['Details']}
-                    </h2>
-                  ) : subcontent['Type'] == 'p' ? (
-                    <p
-                      className={subcontent['Style']}
-                      key={index}
-                      dangerouslySetInnerHTML={{
-                        __html: subcontent['Details'],
+        {workPost.Content.map((content, id) => {
+          return (
+            <div className="content-section width-90" key={id}>
+              {content.map((subcontent, index) => {
+                return subcontent.Type == 'h1' ? (
+                  <h3
+                    className={subcontent.Style + ' content-heading'}
+                    key={index}
+                  >
+                    {subcontent.Details}
+                  </h3>
+                ) : subcontent.Type == 'p' ? (
+                  <p
+                    className={subcontent.Style}
+                    key={index}
+                    dangerouslySetInnerHTML={{
+                      __html: subcontent.Details,
+                    }}
+                  />
+                ) : subcontent.Type == 'img-responsive' ? (
+                  <picture key={index}>
+                    <source
+                      media="(max-width: 640px)"
+                      srcSet={`./pictures/post/${subcontent.Source}@0.5x${subcontent.Format}`}
+                      onError={(e) => {
+                        const target = e.target as HTMLSourceElement;
+                        target.src = `./pictures/post/${subcontent.Source}${subcontent.Format}`;
                       }}
+                      className={subcontent.Style}
                     />
-                  ) : subcontent['Type'] == 'img-responsive' ? (
-                    <picture key={index}>
-                      <source
-                        media="(max-width: 640px)"
-                        srcSet={`./pictures/post/${subcontent['Source']}@0.5x${subcontent['Format']}`}
-                        onError={(e) => {
-                          const target = e.target as HTMLSourceElement;
-                          target.src = `./pictures/post/${subcontent['Source']}${subcontent['Format']}`;
-                        }}
-                        className={subcontent['Style']}
-                      />
-                      <source
-                        media="(min-width: 641px)"
-                        srcSet={`./pictures/post/${subcontent['Source']}${subcontent['Format']}`}
-                        className={subcontent['Style']}
-                      />
-                      <img
-                        src={`./pictures/post/${subcontent['Source']}${subcontent['Format']}`}
-                        className={subcontent['Style']}
-                        alt={subcontent['Caption']}
-                      />
-                    </picture>
-                  ) : subcontent['Type'] == 'img' ? (
-                    <FastImage
-                      src={`./pictures/post/${subcontent['Source']}${subcontent['Format']}`}
-                      placeholderSrc={`./pictures/post/${subcontent['Source']}@0.33x.webp`}
-                      className={subcontent['Style']}
-                      alt={subcontent['Caption']}
+                    <source
+                      media="(min-width: 641px)"
+                      srcSet={`./pictures/post/${subcontent.Source}${subcontent.Format}`}
+                      className={subcontent.Style}
                     />
-                  ) : (
-                    <div className="divider" key={index} />
-                  );
-                })}
-              </div>
-            );
-          },
-        )}
+                    <img
+                      src={`./pictures/post/${subcontent.Source}${subcontent.Format}`}
+                      className={subcontent.Style}
+                      alt={subcontent.Caption}
+                    />
+                  </picture>
+                ) : subcontent.Type == 'img' ? (
+                  <FastImage
+                    src={`./pictures/post/${subcontent.Source}${subcontent.Format}`}
+                    placeholderSrc={`./pictures/post/${subcontent.Source}@0.33x.webp`}
+                    className={subcontent.Style}
+                    alt={subcontent.Caption}
+                  />
+                ) : (
+                  <div className="divider" key={index} />
+                );
+              })}
+            </div>
+          )
+        })}
       </>
     );
   }
@@ -132,7 +136,7 @@ const Post: FC<PostProps> = ({ icons, workField, allPosts }) => {
   function PostsSection() {
     return (
       <>
-        {workPost['Similar'].map((id: string) => <Thumbnail id={id} posts={allPosts} fields={workField} icons={icons} />)}
+        {workPost.Similar.map((id: WorkEnum) => <Thumbnail id={id} posts={allPosts} fields={workField} icons={icons} />)}
       </>
     );
   }
@@ -148,15 +152,15 @@ const Post: FC<PostProps> = ({ icons, workField, allPosts }) => {
         <div className="width-90">
           {/* Desktop */}
           <div className="metadata-container desktop">
-            {workPost['Source'] ? (
+            {workPost.CTA ? (
               <div className="metadata-section">
-                <h3 className="metadata-items">{workPost['Name']}</h3>
-                <Link to={workPost['Source']} className="button">
-                  <p>View report</p>
+                <h4 className="metadata-items">{title}</h4>
+                <Link to={workPost.CTA.Link} className="button">
+                  <p>{workPost.CTA.Text}</p>
                 </Link>
               </div>
             ) : (
-              <h3 className="metadata-items">{workPost['Name']}</h3>
+              <h4 className="metadata-items">{title}</h4>
             )}
           </div>
 
@@ -165,12 +169,12 @@ const Post: FC<PostProps> = ({ icons, workField, allPosts }) => {
             className="metadata-container mobile"
             style={{ maxWidth: '50vw' }}
           >
-            <h3 className="metadata-items">{workPost['Name']}</h3>
+            <h4 className="metadata-items">{title}</h4>
           </div>
-          {workPost['Source'] && (
+          {workPost.CTA && (
             <div className="metadata-section mobile">
-              <Link to={workPost['Source']} className="button">
-                <p>View report</p>
+              <Link to={workPost.CTA.Link} className="button">
+                <p>{workPost.CTA.Text}</p>
               </Link>
             </div>
           )}
@@ -180,43 +184,26 @@ const Post: FC<PostProps> = ({ icons, workField, allPosts }) => {
       {/* Post */}
       <div className="main-container">
         {/* Title */}
-        <div id="heading-section" className="width-90">
-          <picture>
-            <source
-              media="(max-width: 640px)"
-              srcSet={`./graphics/${workPost['Title']}@0.5x.svg`}
-              className="width-90"
-            />
-            <source
-              media="(min-width: 641px)"
-              srcSet={`./graphics/${workPost['Title']}.svg`}
-              className="width-90"
-            />
-            <img
-              src={`./graphics/${workPost['Title']}.svg`}
-              alt={title}
-              className="width-90"
-            />
-          </picture>
-        </div>
+        <h5 id="heading-section" className='width-90'>{workPost.Name}:</h5>
+        <h1 id="heading-section" className='width-90'>{workPost.Subtitle}</h1>
 
         {/* Metadata */}
         <div id="title-section" className="width-90" ref={scrollRef}>
           {/* Desktop */}
           <div className="metadata-container desktop">
             <div className="metadata-section">
-              <h3>Duration</h3>
-              <p>{workPost['Duration'] + ' (' + workPost['Date'] + ')'}</p>
+              <h4>Duration</h4>
+              <p>{workPost.Duration}, {workPost.Date}</p>
             </div>
             <div className="metadata-section">
-              <h3>Role</h3>
-              <p>{workPost['Role']}</p>
+              <h4>Role</h4>
+              <p>{workPost.Role}</p>
             </div>
-            {workPost['Source'] && (
+            {workPost.CTA && (
               <div className="metadata-section ">
-                <h3 className="metadata-items">Project</h3>
-                <Link to={workPost['Source']} className="button">
-                  <p>View report</p>
+                <h4 className="metadata-items">Project</h4>
+                <Link to={workPost.CTA.Link} className="button">
+                  <p>{workPost.CTA.Text}</p>
                 </Link>
               </div>
             )}
@@ -240,9 +227,9 @@ const Post: FC<PostProps> = ({ icons, workField, allPosts }) => {
                   viewBox="0 0 11 13"
                   fill="none"
                 >
-                  <path d={icons['CalendarFill']} />
+                  <path d={icons.CalendarFill} />
                 </svg>
-                <p>{workPost['Duration'] + ' (' + workPost['Date'] + ')'}</p>
+                <p>{workPost.Duration + ' (' + workPost.Date + ')'}</p>
               </div>
               <div className="mobile-section">
                 <svg
@@ -252,15 +239,15 @@ const Post: FC<PostProps> = ({ icons, workField, allPosts }) => {
                   viewBox="0 0 16 18"
                   fill="none"
                 >
-                  <path d={icons['Role']} />
+                  <path d={icons.Role} />
                 </svg>
-                <p>{workPost['Role']}</p>
+                <p>{workPost.Role}</p>
               </div>
             </div>
-            {workPost['Source'] && (
+            {workPost.CTA && (
               <div className="mobile-section">
-                <Link to={workPost['Source']} className="button">
-                  <p>View project</p>
+                <Link to={workPost.CTA.Link} className="button">
+                  <p>{workPost.CTA.Text}</p>
                 </Link>
               </div>
             )}
@@ -269,43 +256,41 @@ const Post: FC<PostProps> = ({ icons, workField, allPosts }) => {
 
         {/* Content */}
         <div id="content-container" className="width-90">
-          {ContentSection()}
+          <ContentSection />
         </div>
 
         {/* CTA */}
-        {workPost['Source'] && (
+        {workPost.CTA && (
           <div id="cta-button" className="width-90">
-            <h1>{workPost['Name']}</h1>
-            <Link to={workPost['Source']} className="button large">
-              <p>View report</p>
+            <h2>{title}</h2>
+            <Link to={workPost.CTA.Link} className="button large">
+              <p>{workPost.CTA.Text}</p>
             </Link>
           </div>
         )}
-        {workPost['Similar'].length != 0 && (
-          <>
-            <div className="divider" />
-            <div className="main-section width-90">
-              <div className="more-container">
-                <h1>More like this </h1>
-                <Link to={'/works?' + filtering} className="button more">
-                  <p className="button-text">More</p>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="19"
-                    height="20"
-                    viewBox="0 0 19 20"
-                    fill="none"
-                  >
-                    <path d={icons['More']} />
-                  </svg>
-                </Link>
-              </div>
-              <div id="post-container" className="width-90">
-                {PostsSection()}
-              </div>
-            </div>
-          </>
-        )}
+
+        {/* Similar */}
+        <div className="divider" />
+        <div className="main-section width-90">
+          <div className="more-container">
+            <h2>More like this </h2>
+            <Link to={'/works?' + filtering} className="button more">
+              <p className="button-text">More</p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="19"
+                height="20"
+                viewBox="0 0 19 20"
+                fill="none"
+              >
+                <path d={icons.More} />
+              </svg>
+            </Link>
+          </div>
+          <div id="post-container" className="width-90">
+            <PostsSection />
+          </div>
+        </div>
       </div>
     </>
   );

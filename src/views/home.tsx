@@ -2,23 +2,24 @@
 // GNL General Public License v3
 // Copyright (c) Do Duc Quan. All rights reserved.
 
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FastImage } from './image';
+import { Thumbnail } from './thumbnail';
+import { FieldWorkType, IconType, OtherHomeType, PostWorkType, OtherContactType, GeneralAboutType, EmailContactType, WorkEnum } from '../data';
 import '../stylesheets/home.css';
 import '../stylesheets/work.css';
-import { useEffect } from 'react';
 
 interface HomeProps {
   title: string,
-  workHighlight: string[];
-  icons: { [key: string]: any };
-  homeOverview: { [key: string]: any };
-  aboutGen: { [key: string]: any };
-  contactEmail: { [key: string]: any };
-  contactLocation: { [key: string]: any };
-  workPost: { [key: string]: any };
-  workField: { [key: string]: any };
+  workHighlight: WorkEnum[];
+  icons: IconType;
+  homeOverview: OtherHomeType;
+  aboutGen: GeneralAboutType;
+  contactEmail: EmailContactType;
+  contactLocation: OtherContactType;
+  workPost: PostWorkType;
+  workField: FieldWorkType;
 }
 
 const Home: FC<HomeProps> = ({
@@ -44,8 +45,7 @@ const Home: FC<HomeProps> = ({
             <FastImage
               src={'./pictures/Thumbnail.png'}
               placeholderSrc={'./pictures/Thumbnail@0.33x.webp'}
-              id="thumbnail-image"
-              className="width-100"
+              className="width-100 fill-image"
               alt="Thumbnail hero image"
             />
             <picture style={{ position: 'absolute' }}>
@@ -66,8 +66,8 @@ const Home: FC<HomeProps> = ({
               />
             </picture>
             <div id="thumbnail-section" className="width-25">
-              <p className="mid">{homeOverview['Primary']}</p>
-              <h2>{homeOverview['Secondary']}</h2>
+              <p className="mid">{homeOverview.Primary}</p>
+              <h3>{homeOverview.Secondary}</h3>
             </div>
           </div>
         </div>
@@ -80,7 +80,7 @@ const Home: FC<HomeProps> = ({
       <>
         <div className="main-section width-100">
           <div className="more-container width-90" style={{ margin: 'auto' }}>
-            <h1>About</h1>
+            <h2>About</h2>
             <Link to="/about" className="button more">
               <p className="button-text">More</p>
               <svg
@@ -90,26 +90,26 @@ const Home: FC<HomeProps> = ({
                 viewBox="0 0 19 20"
                 fill="none"
               >
-                <path d={icons['More']} />
+                <path d={icons.More} />
               </svg>
             </Link>
           </div>
           <div id="about-container">
             <div className="width-90" style={{ margin: 'auto' }}>
-              <p className="mid width-60">{aboutGen['Overview']}</p>
+              <p className="mid width-60">{aboutGen.Overview}</p>
             </div>
             <div className="about-section width-90" style={{ margin: 'auto' }}>
               <div className="about-items general-section">
-                <h3>Experience</h3>
-                <p className="large-number">{aboutGen['Years']}</p>
+                <h4>Experience</h4>
+                <p className="large-number">{aboutGen.Years}</p>
               </div>
               <div className="about-items general-section">
-                <h3>Projects</h3>
-                <p className="large-number">{aboutGen['Project']}</p>
+                <h4>Projects</h4>
+                <p className="large-number">{aboutGen.Project}</p>
               </div>
               <div className="about-items general-section desktop">
-                <h3>Happy clients</h3>
-                <p className="large-number">{aboutGen['Stakeholders']}</p>
+                <h4>Happy clients</h4>
+                <p className="large-number">{aboutGen.Stakeholders}</p>
               </div>
             </div>
           </div>
@@ -123,7 +123,7 @@ const Home: FC<HomeProps> = ({
       <>
         <div className="main-section width-90" style={{ margin: 'auto' }}>
           <div className="more-container">
-            <h1>Contact</h1>
+            <h2>Contact</h2>
             <Link to="/contact" className="button more">
               <p className="button-text">More</p>
               <svg
@@ -133,7 +133,7 @@ const Home: FC<HomeProps> = ({
                 viewBox="0 0 19 20"
                 fill="none"
               >
-                <path d={icons['More']} />
+                <path d={icons.More} />
               </svg>
             </Link>
           </div>
@@ -143,8 +143,8 @@ const Home: FC<HomeProps> = ({
               If you want to start a new project or have questions, feel free to
               reach out at <br />
               <span style={{ position: 'relative', left: '-0.375rem' }}>
-                <Link to={'mailto:' + contactEmail['Link']} className="button">
-                  {contactEmail['Details']}
+                <Link to={'mailto:' + contactEmail.Link} className="button">
+                  {contactEmail.Details}
                 </Link>
               </span>
             </p>
@@ -157,104 +157,13 @@ const Home: FC<HomeProps> = ({
     );
   }
 
-  function HighlightHelper(id: string) {
-    return (
-      <>
-        {Object.entries(workField).map((fields: { [key: string]: any }) => {
-          const field = fields[1];
-
-          return field['PostID'].includes(id) ? (
-            <p className="caption" key={field['ID'] + id}>
-              {field['Alias']}
-            </p>
-          ) : (
-            <></>
-          );
-        })}
-      </>
-    );
-  }
-
   function HighlightSection() {
     return (
       <>
-        {workHighlight?.map((id: string) => {
-          return workPost[id]['Highlight'] ? (
-            <>
-              <Link to={'/works' + workPost[id]['Link']} key={workPost[id]}>
-                <div className="post-section width-30">
-                  <FastImage
-                    src={`${workPost[id]['Thumbnail']}${workPost[id]['Format']}`}
-                    placeholderSrc={`${workPost[id]['Thumbnail']}@0.33x.webp`}
-                    className="width-30"
-                    alt={workPost[id]['Name']}
-                  />
-                  <div className="post-overlay" />
-                  <div className="post-title">
-                    <h3>{workPost[id]['Name']}</h3>
-                    <div className="post-items">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="15"
-                        height="15"
-                        viewBox="0 0 15 15"
-                        fill="none"
-                      >
-                        <path d={icons['Field']} />
-                      </svg>
-                      <div className="listing" style={{ display: 'flex' }}>
-                        {HighlightHelper(id)}
-                      </div>
-                    </div>
-                    <div className="post-items">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="14"
-                        height="16"
-                        viewBox="0 0 14 16"
-                        fill="none"
-                      >
-                        <path d={icons['Calendar']} />
-                      </svg>
-                      <p className="caption">
-                        {workPost[id]['Duration'] +
-                          ' (' +
-                          workPost[id]['Date'] +
-                          ')'}
-                      </p>
-                    </div>
-                    <div className="post-items">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="14"
-                        height="14"
-                        viewBox="0 0 16 16"
-                        fill="none"
-                      >
-                        <path d={icons['Tag']} />
-                      </svg>
-                      <p className="caption">{workPost[id]['Tags']}</p>
-                    </div>
-                  </div>
-
-                  <div className="post-view">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      height="12"
-                      viewBox="0 0 18 12"
-                      fill="none"
-                    >
-                      <path d={icons['Eye']} />
-                    </svg>
-                    <p className="button-text">View project</p>
-                  </div>
-                </div>
-              </Link>
-            </>
-          ) : (
-            <></>
-          );
+        {workHighlight.map((id: WorkEnum) => {
+          return workPost[id].Highlight
+            ? <Thumbnail id={id} posts={workPost} fields={workField} icons={icons} />
+            : <></>
         })}
       </>
     );
@@ -265,7 +174,7 @@ const Home: FC<HomeProps> = ({
       <>
         <div className="main-section width-90" style={{ margin: 'auto' }}>
           <div className="more-container">
-            <h1>Featured works</h1>
+            <h2>Featured works</h2>
             <Link to="/works" className="button more">
               <p className="button-text">More</p>
               <svg
@@ -275,13 +184,13 @@ const Home: FC<HomeProps> = ({
                 viewBox="0 0 19 20"
                 fill="none"
               >
-                <path d={icons['More']} />
+                <path d={icons.More} />
               </svg>
             </Link>
           </div>
 
           <div id="post-container" className="width-90">
-            {HighlightSection()}
+            <HighlightSection />
           </div>
         </div>
       </>
@@ -290,17 +199,12 @@ const Home: FC<HomeProps> = ({
 
   return (
     <>
-      {ContentSection()}
-
-      {AboutSection()}
+      <ContentSection />
+      <AboutSection />
       <div className="divider" />
-
-      {/* Works section */}
-      {WorkSection()}
+      <WorkSection />
       <div className="divider" />
-
-      {/* Contact section */}
-      {ContactSection()}
+      <ContactSection />
     </>
   );
 };

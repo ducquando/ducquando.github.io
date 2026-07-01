@@ -4,12 +4,13 @@
 
 import { FC, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { IconType } from '../data';
 import '../stylesheets/error.css';
 
 interface NotFoundProps {
   title: string;
   message: string;
-  icons: { [key: string]: any };
+  icons: IconType;
 }
 
 const NotFound: FC<NotFoundProps> = ({
@@ -43,7 +44,7 @@ const NotFound: FC<NotFoundProps> = ({
               viewBox="0 0 19 18"
               fill="none"
             >
-              <path d={icons['Home']} />
+              <path d={icons.Home} />
             </svg>
             <p className="button-text">Back to Home</p>
           </Link>

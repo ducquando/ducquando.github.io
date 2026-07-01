@@ -4,10 +4,11 @@
 
 import { FC, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { IconType } from '../data';
 import '../stylesheets/header.css';
 
 interface HeaderProps {
-  icons: { [key: string]: any };
+  icons: IconType;
 }
 
 export const Header: FC<HeaderProps> = ({ icons }) => {
@@ -23,30 +24,36 @@ export const Header: FC<HeaderProps> = ({ icons }) => {
     { Link: '/contact', Name: 'Contact' },
   ];
 
+  function closeMenu() {
+    document.body.style.overflow = 'visible';
+    setOpenSymbol('active');
+    setCloseSymbol('');
+    setNavView('none');
+  }
+
+  function openMenu() {
+    document.body.style.overflow = 'hidden';
+    setOpenSymbol('');
+    setCloseSymbol('active');
+    setNavView('flex');
+  }
+
   function changeState() {
-    if (openSymbol == '') {
-      document.body.style.overflow = 'visible';
-      setOpenSymbol('active');
-      setCloseSymbol('');
-      setNavView('none');
+    if (openSymbol === '') {
+      closeMenu();
     } else {
-      document.body.style.overflow = 'hidden';
-      setOpenSymbol('');
-      setCloseSymbol('active');
-      setNavView('flex');
+      openMenu();
     }
   }
 
   function ItemSection() {
     return (
       <>
-        {pages?.map((page: { [key: string]: any }) => {
-          return (
-            <Link to={page['Link']} className="button mid-1" key={page['Name']}>
-              <h2>{page['Name']}</h2>
-            </Link>
-          );
-        })}
+        {pages.map((page) => (
+          <Link to={page.Link} className="button mid-1" key={page.Name}>
+            <h3>{page.Name}</h3>
+          </Link>
+        ))}
       </>
     );
   }
@@ -54,17 +61,16 @@ export const Header: FC<HeaderProps> = ({ icons }) => {
   function BurgerSection() {
     return (
       <>
-        {pages?.map((page: { [key: string]: any }) => {
-          return (
-            <Link to={page['Link']} key={page['Name']}>
-              <img
-                src={'./graphics/' + page['Name'] + '.svg'}
-                alt={page['Name'] + ' page'}
-                className="width-90"
-              />
-            </Link>
-          );
-        })}
+        {pages.map((page) => (
+          <Link to={page.Link} key={page.Name} onClick={closeMenu}>
+            {/* <h6 className="width-90">{page.Name}</h1> */}
+            <img
+              src={'./graphics/' + page.Name + '.svg'}
+              alt={page.Name + ' page'}
+              className="width-90"
+            />
+          </Link>
+        ))}
       </>
     );
   }
@@ -80,7 +86,9 @@ export const Header: FC<HeaderProps> = ({ icons }) => {
           <span></span>
 
           {/* Desktop version */}
-          <div id="nav-items">{ItemSection()}</div>
+          <div id="nav-items">
+            <ItemSection />
+          </div>
 
           {/* Mobile version */}
           <div id="nav-burger" onClick={changeState}>
@@ -92,12 +100,12 @@ export const Header: FC<HeaderProps> = ({ icons }) => {
               fill="none"
             >
               <path
-                d={icons['HamburgerClose']}
+                d={icons.HamburgerClose}
                 id="burger-close"
                 className={closeSymbol}
               />
               <path
-                d={icons['HamburgerOpen']}
+                d={icons.HamburgerOpen}
                 id="burger-open"
                 className={openSymbol}
               />
@@ -111,7 +119,7 @@ export const Header: FC<HeaderProps> = ({ icons }) => {
             className="width-100"
             style={{ display: navView }}
           >
-            {BurgerSection()}
+            <BurgerSection />
           </div>
         </div>
       </nav>
