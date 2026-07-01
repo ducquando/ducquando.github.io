@@ -2,24 +2,24 @@
 // GNL General Public License v3
 // Copyright (c) Do Duc Quan. All rights reserved.
 
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FastImage } from './image';
+import { Thumbnail } from './thumbnail';
+import { FieldWorkType, IconType, OtherHomeType, PostWorkType, OtherContactType, GeneralAboutType, EmailContactType, WorkEnum } from '../data';
 import '../stylesheets/home.css';
 import '../stylesheets/work.css';
-import { useEffect } from 'react';
-import { Thumbnail } from './thumbnail';
 
 interface HomeProps {
   title: string,
-  workHighlight: string[];
-  icons: { [key: string]: any };
-  homeOverview: { [key: string]: any };
-  aboutGen: { [key: string]: any };
-  contactEmail: { [key: string]: any };
-  contactLocation: { [key: string]: any };
-  workPost: { [key: string]: any };
-  workField: { [key: string]: any };
+  workHighlight: WorkEnum[];
+  icons: IconType;
+  homeOverview: OtherHomeType;
+  aboutGen: GeneralAboutType;
+  contactEmail: EmailContactType;
+  contactLocation: OtherContactType;
+  workPost: PostWorkType;
+  workField: FieldWorkType;
 }
 
 const Home: FC<HomeProps> = ({
@@ -67,8 +67,8 @@ const Home: FC<HomeProps> = ({
               />
             </picture>
             <div id="thumbnail-section" className="width-25">
-              <p className="mid">{homeOverview['Primary']}</p>
-              <h3>{homeOverview['Secondary']}</h3>
+              <p className="mid">{homeOverview.Primary}</p>
+              <h3>{homeOverview.Secondary}</h3>
             </div>
           </div>
         </div>
@@ -91,26 +91,26 @@ const Home: FC<HomeProps> = ({
                 viewBox="0 0 19 20"
                 fill="none"
               >
-                <path d={icons['More']} />
+                <path d={icons.More} />
               </svg>
             </Link>
           </div>
           <div id="about-container">
             <div className="width-90" style={{ margin: 'auto' }}>
-              <p className="mid width-60">{aboutGen['Overview']}</p>
+              <p className="mid width-60">{aboutGen.Overview}</p>
             </div>
             <div className="about-section width-90" style={{ margin: 'auto' }}>
               <div className="about-items general-section">
                 <h4>Experience</h4>
-                <p className="large-number">{aboutGen['Years']}</p>
+                <p className="large-number">{aboutGen.Years}</p>
               </div>
               <div className="about-items general-section">
                 <h4>Projects</h4>
-                <p className="large-number">{aboutGen['Project']}</p>
+                <p className="large-number">{aboutGen.Project}</p>
               </div>
               <div className="about-items general-section desktop">
                 <h4>Happy clients</h4>
-                <p className="large-number">{aboutGen['Stakeholders']}</p>
+                <p className="large-number">{aboutGen.Stakeholders}</p>
               </div>
             </div>
           </div>
@@ -134,7 +134,7 @@ const Home: FC<HomeProps> = ({
                 viewBox="0 0 19 20"
                 fill="none"
               >
-                <path d={icons['More']} />
+                <path d={icons.More} />
               </svg>
             </Link>
           </div>
@@ -144,8 +144,8 @@ const Home: FC<HomeProps> = ({
               If you want to start a new project or have questions, feel free to
               reach out at <br />
               <span style={{ position: 'relative', left: '-0.375rem' }}>
-                <Link to={'mailto:' + contactEmail['Link']} className="button">
-                  {contactEmail['Details']}
+                <Link to={'mailto:' + contactEmail.Link} className="button">
+                  {contactEmail.Details}
                 </Link>
               </span>
             </p>
@@ -161,8 +161,8 @@ const Home: FC<HomeProps> = ({
   function HighlightSection() {
     return (
       <>
-        {workHighlight?.map((id: string) => {
-          return workPost[id]['Highlight']
+        {workHighlight.map((id: WorkEnum) => {
+          return workPost[id].Highlight
             ? <Thumbnail id={id} posts={workPost} fields={workField} icons={icons} />
             : <></>
         })}
@@ -185,7 +185,7 @@ const Home: FC<HomeProps> = ({
                 viewBox="0 0 19 20"
                 fill="none"
               >
-                <path d={icons['More']} />
+                <path d={icons.More} />
               </svg>
             </Link>
           </div>

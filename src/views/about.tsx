@@ -5,14 +5,15 @@
 import { FC, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FastImage } from './image';
+import { ExperienceAboutType, JourneyAboutType, OtherAboutType, SkillAboutType } from '../data';
 import '../stylesheets/about.css';
 
 interface AboutProps {
   title: string;
-  aboutJourney: { [key: string]: any }[];
-  aboutExp: { [key: string]: any }[];
-  aboutDetails: { [key: string]: any };
-  aboutFuture: { [key: string]: any };
+  aboutJourney: JourneyAboutType[];
+  aboutExp: ExperienceAboutType[];
+  aboutDetails: OtherAboutType;
+  aboutFuture: OtherAboutType;
 }
 
 const About: FC<AboutProps> = ({
@@ -29,19 +30,19 @@ const About: FC<AboutProps> = ({
   function JourneySection() {
     return (
       <>
-        {aboutJourney?.map((journey: { [key: string]: any }) => {
+        {aboutJourney.map((journey) => {
           return (
             <>
-              <div className="journey-section width-20" key={journey['Year']}>
-                <p className="large">{journey['Year']}</p>
-                <p>{journey['Description']}</p>
+              <div className="journey-section width-20" key={journey.Year}>
+                <p className="large">{journey.Year}</p>
+                <p>{journey.Description}</p>
                 <FastImage
-                  src={`${journey['Image']}${journey['Format']}`}
-                  placeholderSrc={`${journey['Image']}@0.33x.webp`}
-                  className={journey['Landspace'] ? 'landscape' : 'portrait'}
-                  alt={journey['Year']}
-                  leftOffset={journey['HorizontalOffset']}
-                  topOffset={journey['VerticalOffset']}
+                  src={`${journey.Image}${journey.Format}`}
+                  placeholderSrc={`${journey.Image}@0.33x.webp`}
+                  className={journey.Landspace ? 'landscape' : 'portrait'}
+                  alt={journey.Year}
+                  leftOffset={journey.HorizontalOffset}
+                  topOffset={journey.VerticalOffset}
                 />
               </div>
             </>
@@ -62,18 +63,18 @@ const About: FC<AboutProps> = ({
     );
   }
 
-  function ExperienceTools(tools: { [key: string]: any }[]) {
+  function ExperienceTools(tools: SkillAboutType[]) {
     return (
       <>
-        {tools?.map((tool: { [key: string]: any }) => {
+        {tools.map((tool) => {
           return (
             <>
-              <div className="tool-items" key={tool['SkillName']}>
+              <div className="tool-items" key={tool.SkillName}>
                 <img
-                  src={tool['Image'] + tool['Format']}
-                  alt={tool['SkillName']}
+                  src={tool.Image + tool.Format}
+                  alt={tool.SkillName}
                 />
-                <p>{tool['SkillName']}</p>
+                <p>{tool.SkillName}</p>
               </div>
             </>
           );
@@ -85,26 +86,26 @@ const About: FC<AboutProps> = ({
   function ExperienceSection() {
     return (
       <>
-        {aboutExp?.map((exp: { [key: string]: any }) => {
+        {aboutExp.map((exp) => {
           return (
             <>
-              <div className="experience-section" id={exp['Name']}>
+              <div className="experience-section" id={exp.Name} key={exp.Name}>
                 <div className="description-container width-30">
                   {/* Heading */}
-                  <h3>{exp['Name']}</h3>
-                  <p dangerouslySetInnerHTML={{ __html: exp['Description'] }} />
+                  <h3>{exp.Name}</h3>
+                  <p dangerouslySetInnerHTML={{ __html: exp.Description }} />
 
                   {/* Statistics */}
                   <div className="stats-container">
-                    {ExperienceStats('Years', exp['Years'])}
-                    {ExperienceStats('Projects', exp['Project'])}
+                    {ExperienceStats('Years', exp.Years)}
+                    {ExperienceStats('Projects', exp.Project)}
                   </div>
 
                   {/* Tools & skills */}
                   <div className="tool-container">
                     <h4>Tools and skills</h4>
                     <div className="tool-section-about">
-                      {ExperienceTools(exp['Skills'])}
+                      {ExperienceTools(exp.Skills)}
                     </div>
                   </div>
                 </div>
@@ -117,13 +118,13 @@ const About: FC<AboutProps> = ({
                   }}
                 >
                   <FastImage
-                    src={`${exp['Thumbnail']}${exp['Format']}`}
-                    placeholderSrc={`${exp['Thumbnail']}@0.33x.webp`}
+                    src={`${exp.Thumbnail}${exp.Format}`}
+                    placeholderSrc={`${exp.Thumbnail}@0.33x.webp`}
                     className="width-60"
-                    alt={exp['Name']}
+                    alt={exp.Name}
                   />
-                  <Link to={exp['CTA']} className="button large width-60">
-                    <p className="button-text">{`View ${exp['Name']} works`}</p>
+                  <Link to={exp.CTA} className="button large width-60">
+                    <p className="button-text">{`View ${exp.Name} works`}</p>
                   </Link>
                 </div>
               </div>
@@ -142,10 +143,10 @@ const About: FC<AboutProps> = ({
         <h1 className='width-90'>About</h1>
         <div className="width-90">
           <p className="mid width-60">
-            {aboutDetails['Primary']}
+            {aboutDetails.Primary}
             <br />
             <br />
-            {aboutDetails['Secondary']}
+            {aboutDetails.Secondary}
           </p>
         </div>
         <div className="divider"></div>
@@ -169,10 +170,10 @@ const About: FC<AboutProps> = ({
           <h2>Future Direction</h2>
           <div className="width-90">
             <p className="width-60">
-              {aboutFuture['Primary']}
+              {aboutFuture.Primary}
               <br />
               <br />
-              {aboutFuture['Secondary']}
+              {aboutFuture.Secondary}
             </p>
           </div>
         </div>

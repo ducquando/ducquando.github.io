@@ -4,10 +4,11 @@
 
 import { FC, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { IconType } from '../data';
 import '../stylesheets/header.css';
 
 interface HeaderProps {
-  icons: { [key: string]: any };
+  icons: IconType;
 }
 
 export const Header: FC<HeaderProps> = ({ icons }) => {
@@ -40,10 +41,10 @@ export const Header: FC<HeaderProps> = ({ icons }) => {
   function ItemSection() {
     return (
       <>
-        {pages?.map((page: { [key: string]: any }) => {
+        {pages.map((page) => {
           return (
-            <Link to={page['Link']} className="button mid-1" key={page['Name']}>
-              <h3>{page['Name']}</h3>
+            <Link to={page.Link} className="button mid-1" key={page.Name}>
+              <h3>{page.Name}</h3>
             </Link>
           );
         })}
@@ -54,13 +55,13 @@ export const Header: FC<HeaderProps> = ({ icons }) => {
   function BurgerSection() {
     return (
       <>
-        {pages?.map((page: { [key: string]: any }) => {
+        {pages.map((page) => {
           return (
-            <Link to={page['Link']} key={page['Name']}>
-              {/* <h6 className="width-90">{page['Name']}</h1> */}
+            <Link to={page.Link} key={page.Name}>
+              {/* <h6 className="width-90">{page.Name}</h1> */}
               <img
-                src={'./graphics/' + page['Name'] + '.svg'}
-                alt={page['Name'] + ' page'}
+                src={'./graphics/' + page.Name + '.svg'}
+                alt={page.Name + ' page'}
                 className="width-90"
               />
             </Link>
@@ -93,12 +94,12 @@ export const Header: FC<HeaderProps> = ({ icons }) => {
               fill="none"
             >
               <path
-                d={icons['HamburgerClose']}
+                d={icons.HamburgerClose}
                 id="burger-close"
                 className={closeSymbol}
               />
               <path
-                d={icons['HamburgerOpen']}
+                d={icons.HamburgerOpen}
                 id="burger-open"
                 className={openSymbol}
               />

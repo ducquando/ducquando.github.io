@@ -4,14 +4,15 @@
 
 import { FC, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { EmailContactType, IconType, OtherContactType, ConnectContactType } from '../data';
 import '../stylesheets/contact.css';
 
 interface ContactProps {
   title: string;
-  icons: { [key: string]: any };
-  contactEmail: { [key: string]: any };
-  contactConnect: { [key: string]: any }[];
-  contactInfo: { [key: string]: any }[];
+  icons: IconType;
+  contactEmail: EmailContactType;
+  contactConnect: ConnectContactType[];
+  contactInfo: OtherContactType[];
 }
 
 const Contact: FC<ContactProps> = ({
@@ -28,9 +29,9 @@ const Contact: FC<ContactProps> = ({
   function InfoSection() {
     return (
       <>
-        {contactInfo?.map((info: { [key: string]: any }) => {
+        {contactInfo.map((info) => {
           return (
-            <div className="info-connect-section" key={info['Details']}>
+            <div className="info-connect-section" key={info.Details}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -38,10 +39,10 @@ const Contact: FC<ContactProps> = ({
                 viewBox="0 0 20 20"
                 fill="none"
               >
-                <path d={icons[info['SVG']]} />
+                <path d={icons[info.SVG]} />
               </svg>
               <div className="info-subsection">
-                <p>{info['Details']}</p>
+                <p>{info.Details}</p>
               </div>
             </div>
           );
@@ -53,22 +54,22 @@ const Contact: FC<ContactProps> = ({
   function SocialSection() {
     return (
       <>
-        {contactConnect?.map((connect: { [key: string]: any }) => {
+        {contactConnect.map((connect) => {
           return (
-            <div className="info-connect-section" key={connect['Name']}>
+            <div className="info-connect-section" key={connect.Name}>
               <div className="connect-subsection">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="18"
                   height="14"
-                  viewBox={connect['ViewBox']}
+                  viewBox={connect.ViewBox}
                 >
-                  <path d={icons[connect['SVG']]} />
+                  <path d={icons[connect.SVG]} />
                 </svg>
-                <h4>{connect['Name']}</h4>
+                <h4>{connect.Name}</h4>
               </div>
-              <Link to={connect['Link']} className="button">
-                <p>{connect['Details']}</p>
+              <Link to={connect.Link} className="button">
+                <p>{connect.Details}</p>
               </Link>
             </div>
           );
@@ -100,10 +101,10 @@ const Contact: FC<ContactProps> = ({
                 viewBox="0 0 20 20"
                 fill="none"
               >
-                <path d={icons[contactEmail['SVG']]} />
+                <path d={icons[contactEmail.SVG]} />
               </svg>
-              <Link to={'mailto:' + contactEmail['Link']} className="button">
-                <p>{contactEmail['Details']}</p>
+              <Link to={'mailto:' + contactEmail.Link} className="button">
+                <p>{contactEmail.Details}</p>
               </Link>
             </div>
           </div>

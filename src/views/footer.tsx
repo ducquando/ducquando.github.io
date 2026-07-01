@@ -4,12 +4,13 @@
 
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
+import { IconType, EmailContactType, ConnectContactType } from '../data';
 import '../stylesheets/footer.css';
 
 interface FooterProps {
-  contactEmail: { [key: string]: any };
-  contactConnect: { [key: string]: any }[];
-  icons: { [key: string]: any };
+  contactEmail: EmailContactType;
+  contactConnect: ConnectContactType[];
+  icons: IconType;
 }
 
 const currentYear = new Date().getFullYear();
@@ -45,19 +46,19 @@ export const Footer: FC<FooterProps> = ({
   }
 
   function ConnectSection(
-    contactConnect: { [key: string]: any }[],
+    contactConnect: ConnectContactType[],
   ) {
     return (
       <>
-        {contactConnect?.map((connect: { [key: string]: any }) => {
+        {contactConnect.map((connect) => {
           return (
-            <div key={connect['Name']}>
+            <div key={connect.Name}>
               {LinkSection(
-                connect['Name'],
-                icons[connect['SVG']],
-                connect['Link'],
-                connect['ViewBox'],
-                connect['Size'],
+                connect.Name,
+                icons[connect.SVG],
+                connect.Link,
+                connect.ViewBox,
+                connect.Size,
                 'width-25',
               )}
             </div>
@@ -92,11 +93,11 @@ export const Footer: FC<FooterProps> = ({
         <div id="footer-link-section" className="width-90">
           {/* Mail */}
           {LinkSection(
-            contactEmail['Details'],
-            icons[contactEmail['SVG']],
-            'mailto:' + contactEmail['Link'],
-            contactEmail['ViewBox'],
-            contactEmail['Size'],
+            contactEmail.Details,
+            icons[contactEmail.SVG],
+            'mailto:' + contactEmail.Link,
+            contactEmail.ViewBox,
+            contactEmail.Size,
             'width-70',
           )}
 

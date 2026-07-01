@@ -33,6 +33,7 @@ export const FastImage = ({
       className={`loading-image ${customClass} ${className}`}
       alt={props.alt || ''}
       style={{ left: leftOffset + 'rem', right: rightOffset + 'rem' }}
+      key={imgSource}
     />
   );
 };

@@ -2,44 +2,46 @@
 // GNL General Public License v3
 // Copyright (c) Do Duc Quan. All rights reserved.
 
-type imgFormatEnum = ".png" | ".webp" | ".gif"
+import { ImgFormatEnum } from "./work"
 
-interface JourneyAboutType {
+export interface SkillAboutType {
+    Image: string,
+    Format: ImgFormatEnum,
+    SkillName: string,
+  }
+
+export interface JourneyAboutType {
   Year: string,
   Description: string,
   Image: string,
-  Format: imgFormatEnum,
+  Format: ImgFormatEnum,
   Landspace: boolean,
   HorizontalOffset: string,
   VerticalOffset: string,
 }
 
-interface GeneralAboutType {
+export interface GeneralAboutType {
   Overview: string,
   Years: string,
   Project: string,
   Stakeholders: string,
 }
 
-interface OtherAboutType {
+export interface OtherAboutType {
   Primary: string,
   Secondary: string,
 }
 
-interface ExperienceAboutType {
+export interface ExperienceAboutType {
   Name: string,
   Description: string,
   CTA: string,
   Thumbnail: string,
-  Format: imgFormatEnum,
+  Format: ImgFormatEnum,
   Years: string,
   Project: string,
   Stakeholders: string,
-  Skills: {
-    Image: string,
-    Format: imgFormatEnum,
-    SkillName: string,
-  }[],
+  Skills: SkillAboutType[],
 }[]
 
 const dbJourneyAbout: JourneyAboutType[] = [

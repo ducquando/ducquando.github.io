@@ -5,12 +5,13 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
 import { FastImage } from "./image";
+import { WorkEnum, FieldWorkType, PostWorkType, IconType, } from "../data";
 
 interface ThumbnailProps {
-  id: string,
-  posts: { [key: string]: any },
-  fields: { [key: string]: any },
-  icons: { [key: string]: any },
+  id: WorkEnum,
+  posts: PostWorkType,
+  fields: FieldWorkType,
+  icons: IconType,
 }
 
 export const Thumbnail: FC<ThumbnailProps> = ({
@@ -21,17 +22,17 @@ export const Thumbnail: FC<ThumbnailProps> = ({
 }) => {
   return (
     <>
-      <Link to={'/works' + posts[id]['Link']} key={posts[id]}>
+      <Link to={'/works' + posts[id].Link} key={id}>
         <div className="post-section width-30">
           <FastImage
-            src={`${posts[id]['Thumbnail']}${posts[id]['Format']}`}
-            placeholderSrc={`${posts[id]['Thumbnail']}@0.33x.webp`}
+            src={`${posts[id].Thumbnail}${posts[id].Format}`}
+            placeholderSrc={`${posts[id].Thumbnail}@0.33x.webp`}
             className="width-30"
-            alt={posts[id]['Name']}
+            alt={posts[id].Name}
           />
           <div className="post-overlay" />
           <div className="post-title">
-            <h4>{posts[id]['Name']}: <br></br> {posts[id]['Subtitle']}</h4>
+            <h4>{posts[id].Name}: <br></br> {posts[id].Subtitle}</h4>
             <div className="post-items">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -40,13 +41,13 @@ export const Thumbnail: FC<ThumbnailProps> = ({
                 viewBox="0 0 15 15"
                 fill="none"
               >
-                <path d={icons['Field']} />
+                <path d={icons.Field} />
               </svg>
               <div className="listing">
                 {Object.entries(fields).map((params) => {
                   const field = params[1];
-                  return field['PostID'].includes(id) 
-                    ? <p className="caption" key={field['ID'] + id}>{field['Alias']}</p>
+                  return field.PostID.includes(id) 
+                    ? <p className="caption" key={field.ID + id}>{field.Alias}</p>
                     : <></>
                 })}
               </div>
@@ -59,10 +60,10 @@ export const Thumbnail: FC<ThumbnailProps> = ({
                 viewBox="0 0 14 16"
                 fill="none"
               >
-                <path d={icons['Calendar']} />
+                <path d={icons.Calendar} />
               </svg>
               <p className="caption">
-                {posts[id]['Duration'] + ' (' + posts[id]['Date'] + ')'}
+                {posts[id].Duration}, {posts[id].Date}
               </p>
             </div>
             <div className="post-items">
@@ -73,9 +74,9 @@ export const Thumbnail: FC<ThumbnailProps> = ({
                 viewBox="0 0 16 16"
                 fill="none"
               >
-                <path d={icons['Tag']} />
+                <path d={icons.Tag} />
               </svg>
-              <p className="caption">{posts[id]['Tags']}</p>
+              <p className="caption">{posts[id].Tags}</p>
             </div>
           </div>
           <div className="post-view">
@@ -86,7 +87,7 @@ export const Thumbnail: FC<ThumbnailProps> = ({
               viewBox="0 0 18 12"
               fill="none"
             >
-              <path d={icons['Eye']} />
+              <path d={icons.Eye} />
             </svg>
             <p className="button-text">View project</p>
           </div>

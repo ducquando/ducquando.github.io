@@ -2,7 +2,7 @@
 // GNL General Public License v3
 // Copyright (c) Do Duc Quan. All rights reserved.
 
-interface OtherHomeType {
+export interface OtherHomeType {
   Primary: string,
   Secondary: string,
 }

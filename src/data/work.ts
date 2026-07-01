@@ -11,24 +11,24 @@ const FEATURED_WORKS = {
   "lane-detection": false,
 } as const;
 
-type FilterEnum = "default" | "name" | "date"
-type FieldEnum = "ds" | "se" | "pd" | "gd"
 type WidthEnum = "width-30" | "width-60" | "width-90" | "width-30 top-padding" | "width-60 top-padding" | "width-90 top-padding"
-type ImgFormatEnum = ".png" | ".webp" | ".gif"
 type TextFormatEnum = "h1" | "p"
-type WorkEnum = keyof typeof FEATURED_WORKS;
+export type ImgFormatEnum = ".png" | ".webp" | ".gif"
+export type FilterEnum = "default" | "name" | "date"
+export type FieldEnum = "ds" | "se" | "pd" | "gd"
+export type WorkEnum = keyof typeof FEATURED_WORKS;
 
-type FilterWorkType = Record<FilterEnum, {
+export type FilterWorkType = Record<FilterEnum, {
   Sort: FilterEnum,
   Index: WorkEnum[]
 }>
-type FieldWorkType = Record<FieldEnum, {
+export type FieldWorkType = Record<FieldEnum, {
   ID: FieldEnum,
   Name: string,
   Alias: string,
   PostID: WorkEnum[]
 }>
-type PostWorkType = Record<WorkEnum, {
+export type PostWorkType = Record<WorkEnum, {
   Link: string,
   Name: string,
   Subtitle: string,
@@ -40,9 +40,9 @@ type PostWorkType = Record<WorkEnum, {
   Tags: string,
   Role: string,
   Fields: FieldEnum[],
-  Source: boolean | string,
+  Source?: string,
   Highlight: boolean,
-  Similar: [string, string],
+  Similar: [WorkEnum, WorkEnum],
   Content: ({
     Type: "img" | "img-responsive",
     Style: WidthEnum,
@@ -71,7 +71,6 @@ const dbPostWork: PostWorkType = {
     Tags: "Full-stack, Figma, NodeJS, MySQL, Azure",
     Role: "UX/UI designer, web developer",
     Fields: ["se", "pd"],
-    Source: false,
     Highlight: FEATURED_WORKS["the-next-lap-web"],
     Similar: ["momo-o2o", "inquiry"],
     Content: [
@@ -252,7 +251,7 @@ const dbPostWork: PostWorkType = {
     Date: "2022",
     Duration: "2 weeks",
     Tags: "Python",
-    Fields: ["ds", "se"],
+    Fields: ["ds"],
     Role: "Algorithm architecture, software engineer",
     Source: "https://github.com/ducquando/lane-detection",
     Highlight: FEATURED_WORKS["lane-detection"],
@@ -454,7 +453,6 @@ const dbPostWork: PostWorkType = {
     Tags: "Design, Illustrator",
     Role: "Creative director, graphic designer",
     Fields: ["gd"],
-    Source: false,
     Highlight: FEATURED_WORKS["student-council"],
     Similar: ["inquiry", "momo-o2o"],
     Content: [
@@ -735,7 +733,7 @@ const dbPostWork: PostWorkType = {
     Tags: "Full-stack, Swift, TypeScript, Figma, Applied AI",
     Role: "iOS Developer, Game Developer, UX/UI designer",
     Fields: ["se", "pd", "ds"],
-    Source: false,
+    Source: "https://apps.apple.com/us/app/connect-cards-game/id6780162324",
     Highlight: FEATURED_WORKS["connect-cards"],
     Similar: ["the-next-lap-web", "momo-o2o"],
     Content: [

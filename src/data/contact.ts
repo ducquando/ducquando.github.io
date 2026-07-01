@@ -2,18 +2,26 @@
 // GNL General Public License v3
 // Copyright (c) Do Duc Quan. All rights reserved.
 
-interface ContactValueType {
+import { IconEnum } from "./icon"
+
+export interface OtherContactType {
   Details: string,
-  SVG: string,
-  Link?: string,
-  ViewBox?: string,
-  Size?: string,
-  Name?: string,
+  SVG: IconEnum,
+}
+
+export interface EmailContactType extends OtherContactType {
+  Link: string,
+  ViewBox: string,
+  Size: string,
+}
+
+export interface ConnectContactType extends EmailContactType {
+  Name: string,
 }
 
 interface ContactContactType {
-  Name: ContactValueType,
-  Location: ContactValueType,
+  Name: OtherContactType,
+  Location: OtherContactType,
 }
 
 const dbContactContact: ContactContactType = {
@@ -21,13 +29,13 @@ const dbContactContact: ContactContactType = {
     Details: "Quan Do (he/him)",
     SVG: "Person"
   },
-  "Location": {
+  Location: {
     Details: "Atlanta, Georgia, USA",
     SVG: "Location"
   }
 }
 
-const dbEmailContact: ContactValueType = {
+const dbEmailContact: EmailContactType = {
   Details: "contact@dodquan.com",
   Link: "contact@dodquan.com",
   ViewBox: "0 0 20 20",
@@ -35,7 +43,7 @@ const dbEmailContact: ContactValueType = {
   SVG: "Email"
 }
 
-const dbConnectContact: ContactValueType[] = [
+const dbConnectContact: ConnectContactType[] = [
   {
     Name: "LinkedIn",
     Details: "Duc Quan Do (@dodquan)",
