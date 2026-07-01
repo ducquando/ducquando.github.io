@@ -152,11 +152,11 @@ const Post: FC<PostProps> = ({
         <div className="width-90">
           {/* Desktop */}
           <div className="metadata-container desktop">
-            {workPost.Source ? (
+            {workPost.CTA ? (
               <div className="metadata-section">
                 <h4 className="metadata-items">{title}</h4>
-                <Link to={workPost.Source} className="button">
-                  <p>View report</p>
+                <Link to={workPost.CTA.Link} className="button">
+                  <p>{workPost.CTA.Text}</p>
                 </Link>
               </div>
             ) : (
@@ -171,10 +171,10 @@ const Post: FC<PostProps> = ({
           >
             <h4 className="metadata-items">{title}</h4>
           </div>
-          {workPost.Source && (
+          {workPost.CTA && (
             <div className="metadata-section mobile">
-              <Link to={workPost.Source} className="button">
-                <p>View report</p>
+              <Link to={workPost.CTA.Link} className="button">
+                <p>{workPost.CTA.Text}</p>
               </Link>
             </div>
           )}
@@ -199,11 +199,11 @@ const Post: FC<PostProps> = ({
               <h4>Role</h4>
               <p>{workPost.Role}</p>
             </div>
-            {workPost.Source && (
+            {workPost.CTA && (
               <div className="metadata-section ">
                 <h4 className="metadata-items">Project</h4>
-                <Link to={workPost.Source} className="button">
-                  <p>View report</p>
+                <Link to={workPost.CTA.Link} className="button">
+                  <p>{workPost.CTA.Text}</p>
                 </Link>
               </div>
             )}
@@ -244,10 +244,10 @@ const Post: FC<PostProps> = ({
                 <p>{workPost.Role}</p>
               </div>
             </div>
-            {workPost.Source && (
+            {workPost.CTA && (
               <div className="mobile-section">
-                <Link to={workPost.Source} className="button">
-                  <p>View project</p>
+                <Link to={workPost.CTA.Link} className="button">
+                  <p>{workPost.CTA.Text}</p>
                 </Link>
               </div>
             )}
@@ -260,11 +260,11 @@ const Post: FC<PostProps> = ({
         </div>
 
         {/* CTA */}
-        {workPost.Source && (
+        {workPost.CTA && (
           <div id="cta-button" className="width-90">
             <h2>{title}</h2>
-            <Link to={workPost.Source} className="button large">
-              <p>View report</p>
+            <Link to={workPost.CTA.Link} className="button large">
+              <p>{workPost.CTA.Text}</p>
             </Link>
           </div>
         )}

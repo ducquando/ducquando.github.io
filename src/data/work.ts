@@ -40,7 +40,10 @@ export type PostWorkType = Record<WorkEnum, {
   Tags: string,
   Role: string,
   Fields: FieldEnum[],
-  Source?: string,
+  CTA?: {
+    Link: string,
+    Text: string,
+  },
   Highlight: boolean,
   Similar: [WorkEnum, WorkEnum],
   Content: ({
@@ -253,7 +256,10 @@ const dbPostWork: PostWorkType = {
     Tags: "Python",
     Fields: ["ds"],
     Role: "Algorithm architecture, software engineer",
-    Source: "https://github.com/ducquando/lane-detection",
+    CTA: {
+      Link: "https://github.com/ducquando/lane-detection",
+      Text: "View source code",
+    },
     Highlight: FEATURED_WORKS["lane-detection"],
     Similar: ["the-next-lap-web", "momo-o2o"],
     Content: [
@@ -327,7 +333,10 @@ const dbPostWork: PostWorkType = {
     Tags: "Prototypes, Figma",
     Role: "UX/UI designer",
     Fields: ["pd"],
-    Source: "https://www.behance.net/gallery/168780193/ReImagined-OneStop-Inquiry-Site",
+    CTA: {
+      Link: "https://www.behance.net/gallery/168780193/ReImagined-OneStop-Inquiry-Site",
+      Text: "View report",
+    },
     Highlight: FEATURED_WORKS["inquiry"],
     Similar: ["momo-o2o", "the-next-lap-web"],
     Content: [
@@ -605,7 +614,10 @@ const dbPostWork: PostWorkType = {
     Tags: "Product, Prototypes, Figma, Illustrator",
     Role: "Product developer, UX/UI designer",
     Fields: ["pd"],
-    Source: "https://www.behance.net/gallery/168781019/MoMo-O2O",
+    CTA: {
+      Link: "https://www.behance.net/gallery/168781019/MoMo-O2O",
+      Text: "View report",
+    },
     Highlight: FEATURED_WORKS["momo-o2o"],
     Similar: ["inquiry", "the-next-lap-web"],
     Content: [
@@ -733,7 +745,10 @@ const dbPostWork: PostWorkType = {
     Tags: "Full-stack, Swift, TypeScript, Figma, Applied AI",
     Role: "iOS Developer, Game Developer, UX/UI designer",
     Fields: ["se", "pd", "ds"],
-    Source: "https://apps.apple.com/us/app/connect-cards-game/id6780162324",
+    CTA: {
+      Link: "https://apps.apple.com/us/app/connect-cards-game/id6780162324",
+      Text: "View on App Store",
+    },
     Highlight: FEATURED_WORKS["connect-cards"],
     Similar: ["the-next-lap-web", "momo-o2o"],
     Content: [
