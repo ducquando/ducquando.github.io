@@ -256,7 +256,7 @@ const Post: FC<PostProps> = ({
 
         {/* Content */}
         <div id="content-container" className="width-90">
-          {ContentSection()}
+          <ContentSection />
         </div>
 
         {/* CTA */}
@@ -288,7 +288,7 @@ const Post: FC<PostProps> = ({
             </Link>
           </div>
           <div id="post-container" className="width-90">
-            {PostsSection()}
+            <PostsSection />
           </div>
         </div>
       </div>

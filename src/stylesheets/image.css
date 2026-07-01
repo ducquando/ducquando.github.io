@@ -8,3 +8,10 @@
   filter: blur(0px);
   transition: filter 0.5s linear;
 }
+
+.fill-image {
+  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+}

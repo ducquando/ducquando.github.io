@@ -154,14 +154,18 @@ const About: FC<AboutProps> = ({
         {/* Journey section */}
         <div className="about-container width-90">
           <h2>Journey</h2>
-          <div id="journey-container">{JourneySection()}</div>
+          <div id="journey-container">
+            <JourneySection />
+          </div>
         </div>
         <div className="divider"></div>
 
         {/* Experience section */}
         <div className="about-container width-90">
           <h2>Experience</h2>
-          <div id="experience-container">{ExperienceSection()}</div>
+          <div id="experience-container">
+            <ExperienceSection />
+          </div>
         </div>
         <div className="divider"></div>
 

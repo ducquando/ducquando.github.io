@@ -45,8 +45,7 @@ const Home: FC<HomeProps> = ({
             <FastImage
               src={'./pictures/Thumbnail.png'}
               placeholderSrc={'./pictures/Thumbnail@0.33x.webp'}
-              id="thumbnail-image"
-              className="width-100"
+              className="width-100 fill-image"
               alt="Thumbnail hero image"
             />
             <picture style={{ position: 'absolute' }}>
@@ -191,7 +190,7 @@ const Home: FC<HomeProps> = ({
           </div>
 
           <div id="post-container" className="width-90">
-            {HighlightSection()}
+            <HighlightSection />
           </div>
         </div>
       </>
@@ -200,17 +199,12 @@ const Home: FC<HomeProps> = ({
 
   return (
     <>
-      {ContentSection()}
-
-      {AboutSection()}
+      <ContentSection />
+      <AboutSection />
       <div className="divider" />
-
-      {/* Works section */}
-      {WorkSection()}
+      <WorkSection />
       <div className="divider" />
-
-      {/* Contact section */}
-      {ContactSection()}
+      <ContactSection />
     </>
   );
 };

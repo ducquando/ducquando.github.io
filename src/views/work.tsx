@@ -138,7 +138,9 @@ const Work: FC<WorkProps> = ({
                 </svg>
                 <h3>Filter</h3>
               </div>
-              <div id="filter-container">{FilterSection()}</div>
+              <div id="filter-container">
+                <FilterSection />
+              </div>
             </div>
 
             {/* Sort */}
@@ -174,7 +176,7 @@ const Work: FC<WorkProps> = ({
           <div className="divider" />
 
           <div id="post-container" className="width-90">
-            {ThumbnailsSection()}
+            <ThumbnailsSection />
           </div>
         </div>
       </div>

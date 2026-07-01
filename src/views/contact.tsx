@@ -90,7 +90,7 @@ const Contact: FC<ContactProps> = ({
           <h2>CONTACT INFORMATION</h2>
           <div className="info-connect-container">
             {/* Basic information */}
-            {InfoSection()}
+            <InfoSection />
 
             {/* Email */}
             <div className="info-connect-section">
@@ -112,7 +112,9 @@ const Contact: FC<ContactProps> = ({
 
         <div className="contact-section width-90">
           <h2>CONNECT ME ON</h2>
-          <div className="info-connect-container">{SocialSection()}</div>
+          <div className="info-connect-container">
+            <SocialSection />
+          </div>
         </div>
       </div>
     </>
