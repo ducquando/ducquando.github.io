@@ -2,13 +2,13 @@
 // GNL General Public License v3
 // Copyright (c) Do Duc Quan. All rights reserved.
 
-import { ImgFormatEnum } from "./work"
+import { ImgFormatEnum } from "./work";
 
 export interface SkillAboutType {
-    Image: string,
-    Format: ImgFormatEnum,
-    SkillName: string,
-  }
+  Image: string,
+  Format: ImgFormatEnum,
+  SkillName: string,
+};
 
 export interface JourneyAboutType {
   Year: string,
@@ -18,19 +18,19 @@ export interface JourneyAboutType {
   Landspace: boolean,
   HorizontalOffset: string,
   VerticalOffset: string,
-}
+};
 
 export interface GeneralAboutType {
   Overview: string,
   Years: string,
   Project: string,
   Stakeholders: string,
-}
+};
 
 export interface OtherAboutType {
   Primary: string,
   Secondary: string,
-}
+};
 
 export interface ExperienceAboutType {
   Name: string,
@@ -42,7 +42,7 @@ export interface ExperienceAboutType {
   Project: string,
   Stakeholders: string,
   Skills: SkillAboutType[],
-}[]
+};
 
 const dbJourneyAbout: JourneyAboutType[] = [
   {
@@ -52,7 +52,7 @@ const dbJourneyAbout: JourneyAboutType[] = [
     Format: ".png",
     Landspace: false,
     HorizontalOffset: "4",
-    VerticalOffset: "-1"
+    VerticalOffset: "-1",
   },
   {
     Year: "2017",
@@ -61,7 +61,7 @@ const dbJourneyAbout: JourneyAboutType[] = [
     Format: ".png",
     Landspace: false,
     HorizontalOffset: "7",
-    VerticalOffset: "-1"
+    VerticalOffset: "-1",
   },
   {
     Year: "2020",
@@ -70,7 +70,7 @@ const dbJourneyAbout: JourneyAboutType[] = [
     Format: ".png",
     Landspace: true,
     HorizontalOffset: "7",
-    VerticalOffset: "0"
+    VerticalOffset: "0",
   },
   {
     Year: "2021",
@@ -79,7 +79,7 @@ const dbJourneyAbout: JourneyAboutType[] = [
     Format: ".png",
     Landspace: true,
     HorizontalOffset: "6",
-    VerticalOffset: "0"
+    VerticalOffset: "0",
   },
   {
     Year: "2023",
@@ -88,7 +88,7 @@ const dbJourneyAbout: JourneyAboutType[] = [
     Format: ".png",
     Landspace: false,
     HorizontalOffset: "6",
-    VerticalOffset: "-1"
+    VerticalOffset: "-1",
   },
   {
     Year: "2024",
@@ -97,7 +97,7 @@ const dbJourneyAbout: JourneyAboutType[] = [
     Format: ".png",
     Landspace: false,
     HorizontalOffset: "7",
-    VerticalOffset: "-1"
+    VerticalOffset: "-1",
   },
   {
     Year: "Now",
@@ -106,26 +106,26 @@ const dbJourneyAbout: JourneyAboutType[] = [
     Format: ".png",
     Landspace: true,
     HorizontalOffset: "9",
-    VerticalOffset: "0"
-  }
-]
+    VerticalOffset: "0",
+  },
+];
 
 const dbGeneralAbout: GeneralAboutType = {
   Overview: "Quan is a software engineer and applied ML researcher with a background in user-centric design.",
   Years: "5+",
   Project: "30+",
-  Stakeholders: "20+"
-}
+  Stakeholders: "20+",
+};
 
 const dbDetailAbout: OtherAboutType = {
   Primary: "I'm Quan, a software engineer with strong applied machine learning experience.",
-  Secondary: "I build end-to-end intelligent systems that combine engineering rigor, human-centered design, and creative problem-solving. I enjoy making arts in my free time."
-}
+  Secondary: "I build end-to-end intelligent systems that combine engineering rigor, human-centered design, and creative problem-solving. I enjoy making arts in my free time.",
+};
 
 const dbFutureAbout: OtherAboutType = {
   Primary: "I aim to deepen my expertise in software engineering and applied machine learning by contributing to projects that solve real-world challenges through intelligent, human-centered systems.",
   Secondary: "Long term, I hope to pursue an academic path where I can work on research at the intersection of ML, simulations, and interactive technologies. I'm especially fascinated by AI-augmented workflows, especially about how tools like LLMs can support creativity, design, and everyday problem-solving.",
-}
+};
 
 const dbExperienceAbout: ExperienceAboutType[] = [
   {
@@ -141,29 +141,29 @@ const dbExperienceAbout: ExperienceAboutType[] = [
       {
         Image: "./pictures/tools/Python",
         Format: ".png",
-        SkillName: "Python"
+        SkillName: "Python",
       },
       {
         Image: "./pictures/tools/PyTorch",
         Format: ".png",
-        SkillName: "PyTorch"
+        SkillName: "PyTorch",
       },
       {
         Image: "./pictures/tools/ScikitLearn",
         Format: ".png",
-        SkillName: "Scikit-learn"
+        SkillName: "Scikit-learn",
       },
       {
         Image: "./pictures/tools/TensorFlow",
         Format: ".png",
-        SkillName: "TensorFlow"
+        SkillName: "TensorFlow",
       },
       {
         Image: "/pictures/tools/R",
         Format: ".png",
-        SkillName: "R"
+        SkillName: "R",
       },
-    ]
+    ],
   },
   {
     Name: "Software Engineering",
@@ -178,64 +178,64 @@ const dbExperienceAbout: ExperienceAboutType[] = [
       {
         Image: "./pictures/tools/Python",
         Format: ".png",
-        SkillName: "Python"
+        SkillName: "Python",
       },
       {
         Image: "./pictures/tools/TypeScript",
         Format: ".png",
-        SkillName: "TypeScript"
+        SkillName: "TypeScript",
       },
       {
         Image: "./pictures/tools/JavaScript",
         Format: ".png",
-        SkillName: "JavaScript"
+        SkillName: "JavaScript",
       },
       {
         Image: "./pictures/tools/Java",
         Format: ".png",
-        SkillName: "Java"
+        SkillName: "Java",
       },
       {
         Image: "./pictures/tools/Swift",
         Format: ".png",
-        SkillName: "Swift"
+        SkillName: "Swift",
       },
       {
         Image: "./pictures/tools/React",
         Format: ".png",
-        SkillName: "React"
+        SkillName: "React",
       },
       {
         Image: "./pictures/tools/NodeJS",
         Format: ".png",
-        SkillName: "NodeJS"
+        SkillName: "NodeJS",
       },
       {
         Image: "./pictures/tools/SQL",
         Format: ".png",
-        SkillName: "SQL"
+        SkillName: "SQL",
       },
       {
         Image: "./pictures/tools/Docker",
         Format: ".png",
-        SkillName: "Docker"
+        SkillName: "Docker",
       },
       {
         Image: "./pictures/tools/AmazonEC2",
         Format: ".png",
-        SkillName: "Amazon EC2"
+        SkillName: "Amazon EC2",
       },
       {
         Image: "./pictures/tools/Playwright",
         Format: ".png",
-        SkillName: "Playwright"
+        SkillName: "Playwright",
       },
       {
         Image: "./pictures/tools/Appium",
         Format: ".png",
-        SkillName: "Appium"
+        SkillName: "Appium",
       },
-    ]
+    ],
   },
   {
     Name: "Product & Human-Centered Engineering",
@@ -250,19 +250,19 @@ const dbExperienceAbout: ExperienceAboutType[] = [
       {
         Image: "./pictures/tools/Figma",
         Format: ".png",
-        SkillName: "Figma"
+        SkillName: "Figma",
       },
       {
         Image: "./pictures/tools/XD",
         Format: ".png",
-        SkillName: "XD"
+        SkillName: "XD",
       },
       {
         Image: "./pictures/tools/Agile",
         Format: ".png",
-        SkillName: "Agile"
-      }
-    ]
+        SkillName: "Agile",
+      },
+    ],
   },
   {
     Name: "Visual Design",
@@ -277,26 +277,26 @@ const dbExperienceAbout: ExperienceAboutType[] = [
       {
         Image: "./pictures/tools/Illustrator",
         Format: ".png",
-        SkillName: "Illustrator"
+        SkillName: "Illustrator",
       },
       {
         Image: "./pictures/tools/Photoshop",
         Format: ".png",
-        SkillName: "Photoshop"
+        SkillName: "Photoshop",
       },
       {
         Image: "./pictures/tools/AfterEffects",
         Format: ".png",
-        SkillName: "After Effects"
+        SkillName: "After Effects",
       },
       {
         Image: "./pictures/tools/Canva",
         Format: ".png",
-        SkillName: "Canva"
-      }
-    ]
-  }
-]
+        SkillName: "Canva",
+      },
+    ],
+  },
+];
 
 export const dbAbout = {
   Journey: dbJourneyAbout,

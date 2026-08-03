@@ -1,12 +1,12 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
+import { resolve as _resolve, dirname as __dirname, join } from 'path';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import CopyPlugin from 'copy-webpack-plugin';
 
-module.exports = (_, argv) => ({
+export default (_, argv) => ({
   entry: './src/index.tsx',
 
   output: {
-    path: path.resolve(__dirname, 'build'),
+    path: _resolve(__dirname, 'build'),
     publicPath: '/',
     filename: 'bundle.js',
     clean: true,
@@ -42,7 +42,7 @@ module.exports = (_, argv) => ({
   ],
 
   devServer: {
-    static: { directory: path.join(__dirname, 'public') },
+    static: { directory: join(__dirname, 'public') },
     allowedHosts: 'all',
     historyApiFallback: true,
   },

@@ -3,6 +3,7 @@
   "version": "2.3.0",
   "private": true,
   "description": "Quan Do",
+  "type": "module",
   "scripts": {
     "start": "webpack serve --mode=development --open",
     "build": "webpack --mode=production",
