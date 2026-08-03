@@ -3,7 +3,7 @@
 // Copyright (c) Do Duc Quan. All rights reserved.
 
 import { FC, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { EmailContactType, IconType, OtherContactType, ConnectContactType } from '../data';
 import '../stylesheets/contact.css';
 

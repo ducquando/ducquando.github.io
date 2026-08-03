@@ -3,7 +3,7 @@
 // Copyright (c) Do Duc Quan. All rights reserved.
 
 import { FC, useEffect, useRef, useState } from 'react';
-import { Navigate, Link, useParams } from 'react-router-dom';
+import { Navigate, Link, useParams } from 'react-router';
 import { FastImage } from './image';
 import { Thumbnail } from './thumbnail';
 import { FieldEnum, FieldWorkType, IconType, PostWorkType, WorkEnum } from '../data';

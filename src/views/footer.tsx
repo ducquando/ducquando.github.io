@@ -3,7 +3,7 @@
 // Copyright © Do Duc Quan. All rights reserved.
 
 import { FC } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { IconType, EmailContactType, ConnectContactType } from '../data';
 import '../stylesheets/footer.css';
 

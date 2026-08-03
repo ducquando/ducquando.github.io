@@ -3,7 +3,7 @@
 // Copyright (c) Do Duc Quan. All rights reserved.
 
 import { FC, useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router';
 import { Thumbnail } from './thumbnail';
 import { FieldEnum, FieldWorkType, FilterEnum, FilterWorkType, IconType, PostWorkType, WorkEnum } from '../data';
 import '../stylesheets/work.css';

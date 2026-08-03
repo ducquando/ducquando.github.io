@@ -3,7 +3,7 @@
 // Copyright (c) Do Duc Quan. All rights reserved.
 
 import { FC } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { FastImage } from "./image";
 import { WorkEnum, FieldWorkType, PostWorkType, IconType, } from "../data";
 

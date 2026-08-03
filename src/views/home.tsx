@@ -3,7 +3,7 @@
 // Copyright (c) Do Duc Quan. All rights reserved.
 
 import { FC, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { FastImage } from './image';
 import { Thumbnail } from './thumbnail';
 import { FieldWorkType, IconType, OtherHomeType, PostWorkType, OtherContactType, GeneralAboutType, EmailContactType, WorkEnum } from '../data';

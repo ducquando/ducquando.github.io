@@ -3,7 +3,7 @@
 // Copyright (c) Do Duc Quan. All rights reserved.
 
 import { FC, lazy, Suspense, useEffect } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router';
 import { Header, Footer, Loading } from './views';
 import { dbHome, dbAbout, dbContact, dbWork, dbIcon } from './data';
 

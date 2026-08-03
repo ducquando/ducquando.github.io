@@ -3,7 +3,7 @@
 // Copyright (c) Do Duc Quan. All rights reserved.
 
 import { FC, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { IconType } from '../data';
 import '../stylesheets/header.css';
 

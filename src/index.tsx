@@ -3,7 +3,7 @@
 // Copyright (c) Do Duc Quan. All rights reserved.
 
 import { createRoot } from 'react-dom/client';
-import { HashRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router';
 import { App, ScrollToTop } from './App';
 import './stylesheets/fonts.css';
 import './stylesheets/colors.css';
