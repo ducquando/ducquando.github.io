@@ -1,12 +1,15 @@
-import { resolve as _resolve, dirname as __dirname, join } from 'path';
+import { dirname, resolve, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CopyPlugin from 'copy-webpack-plugin';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export default (_, argv) => ({
   entry: './src/index.tsx',
 
   output: {
-    path: _resolve(__dirname, 'build'),
+    path: resolve(__dirname, 'build'),
     publicPath: '/',
     filename: 'bundle.js',
     clean: true,
