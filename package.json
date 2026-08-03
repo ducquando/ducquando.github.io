@@ -1,15 +1,13 @@
 {
   "name": "ducquando.github.io",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "private": true,
   "description": "Quan Do",
   "scripts": {
     "start": "webpack serve --mode=development --open",
     "build": "webpack --mode=production",
-    "prepare": "husky",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "test": "npm run lint"
+    "test": "eslint .",
+    "lint": "eslint . --fix"
   },
   "repository": {
     "type": "git",
@@ -18,35 +16,19 @@
   "author": "Do Duc Quan <dodquan@gmail.com>",
   "license": "GPL-3.0",
   "dependencies": {
-    "@radix-ui/react-icons": "^1.3.2",
-    "@stitches/react": "^0.1.9",
-    "@uidotdev/usehooks": "^2.4.x",
-    "lodash": "^4.17.21",
-    "prop-types": "^15.8.x",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-interactive": "^1.1.2",
     "react-router-dom": "^7.18.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.4",
-    "@types/lodash": "^4.14.202",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
-    "@typescript-eslint/eslint-plugin": "^8",
-    "@typescript-eslint/parser": "^8",
     "copy-webpack-plugin": "^14.0.0",
     "css-loader": "^7.1.2",
     "eslint": "9.7",
-    "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "^7.1.1",
-    "glob": "^13.0.6",
-    "globals": "^17.7.0",
     "html-webpack-plugin": "^5.6.7",
-    "husky": "^9",
-    "lint-staged": "^16",
     "prettier": "^3",
-    "source-map-loader": "^5",
     "style-loader": "^4",
     "ts-loader": "^9",
     "typescript": "^5.8",
@@ -58,15 +40,6 @@
   "prettier": {
     "trailingComma": "all",
     "singleQuote": true
-  },
-  "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "src/**/*.{css,json,md}": [
-      "prettier --write"
-    ]
   },
   "overrides": {
     "uuid": "^11.1.0"
